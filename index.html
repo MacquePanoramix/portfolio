@@ -61,7 +61,40 @@
                 <div class="about-text">
                     <h2>About Me</h2>
                     <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
-                    <p>This portfolio is a collection of my journeys—explorations.</p>
+                    <!-- Journey line with tiny train -->
+<div id="journey-line">
+  <p class="journey-text">This portfolio is a collection of my journeys.</p>
+
+  <!-- Inline SVG so the train can follow a path -->
+  <svg class="journey-svg" viewBox="0 0 300 300" aria-hidden="true">
+    <!-- Circular track -->
+    <circle cx="150" cy="150" r="115" class="track" />
+
+    <!-- The train group (a tiny engine) -->
+    <g class="train">
+      <!-- cart body -->
+      <rect x="-10" y="-6" width="20" height="12" rx="2" ry="2" class="train-body"/>
+      <!-- chimney -->
+      <rect x="4" y="-10" width="4" height="6" rx="1" class="chimney"/>
+      <!-- wheels -->
+      <circle cx="-6" cy="7" r="3" class="wheel"/>
+      <circle cx="6"  cy="7" r="3" class="wheel"/>
+
+      <!-- follow the circular path -->
+      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+        <mpath xlink:href="#journey-track-path"/>
+      </animateMotion>
+    </g>
+
+    <!-- Hidden path the train follows (same circle as the visible track) -->
+    <defs>
+      <path id="journey-track-path"
+            d="M150,35
+               A115,115 0 1,1 149.999,35" />
+    </defs>
+  </svg>
+</div>
+
                     <p></p>
                 </div>
             </div>

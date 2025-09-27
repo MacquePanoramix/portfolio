@@ -132,6 +132,45 @@ main > section:last-of-type {
     animation-delay: 0.5s;
 }
 
+/* --- Journey text with orbiting train --- */
+#journey-line{
+  position: relative;
+  display: inline-grid;        /* lets text sit above the SVG */
+  place-items: center;
+  margin: .75rem 0 1.25rem;
+}
+
+.journey-text{
+  z-index: 2;                  /* keep text on top */
+  padding: .25rem .5rem;       /* a little breathing room */
+  text-align: center;
+}
+
+.journey-svg{
+  position: absolute;          /* center the SVG around the text */
+  width: 180px;                /* <- size of the orbit */
+  height: 180px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;        /* clicks pass through */
+}
+
+/* the circular track (make it invisible or very soft) */
+.track{
+  fill: none;                  /* removes the black fill */
+  stroke: transparent;         /* or: #cfc7d8 for a faint dotted ring */
+  stroke-width: 2;
+  stroke-dasharray: 2 6;       /* dotted vibe (ignored if transparent) */
+  opacity: .9;
+}
+
+/* simple default train colors (if you didn't swap in an image yet) */
+.train-body{ fill:#bda6d8; }
+.chimney{    fill:#8e7ab8; }
+.wheel{      fill:#5f5f5f; }
+
+
 @keyframes fadeInAnimation {
     to {
         opacity: 1;

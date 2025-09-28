@@ -1,116 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luís Antônio de Albuquerque Hollanda | Creative Technologist</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luís Antônio de Albuquerque Hollanda | Creative Technologist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="stars"></div>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="stars"></div>
 
-    <main>
-        <section id="home" class="hero">
-            <h1 class="fade-in">Luís Antônio de Albuquerque Hollanda</h1>
-            <p class="fade-in poetic-tagline">A portfolio full of aspirations, growing with every dream.</p>
-        </section>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Project+Banner" alt="Project 1 Banner">
-                    <div class="project-content">
-                        <h3>Project Title 1</h3>
-                        <p class="project-quote">"A one-sentence intention or thought behind the piece."</p>
-                        <p>A brief description of your project. What was the challenge? What did you create?</p>
-                        <a href="#" class="project-link">View Project Details</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Project+Banner" alt="Project 2 Banner">
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
-                        <p class="project-quote">"The story behind the creation of this interactive experience."</p>
-                        <p>This is where you can talk about the process, from the initial idea to the final result.</p>
-                        <a href="#" class="project-link">View Project Details</a>
-                    </div>
-                </div>
-                 </div>
-        </section>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <h1 class="fade-in">Luís Antônio de Albuquerque Hollanda</h1>
+      <p class="fade-in poetic-tagline">A portfolio full of aspirations, growing with every dream.</p>
+    </section>
 
-        <section id="about">
-            <div class="about-container">
-                <div class="polaroid">
-                    <img src="me.jpg" alt="Photo of Luís Antônio de Albuquerque Hollanda">
-                    <p class="handwriting">This is me...</p>
-                </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
-                    <!-- Journey line with tiny train -->
-<div id="journey-line">
-  <p class="journey-text">This portfolio is a collection of my journeys.</p>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Project+Banner" alt="Project 1 Banner" />
+          <div class="project-content">
+            <h3>Project Title 1</h3>
+            <p class="project-quote">"A one-sentence intention or thought behind the piece."</p>
+            <p>A brief description of your project. What was the challenge? What did you create?</p>
+            <a href="#" class="project-link">View Project Details</a>
+          </div>
+        </div>
 
-  <!-- Inline SVG so the train can follow a path -->
-  <svg class="journey-svg" viewBox="0 0 300 300" aria-hidden="true">
-    <!-- Circular track -->
-    <circle cx="150" cy="150" r="115" class="track" />
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Project+Banner" alt="Project 2 Banner" />
+          <div class="project-content">
+            <h3>Project Title 2</h3>
+            <p class="project-quote">"The story behind the creation of this interactive experience."</p>
+            <p>This is where you can talk about the process, from the initial idea to the final result.</p>
+            <a href="#" class="project-link">View Project Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- The train group (a tiny engine) -->
-    <g class="train">
-      <!-- cart body -->
-      <rect x="-10" y="-6" width="20" height="12" rx="2" ry="2" class="train-body"/>
-      <!-- chimney -->
-      <rect x="4" y="-10" width="4" height="6" rx="1" class="chimney"/>
-      <!-- wheels -->
-      <circle cx="-6" cy="7" r="3" class="wheel"/>
-      <circle cx="6"  cy="7" r="3" class="wheel"/>
+    <!-- About -->
+    <section id="about">
+      <div class="about-container">
+        <div class="polaroid">
+          <img src="me.jpg" alt="Photo of Luís Antônio de Albuquerque Hollanda" />
+          <p class="handwriting">This is me...</p>
+        </div>
 
-      <!-- follow the circular path -->
-      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-        <mpath xlink:href="#journey-track-path"/>
-      </animateMotion>
-    </g>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
 
-    <!-- Hidden path the train follows (same circle as the visible track) -->
-    <defs>
-      <path id="journey-track-path"
-            d="M150,35
-               A115,115 0 1,1 149.999,35" />
-    </defs>
-  </svg>
-</div>
+          <!-- Journey line with tiny train orbiting a rounded-rectangle path -->
+          <div id="journey-line">
+            <p class="journey-text">This portfolio is a collection of my journeys.</p>
 
-                    <p></p>
-                </div>
-            </div>
-        </section>
+            <svg class="journey-svg" aria-hidden="true">
+              <!-- Path is drawn by script.js to hug the sentence -->
+              <path id="journey-track-path" class="track" d="" />
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>I'm always open to collaborating on interesting projects or just having a chat. <br>Feel free to reach out.</p>
-            <a href="mailto:your.email@example.com" class="button">Say Hello</a>
-        </section>
+              <!-- Tiny engine (swap for <image href="train.png"> if you add one) -->
+              <g class="train">
+                <rect x="-10" y="-6" width="20" height="12" rx="2" ry="2" class="train-body"></rect>
+                <rect x="4" y="-10" width="4" height="6" rx="1" class="chimney"></rect>
+                <circle cx="-6" cy="7" r="3" class="wheel"></circle>
+                <circle cx="6"  cy="7" r="3" class="wheel"></circle>
 
-        <footer>
-            <a href="hidden-corner.html" class="hidden-link">✨</a>
-        </footer>
-    </main>
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#journey-track-path"></mpath>
+                </animateMotion>
+              </g>
+            </svg>
+          </div>
 
-    <script src="script.js"></script>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>I'm always open to collaborating on interesting projects or just having a chat. <br />Feel free to reach out.</p>
+      <a href="mailto:your.email@example.com" class="button">Say Hello</a>
+    </section>
+
+    <footer>
+      <a href="hidden-corner.html" class="hidden-link">✨</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

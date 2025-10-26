@@ -68,24 +68,23 @@
           <h2>About Me</h2>
           <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
 
-          <!-- Journey line with tiny train orbiting a rounded-rectangle path -->
+          <!-- Journey line with a train sprite that follows a rounded-rectangle path -->
           <div id="journey-line">
             <p class="journey-text">This portfolio is a collection of my journeys.</p>
 
             <svg class="journey-svg" aria-hidden="true">
-  <!-- Path is drawn by script.js to hug the sentence -->
-  <path id="journey-track-path" class="track" d="" />
+              <!-- Path gets drawn by script.js to hug the text -->
+              <path id="journey-track-path" class="track" d="" />
 
-  <!-- Single sprite: engine + carts as one SVG image -->
-  <g class="train-sprite">
-    <!-- Adjust width/height and x/y to size & center the sprite -->
-    <image href="train.svg" x="-36" y="-14" width="72" height="28" />
-    <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-      <mpath href="#journey-track-path" />
-    </animateMotion>
-  </g>
-</svg>
-
+              <!-- One sprite: your whole train (engine+carts) -->
+              <g class="train-sprite">
+                <!-- Adjust x/y to center on the path, width/height for size -->
+                <image href="train.svg" x="-40" y="-16" width="80" height="32" />
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#journey-track-path" />
+                </animateMotion>
+              </g>
+            </svg>
           </div>
 
           <p></p>

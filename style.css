@@ -136,6 +136,23 @@ main > section:last-of-type { border-bottom: none; }
   overflow: visible;  
 }
 
+/* keep the SVG hidden until the JS draws the path (prevents initial jump) */
+.journey-svg { visibility: hidden; }
+
+/* flip horizontally so the engine faces forward along the path */
+.train-sprite .sprite-body {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(-1, 1); /* horizontal mirror only */
+}
+
+/* (optional) tiny visual nudge so the sprite hugs the track a little tighter) */
+/* If you later want it even closer, reduce the JS pad values in step 3. */
+.train-sprite image {
+  /* no transform here; sizing is already centered with x/y */
+}
+
+
 /* the track (set stroke to transparent to hide, or #cfc7d8 to show) */
 .track{
   fill: none;

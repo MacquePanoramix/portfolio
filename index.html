@@ -19,6 +19,13 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+  <button id="musicToggle" class="music-btn" aria-pressed="false" title="Play music">
+    <span class="music-icon" aria-hidden="true">♪</span>
+    <span class="music-label">Music</span>
+  </button>
+</li>
+
       </ul>
     </nav>
   </header>
@@ -110,6 +117,10 @@
       <a href="hidden-corner.html" class="hidden-link">✨</a>
     </footer>
   </main>
+
+  <!-- Background music (start muted; we unmute on user click) -->
+<audio id="bgm" src="audio/bgm.mp3" preload="auto" loop muted></audio>
+
 
   <script src="script.js"></script>
 </body>

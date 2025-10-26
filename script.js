@@ -11,6 +11,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Draw a rounded-rectangle path around the journey text,
 // and size the SVG to that path so the train orbits correctly.
+// Draw a rounded-rectangle path around the journey text,
+// and size the SVG to that path so the train orbits correctly.
 function updateJourneyPath() {
   const wrap = document.getElementById('journey-line');
   if (!wrap) return;
@@ -22,35 +24,50 @@ function updateJourneyPath() {
 
   // Measure the text box
   const r = text.getBoundingClientRect();
-  // Padding around the text inside the orbit
-  const padX = 20, padY = 12;
+
+  // Inner padding (space between text and the track)
+  const padX = 20;
+  const padY = 12;
+
   // Corner radius of the rounded rectangle
   const radius = 16;
 
-  const w = Math.max(60, Math.round(r.width  + padX * 2));
-  const h = Math.max(40, Math.round(r.height + padY * 2));
+  // Extra padding OUTSIDE the track so the train sprite
+  // never gets clipped by the SVG bounds.
+  const ORBIT_PAD = 18;  // bump to 20–24 if you increase the train size
 
-  // Size the SVG to fit the rounded rect
+  const innerW = Math.max(60, Math.round(r.width  + padX * 2));
+  const innerH = Math.max(40, Math.round(r.height + padY * 2));
+
+  // Final SVG size including extra orbit padding
+  const w = innerW + ORBIT_PAD * 2;
+  const h = innerH + ORBIT_PAD * 2;
+
   svg.setAttribute('width',  w);
   svg.setAttribute('height', h);
   svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
 
+  // Top-left of the inner rounded rectangle (the track)
+  const x0 = ORBIT_PAD;
+  const y0 = ORBIT_PAD;
+
   // Rounded-rectangle path (clockwise)
   const d = [
-    `M ${radius} 0`,
-    `H ${w - radius}`,
-    `A ${radius} ${radius} 0 0 1 ${w} ${radius}`,
-    `V ${h - radius}`,
-    `A ${radius} ${radius} 0 0 1 ${w - radius} ${h}`,
-    `H ${radius}`,
-    `A ${radius} ${radius} 0 0 1 0 ${h - radius}`,
-    `V ${radius}`,
-    `A ${radius} ${radius} 0 0 1 ${radius} 0`,
+    `M ${x0 + radius} ${y0}`,
+    `H ${x0 + innerW - radius}`,
+    `A ${radius} ${radius} 0 0 1 ${x0 + innerW} ${y0 + radius}`,
+    `V ${y0 + innerH - radius}`,
+    `A ${radius} ${radius} 0 0 1 ${x0 + innerW - radius} ${y0 + innerH}`,
+    `H ${x0 + radius}`,
+    `A ${radius} ${radius} 0 0 1 ${x0} ${y0 + innerH - radius}`,
+    `V ${y0 + radius}`,
+    `A ${radius} ${radius} 0 0 1 ${x0 + radius} ${y0}`,
     'Z'
   ].join(' ');
 
   path.setAttribute('d', d);
 }
+
 
 // Run on load and when resized (so it adapts on mobile)
 window.addEventListener('load',   updateJourneyPath);

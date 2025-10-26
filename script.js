@@ -76,3 +76,90 @@ svg.style.visibility = 'visible';
 // Run on load and when resized (so it adapts on mobile)
 window.addEventListener('load',   updateJourneyPath);
 window.addEventListener('resize', () => requestAnimationFrame(updateJourneyPath));
+
+/* === Background Music Toggle (muted by default) === */
+(function () {
+  const audio = document.getElementById('bgm');
+  const btn   = document.getElementById('musicToggle');
+  if (!audio || !btn) return;
+
+  // Restore previous preference
+  const saved = localStorage.getItem('bgm-pref'); // 'on' | 'off'
+  const wantOn = saved === 'on';
+
+  // Always begin muted to satisfy autoplay policies
+  audio.muted = true;
+  audio.volume = 0; // fade-in later
+
+  // If user previously chose ON, we’ll auto-start after first interaction
+  let armedAutoplay = wantOn;
+
+  // Small helper for gentle fades
+  function fadeVolume(target, ms = 600) {
+    const start = audio.volume;
+    const delta = target - start;
+    const startT = performance.now();
+    function step(t) {
+      const p = Math.min(1, (t - startT) / ms);
+      audio.volume = start + delta * p;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  async function playBgm() {
+    try {
+      audio.muted = false;
+      if (audio.paused) await audio.play();
+      fadeVolume(0.65, 700);
+      btn.setAttribute('aria-pressed', 'true');
+      localStorage.setItem('bgm-pref', 'on');
+    } catch (e) {
+      // Playback can still be blocked until a gesture occurs.
+      // We stay 'armed' and try again on the next click.
+      armedAutoplay = true;
+    }
+  }
+
+  function stopBgm() {
+    fadeVolume(0, 400);
+    setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.muted = true;
+    }, 420);
+    btn.setAttribute('aria-pressed', 'false');
+    localStorage.setItem('bgm-pref', 'off');
+    armedAutoplay = false;
+  }
+
+  // Toggle on button click (this is a clear user gesture)
+  btn.addEventListener('click', () => {
+    const isOn = btn.getAttribute('aria-pressed') === 'true';
+    if (isOn) stopBgm();
+    else playBgm();
+  });
+
+  // “Arm” autoplay: first user interaction anywhere can start it if pref was 'on'
+  function armOnce() {
+    if (armedAutoplay) {
+      armedAutoplay = false; // un-arm
+      playBgm();
+    }
+    window.removeEventListener('pointerdown', armOnce);
+    window.removeEventListener('keydown', armOnce);
+  }
+  window.addEventListener('pointerdown', armOnce, { once: true });
+  window.addEventListener('keydown', armOnce, { once: true });
+
+  // Optional niceties: pause when tab hidden; resume when visible and 'on'
+  document.addEventListener('visibilitychange', () => {
+    const on = localStorage.getItem('bgm-pref') === 'on';
+    if (document.hidden) {
+      if (!audio.paused) audio.pause();
+    } else if (on) {
+      playBgm();
+    }
+  });
+})();
+

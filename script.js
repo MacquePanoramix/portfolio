@@ -1,9 +1,12 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-  });
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
 // Draw a rounded-rectangle path around the journey text,
@@ -19,11 +22,9 @@ function updateJourneyPath() {
 
   // Measure the text box
   const r = text.getBoundingClientRect();
-
-  // Padding around the text inside the orbit (tweak these)
-  const padX = 22, padY = 12;
-
-  // Corner radius of the rounded rectangle (tweak this)
+  // Padding around the text inside the orbit
+  const padX = 20, padY = 12;
+  // Corner radius of the rounded rectangle
   const radius = 16;
 
   const w = Math.max(60, Math.round(r.width  + padX * 2));

@@ -25,9 +25,10 @@ function updateJourneyPath() {
   // Measure the text box
   const r = text.getBoundingClientRect();
 
-  // Inner padding (space between text and the track)
-  const padX = 20;
-  const padY = 12;
+  // Padding around the text inside the orbit (closer to letters)
+const padX = 14;
+const padY = 8;
+
 
   // Corner radius of the rounded rectangle
   const radius = 16;

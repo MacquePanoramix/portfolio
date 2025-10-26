@@ -26,7 +26,7 @@ function updateJourneyPath() {
   const r = text.getBoundingClientRect();
 
   // Padding around the text inside the orbit (closer to letters)
-const padX = 14;
+const padX = 8;
 const padY = 8;
 
 

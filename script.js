@@ -26,8 +26,8 @@ function updateJourneyPath() {
   const r = text.getBoundingClientRect();
 
   // Padding around the text inside the orbit (closer to letters)
-const padX = 8;
-const padY = 8;
+const padX = 10;
+const padY = 4;
 
 
   // Corner radius of the rounded rectangle
@@ -67,6 +67,9 @@ const padY = 8;
   ].join(' ');
 
   path.setAttribute('d', d);
+
+// show the svg only after the path is set (prevents initial "jump")
+svg.style.visibility = 'visible';
 }
 
 

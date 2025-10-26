@@ -133,6 +133,7 @@ main > section:last-of-type { border-bottom: none; }
   pointer-events: none;        /* clicks pass through */
   width: unset;                /* let JS-set attributes decide size */
   height: unset;
+  overflow: visible;  
 }
 
 /* the track (set stroke to transparent to hide, or #cfc7d8 to show) */

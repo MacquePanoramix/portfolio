@@ -118,8 +118,10 @@
     </footer>
   </main>
 
-  <!-- Background music (start muted; we unmute on user click) -->
-<audio id="bgm" src="audio/bgm.mp3" preload="auto" loop muted></audio>
+  <!-- Background music (muted until the user turns it on) -->
+<button id="audioToggle" class="audio-toggle" aria-label="Unmute background music" title="Music">✨</button>
+<audio id="bgm" preload="metadata" muted></audio>
+
 
 
   <script src="script.js"></script>

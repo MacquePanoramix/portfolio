@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
-  <!-- Background music (start muted; we unmute on user click) -->
-<audio id="bgm" src="audio/bgm.mp3" preload="auto" loop muted></audio>
 
 </head>
 <body>
@@ -122,9 +120,23 @@
     </footer>
   </main>
 
-  <!-- Background music (muted until the user turns it on) -->
-<button id="audioToggle" class="audio-toggle" aria-label="Unmute background music" title="Music">✨</button>
-<audio id="bgm" preload="metadata" muted></audio>
+<!-- Bottom-right: Skip current track -->
+<button id="audioToggle" class="audio-toggle" aria-label="Next track" title="Next track">⏭</button>
+
+<!-- Background music (muted until the user turns it on) -->
+<audio
+  id="bgm"
+  preload="metadata"
+  muted
+  data-playlist='[
+    "audio/Carroussel Cafe (Instrumental).mp3",
+    "audio/Starlit Atelier (Instrumental).mp3",
+    "audio/Title_ Waterwheel Café (Instrumental).mp3",
+    "audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3",
+    "audio/lamp Cafe.mp3"
+  ]'
+></audio>
+
 
 
 

@@ -167,29 +167,28 @@ window.addEventListener('resize', () => requestAnimationFrame(updateJourneyPath)
    Cozy background playlist
    ========================= */
 
-// 1) List up to 5 tracks here. Put the audio files in /audio/ (see notes below).
-//    Use your real filenames and (optionally) titles for reference.
+// 1) Drop your exact filenames here (relative to site root)
 const PLAYLIST = [
-  { src: 'audio/track1.mp3', title: 'Dreamy Jazz — JuliusH' },
-  { src: 'audio/track2.mp3', title: 'Cozy Café 1' },
-  { src: 'audio/track3.mp3', title: 'Cozy Café 2' },
-  { src: 'audio/track4.mp3', title: 'Late Night Bossa' },
-  { src: 'audio/track5.mp3', title: 'Soft Rain Keys' },
+  'audio/Carroussel Cafe (Instrumental).mp3',
+  'audio/Starlit Atelier (Instrumental).mp3',
+  'audio/Title_ Waterwheel Café (Instrumental).mp3',
+  'audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3',
+  'audio/lamp Cafe.mp3'
 ];
 
-// 2) Behavior flags
-const SHUFFLE = false;  // set true if you want random order each time
-const REMEMBER_STATE = true; // remember if user turned music on
+// 2) Options
+const SHUFFLE = false;           // set true if you want random order
+const REMEMBER_STATE = true;     // remember last on/off choice
 
 // 3) Elements
 const audioEl = document.getElementById('bgm');
 const toggleBtn = document.getElementById('audioToggle');
 
 // 4) Internal state
-let idx = 0;
 let order = [...PLAYLIST.keys()];
+let idx = 0;
 
-// shuffle helper
+// Shuffle helper
 function shuffle(arr){
   for (let i = arr.length - 1; i > 0; i--){
     const j = Math.floor(Math.random() * (i + 1));
@@ -198,19 +197,23 @@ function shuffle(arr){
   return arr;
 }
 
+// Load a track by index
 function loadTrack(i){
-  const track = PLAYLIST[ order[i] ];
-  audioEl.src = track.src;
+  const src = PLAYLIST[ order[i] ];
+  audioEl.src = src;
   audioEl.load();
 }
 
+// Advance to next track (loops)
 function nextTrack(){
   idx = (idx + 1) % order.length;
   loadTrack(idx);
-  // keep playing if user enabled it
-  if (!audioEl.muted) audioEl.play().catch(()=>{});
+  if (!audioEl.muted){
+    audioEl.play().catch(()=>{});
+  }
 }
 
+// Update button UI
 function setButtonState(isOn){
   toggleBtn.classList.toggle('on', isOn);
   toggleBtn.setAttribute('aria-pressed', String(isOn));
@@ -218,35 +221,31 @@ function setButtonState(isOn){
   toggleBtn.textContent = isOn ? '🎶' : '✨';
 }
 
+// Init on load
 function initPlaylist(){
-  if (PLAYLIST.length === 0) return;
+  if (!audioEl || !toggleBtn || PLAYLIST.length === 0) return;
 
-  // initial order
   order = [...PLAYLIST.keys()];
   if (SHUFFLE) shuffle(order);
-
   idx = 0;
   loadTrack(idx);
 
-  // advance when a track ends
   audioEl.addEventListener('ended', nextTrack);
 
-  // restore user preference (optional)
+  // Restore user choice
   if (REMEMBER_STATE){
     const saved = localStorage.getItem('bgmEnabled');
-    if (saved === '1'){
-      // we still need a user gesture to actually start audio on many browsers
-      setButtonState(false);
-      // "prime" the button so the first click turns on and plays
-    } else {
-      setButtonState(false);
-    }
+    setButtonState(saved === '1');
+    // Note: we still need a user click to actually start playback
+    audioEl.muted = (saved !== '1');
   } else {
     setButtonState(false);
+    audioEl.muted = true;
   }
 }
 
-toggleBtn.addEventListener('click', async () => {
+// Toggle on click (user gesture enables playback)
+toggleBtn?.addEventListener('click', async () => {
   try {
     if (audioEl.muted || audioEl.paused){
       audioEl.muted = false;
@@ -261,12 +260,9 @@ toggleBtn.addEventListener('click', async () => {
       if (REMEMBER_STATE) localStorage.setItem('bgmEnabled', '0');
     }
   } catch (e) {
-    // Autoplay/gesture restrictions or race conditions — no crash
     console.warn('Audio toggle error:', e);
   }
 });
 
-// Initialize after page load
 window.addEventListener('load', initPlaylist);
-
 

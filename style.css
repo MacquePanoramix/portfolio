@@ -319,3 +319,26 @@ footer {
 /* keep the header layout happy when we add the extra <li> */
 nav ul { gap: 0.75rem; }
 
+/* --- Cozy audio toggle --- */
+.audio-toggle{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(216,191,216,.95); /* lavender */
+  color: #fff;
+  font-size: 20px;
+  line-height: 46px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  z-index: 1000;
+}
+.audio-toggle:hover{ transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.16); }
+.audio-toggle:active{ transform: translateY(0); }
+.audio-toggle.on{ background:#c9a9c9; }               /* slightly warmer when playing */
+.audio-toggle:focus-visible{ outline: 2px solid #FFDAB9; outline-offset: 3px; } /* peachy focus */

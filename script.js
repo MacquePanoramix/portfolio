@@ -183,6 +183,8 @@ const REMEMBER_STATE = true;     // remember last on/off choice
 // 3) Elements
 const audioEl = document.getElementById('bgm');
 const toggleBtn = document.getElementById('audioToggle');
+const powerBtn  = document.getElementById('audioPower');
+
 
 // 4) Internal state
 let order = [...PLAYLIST.keys()];
@@ -221,6 +223,36 @@ function setButtonState(isOn){
   toggleBtn.textContent = isOn ? '🎶' : '✨';
 }
 
+// Bottom button UI (play/pause icon)
+function setTransportUI(isPlaying){
+  if (!toggleBtn) return;
+  toggleBtn.classList.toggle('on', isPlaying);
+  toggleBtn.setAttribute('aria-pressed', String(isPlaying));
+  toggleBtn.title = isPlaying ? 'Pause' : 'Play';
+  toggleBtn.textContent = isPlaying ? '⏸️' : '▶️';
+}
+
+// Top button UI (power icon)
+function syncPowerUI(){
+  if (!powerBtn) return;
+  const on = !audioEl.muted;
+  powerBtn.classList.toggle('on', on);
+  powerBtn.setAttribute('aria-pressed', String(on));
+  powerBtn.title = on ? 'Turn music off' : 'Turn music on';
+  powerBtn.textContent = on ? '🔊' : '🔇';
+}
+
+// Keep the UI synced if something else changes audio state
+audioEl.addEventListener('play',  () => { setTransportUI(true);  syncPowerUI(); });
+audioEl.addEventListener('pause', () => { setTransportUI(false); syncPowerUI(); });
+audioEl.addEventListener('volumechange', syncPowerUI);
+window.addEventListener('load', () => {
+  // reflect saved state if you use REMEMBER_STATE
+  setTransportUI(!audioEl.paused && !audioEl.muted);
+  syncPowerUI();
+});
+
+
 // Init on load
 function initPlaylist(){
   if (!audioEl || !toggleBtn || PLAYLIST.length === 0) return;
@@ -244,21 +276,44 @@ function initPlaylist(){
   }
 }
 
-// Toggle on click (user gesture enables playback)
+// Top button: power on/off (unmute/mute). Keeps the track position.
+powerBtn?.addEventListener('click', async () => {
+  try {
+    if (audioEl.muted){
+      audioEl.muted = false;                 // power ON
+      await audioEl.play().catch(()=>{});
+      if (typeof REMEMBER_STATE !== 'undefined' && REMEMBER_STATE) {
+        localStorage.setItem('bgmEnabled','1');
+      }
+      setTransportUI(!audioEl.paused);
+    } else {
+      audioEl.pause();                        // power OFF
+      audioEl.muted = true;                   // keep currentTime (no reset)
+      if (typeof REMEMBER_STATE !== 'undefined' && REMEMBER_STATE) {
+        localStorage.setItem('bgmEnabled','0');
+      }
+      setTransportUI(false);
+    }
+    syncPowerUI();
+  } catch (e) {
+    console.warn('Power toggle error:', e);
+  }
+});
+
+
 toggleBtn?.addEventListener('click', async () => {
   try {
-    if (audioEl.muted || audioEl.paused){
-      audioEl.muted = false;
+    // If the system is "off" (muted), do nothing.
+    if (audioEl.muted) return;
+
+    if (audioEl.paused){
       await audioEl.play();
-      setButtonState(true);
-      if (REMEMBER_STATE) localStorage.setItem('bgmEnabled', '1');
+      setTransportUI(true);
     } else {
-      audioEl.pause();
-      audioEl.currentTime = 0;
-      audioEl.muted = true;
-      setButtonState(false);
-      if (REMEMBER_STATE) localStorage.setItem('bgmEnabled', '0');
+      audioEl.pause();               // NOTE: do NOT reset currentTime
+      setTransportUI(false);
     }
+    syncPowerUI();
   } catch (e) {
     console.warn('Audio toggle error:', e);
   }

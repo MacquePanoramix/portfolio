@@ -221,20 +221,22 @@ main > section:last-of-type { border-bottom: none; }
 
 .polaroid {
   position: relative;
-  /* soft, slightly aged paper gradient */
+
+  /* twilight-pastel frame: pink → lavender → warm cream */
   background: linear-gradient(
-    180deg,
-    #fffdf7 0%,
-    #f7efe3 55%,
-    #f3e6d5 100%
+    145deg,
+    #fde6f0 0%,   /* soft pink */
+    #ece5ff 45%,  /* lavender haze */
+    #fdf6e4 100%  /* warm parchment */
   );
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+
   padding: 1.1rem;
-  padding-bottom: 3.7rem; /* room for “This is me…” */
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  padding-bottom: 3.7rem; /* still room for “This is me…” */
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+
   transform: rotate(-3deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -272,12 +274,17 @@ main > section:last-of-type { border-bottom: none; }
 
 .handwriting {
   font-family: var(--font-handwriting);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: center;
   position: absolute;
-  bottom: 0.2rem;
+  bottom: 0.25rem;
   left: 50%;
   transform: translateX(-50%);
+
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.9); /* soft cream pill */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .about-text { flex: 1; }

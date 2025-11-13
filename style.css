@@ -220,16 +220,55 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 .polaroid {
-  background: white;
-  padding: 1rem;
-  padding-bottom: 3.4rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  position: relative;
+  /* soft, slightly aged paper gradient */
+  background: linear-gradient(
+    180deg,
+    #fffdf7 0%,
+    #f7efe3 55%,
+    #f3e6d5 100%
+  );
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.1rem;
+  padding-bottom: 3.7rem; /* room for “This is me…” */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
   transform: rotate(-3deg);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.polaroid:hover { transform: rotate(0deg) scale(1.05); }
 
-.polaroid img { width: 100%; max-width: 250px; }
+/* little “tape” on top for nostalgic vibes */
+.polaroid::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 60%;
+  height: 0.85rem;
+  background: rgba(216, 191, 216, 0.45); /* lavender accent */
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.polaroid img {
+  width: 100%;
+  max-width: 250px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
 
 .handwriting {
   font-family: var(--font-handwriting);

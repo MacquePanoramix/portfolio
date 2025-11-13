@@ -222,7 +222,7 @@ main > section:last-of-type { border-bottom: none; }
 .polaroid {
   background: white;
   padding: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 3.4rem;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transform: rotate(-3deg);
   transition: transform 0.3s ease;

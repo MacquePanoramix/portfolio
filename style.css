@@ -230,7 +230,7 @@ main > section:last-of-type { border-bottom: none; }
     #f2e6da 100%
   );
 
-  padding: 0.5rem;
+  padding: 1.1rem;
   padding-bottom: 3.4rem; /* still room for “This is me…” */
 
   border-radius: 8px;
@@ -281,7 +281,7 @@ main > section:last-of-type { border-bottom: none; }
   text-align: center;
 
   position: absolute;
-  bottom: 0.6rem;
+  bottom: 0.2rem;
   left: 50%;
   transform: translateX(-50%);
 

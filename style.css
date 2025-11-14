@@ -230,7 +230,7 @@ main > section:last-of-type { border-bottom: none; }
     #f2e6da 100%
   );
 
-  padding: 1.1rem;
+  padding: 0.5rem;
   padding-bottom: 3.4rem; /* still room for “This is me…” */
 
   border-radius: 8px;

@@ -48,14 +48,15 @@ function updateJourneyPath() {
   // Reveal SVG after we draw the path to avoid the initial "jump"
   svg.style.visibility = 'visible';
 }
+
 window.addEventListener('load',   updateJourneyPath);
 window.addEventListener('resize', () => requestAnimationFrame(updateJourneyPath));
 
-/* ---------- Music player (shuffle + skip) ---------- */
+/* ---------- Music player (shuffle + skip + volume) ---------- */
 const bgm          = document.getElementById('bgm');
-const toggleBtn    = document.getElementById('audioPower'); // top button
-const skipBtn      = document.getElementById('audioToggle'); // bottom button (now: Next)
-const volumeSlider = document.getElementById('audioVolume'); // new: volume range
+const toggleBtn    = document.getElementById('audioPower');   // top button
+const skipBtn      = document.getElementById('audioToggle');  // bottom-right button
+const volumeSlider = document.getElementById('audioVolume');  // volume range
 
 if (bgm) {
   // --- initial volume ---
@@ -80,6 +81,7 @@ if (bgm) {
       'audio/lamp Cafe.mp3'
     ];
   }
+
   // Shuffle helper
   function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -98,7 +100,8 @@ if (bgm) {
     bgm.src = playlist[trackIndex];
     bgm.load();
   }
-  setTrackByOrder(orderIdx); // prepare the first (random) track, do not autoplay
+  // prepare the first (random) track, but don’t autoplay
+  setTrackByOrder(orderIdx);
 
   function nextTrack(autoplay = true) {
     orderIdx = (orderIdx + 1) % order.length;
@@ -113,7 +116,7 @@ if (bgm) {
     return !bgm.paused && !bgm.ended && bgm.currentTime > 0 && !bgm.muted;
   }
 
-  // Keep the top button's pressed state in sync
+  // Sync the top button’s pressed state
   function updateTopUI() {
     if (!toggleBtn) return;
     toggleBtn.setAttribute('aria-pressed', isPlaying() ? 'true' : 'false');
@@ -148,13 +151,11 @@ if (bgm) {
   bgm.addEventListener('play',  updateTopUI);
   bgm.addEventListener('pause', updateTopUI);
 
-    // Volume slider: range [0,1] → bgm.volume
+  // Volume slider: range [0,1] → bgm.volume
   if (volumeSlider) {
     volumeSlider.addEventListener('input', () => {
       const v = parseFloat(volumeSlider.value);
       bgm.volume = Math.min(1, Math.max(0, isNaN(v) ? defaultVolume : v));
     });
   }
-}
-
 }

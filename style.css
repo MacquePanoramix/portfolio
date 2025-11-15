@@ -352,6 +352,110 @@ main > section:last-of-type { border-bottom: none; }
 }
 .project-link:hover { background-color: var(--highlight); }
 
+/* Soft ghost-style button (used on project detail page) */
+.button-ghost {
+  background: transparent;
+  color: var(--typography);
+  border: 1px solid var(--accent);
+  box-shadow: none;
+}
+
+.button-ghost:hover {
+  background-color: var(--highlight);
+  color: var(--typography);
+}
+
+/* --- Project detail page (Mossaratus) --- */
+.project-hero {
+  padding: 6rem 2rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.project-hero-text h1 {
+  margin-bottom: 0.5rem;
+}
+
+.project-hero-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+}
+
+.project-hero-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Generic sections on the detail page */
+.project-section {
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding: 0 2rem;
+}
+
+.project-section p {
+  max-width: 70ch;
+}
+
+/* Split layout for “My role / Project info” */
+.project-section-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: 2rem;
+}
+
+.project-sidebar {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+}
+
+.project-sidebar dl {
+  margin: 0;
+}
+
+.project-sidebar dt {
+  font-weight: 600;
+}
+
+.project-sidebar dd {
+  margin: 0 0 0.75rem 0;
+}
+
+/* Simple gallery (you can add real screenshots later) */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile adjustments for detail page */
+@media (max-width: 900px) {
+  .project-hero-inner,
+  .project-section-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* --- About Section --- */
 .about-container {
   display: flex;
@@ -455,6 +559,8 @@ main > section:last-of-type { border-bottom: none; }
   background-color: #c9a9c9; /* a slightly lighter lavender */
   transform: scale(1.05);
 }
+
+
 
 /* --- Footer & Hidden Link --- */
 footer {

@@ -174,6 +174,146 @@ main > section:last-of-type { border-bottom: none; }
   gap: 2rem;
 }
 
+/* Featured Mossaratus block */
+.featured-project {
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-project::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at top left,
+      rgba(216, 191, 216, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right,
+      rgba(255, 218, 185, 0.22), transparent 55%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.featured-image {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-image img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.featured-content {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.featured-title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.featured-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.featured-meta {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.featured-meta li + li {
+  margin-top: 0.25rem;
+}
+
+.featured-link {
+  margin-top: 0.5rem;
+}
+
+/* Keep existing card styles (for the grid below) */
+.project-card {
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-quote {
+  font-family: var(--font-handwriting);
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--typography);
+  font-weight: bold;
+  border-bottom: 2px solid var(--highlight);
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: var(--highlight);
+}
+
+/* Featured block behaves nicely on small screens */
+@media (max-width: 900px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+
+  .featured-image img {
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+
+
 .project-card {
   background: white;
   border: 1px solid #eee;

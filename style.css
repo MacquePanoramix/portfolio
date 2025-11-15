@@ -372,6 +372,51 @@ footer {
 /* keep the header layout happy when we add the extra <li> */
 nav ul { gap: 0.75rem; }
 
+/* Group music button + slider nicely */
+.audio-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Volume slider styling */
+.volume-slider {
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+/* WebKit (Chrome, Edge, Safari) thumb */
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px #fff;
+  margin-top: -4px; /* centers the thumb vertically */
+}
+
+/* Firefox thumb */
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Firefox track */
+.volume-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+
 /* --- Cozy audio toggle --- */
 .audio-toggle{
   position: fixed;

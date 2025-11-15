@@ -52,11 +52,19 @@ window.addEventListener('load',   updateJourneyPath);
 window.addEventListener('resize', () => requestAnimationFrame(updateJourneyPath));
 
 /* ---------- Music player (shuffle + skip) ---------- */
-const bgm         = document.getElementById('bgm');
-const toggleBtn   = document.getElementById('audioPower'); // top button
-const skipBtn     = document.getElementById('audioToggle'); // bottom button (now: Next)
+const bgm          = document.getElementById('bgm');
+const toggleBtn    = document.getElementById('audioPower'); // top button
+const skipBtn      = document.getElementById('audioToggle'); // bottom button (now: Next)
+const volumeSlider = document.getElementById('audioVolume'); // new: volume range
 
 if (bgm) {
+  // --- initial volume ---
+  const defaultVolume = 0.6;      // ~60% = cozy background
+  bgm.volume = defaultVolume;
+  if (volumeSlider) {
+    volumeSlider.value = defaultVolume;
+  }
+
   // Read playlist from the HTML attribute; fall back to placeholders if missing
   let playlist = [];
   try {
@@ -64,7 +72,6 @@ if (bgm) {
     if (Array.isArray(fromAttr) && fromAttr.length) playlist = fromAttr;
   } catch (_) {}
   if (!playlist.length) {
-    // You can delete this fallback once your data-playlist is filled
     playlist = [
       'audio/Carroussel Cafe (Instrumental).mp3',
       'audio/Starlit Atelier (Instrumental).mp3',
@@ -73,7 +80,6 @@ if (bgm) {
       'audio/lamp Cafe.mp3'
     ];
   }
-
   // Shuffle helper
   function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -141,4 +147,14 @@ if (bgm) {
   // Keep UI in sync when user pauses/resumes via native controls (mobile etc.)
   bgm.addEventListener('play',  updateTopUI);
   bgm.addEventListener('pause', updateTopUI);
+
+    // Volume slider: range [0,1] → bgm.volume
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', () => {
+      const v = parseFloat(volumeSlider.value);
+      bgm.volume = Math.min(1, Math.max(0, isNaN(v) ? defaultVolume : v));
+    });
+  }
+}
+
 }

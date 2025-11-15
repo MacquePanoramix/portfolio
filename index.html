@@ -19,13 +19,31 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About Me</a></li>
-        <li><a href="#contact">Contact</a></li>
-       <li>
-  <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+        <li class="audio-controls">
+  <button
+    id="audioPower"
+    class="music-btn"
+    type="button"
+    aria-pressed="false"
+    title="Music power"
+  >
     <span class="music-icon" aria-hidden="true">♪</span>
     <span class="music-label">Music</span>
   </button>
+
+  <!-- Cozy little volume slider -->
+  <input
+    id="audioVolume"
+    class="volume-slider"
+    type="range"
+    min="0"
+    max="1"
+    step="0.05"
+    value="0.6"
+    aria-label="Music volume"
+  />
 </li>
+
 
 
       </ul>

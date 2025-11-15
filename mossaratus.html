@@ -4,15 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mossaratus | Project Details</title>
+
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
   <div class="stars"></div>
 
-  <!-- Same header, but links point back to index sections -->
+  <!-- Header: same vibe as index, but links go back to sections there -->
   <header>
     <nav>
       <ul>
@@ -20,18 +24,47 @@
         <li><a href="index.html#projects">Projects</a></li>
         <li><a href="index.html#about">About Me</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li>
-          <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+
+        <!-- Music controls (same structure as on index) -->
+        <li class="music-control">
+          <button
+            id="audioPower"
+            class="music-btn"
+            type="button"
+            aria-pressed="false"
+            title="Music power"
+          >
             <span class="music-icon" aria-hidden="true">♪</span>
             <span class="music-label">Music</span>
           </button>
+
+          <!-- volume slider (optional; styled by your existing CSS) -->
+          <input
+            id="audioVolume"
+            class="music-volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.6"
+            aria-label="Music volume"
+          />
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Music controls (same as index) -->
-  <button id="audioToggle" class="audio-toggle" aria-label="Next track" title="Next track">⏭</button>
+  <!-- Bottom-right: skip current track -->
+  <button
+    id="audioToggle"
+    class="audio-toggle"
+    aria-label="Next track"
+    title="Next track"
+  >
+    ⏭
+  </button>
+
+  <!-- Background music (playlist shared with index) -->
   <audio
     id="bgm"
     preload="metadata"
@@ -45,140 +78,164 @@
     ]'
   ></audio>
 
-<main class="project-main">
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="project-main">
+    <!-- Back link -->
+    <a href="index.html#projects" class="back-link">← Back to all projects</a>
 
-  <!-- Back link -->
-  <a href="index.html#projects" class="back-link">← Back to all projects</a>
+    <!-- Hero / title -->
+    <section class="project-hero">
+      <p class="project-eyebrow">Featured Project</p>
+      <h1>Mossaratus</h1>
 
-  <!-- Hero / title -->
-  <section class="project-hero">
-    <p class="project-eyebrow">Featured Project</p>
-    <h1>Mossaratus</h1>
-    <p class="project-tagline">
-      A short, cozy game about <em>[one-sentence poetic hook goes here]</em>.
-    </p>
-
-    <div class="project-meta">
-      <span>Team size: <strong>4 students</strong></span>
-      <span>Role: <strong>[Your role here]</strong></span>
-      <span>Scope: <strong>[Course / time frame]</strong></span>
-      <span>Tools: <strong>[e.g. Unity, C#, Figma, Ableton]</strong></span>
-    </div>
-  </section>
-
-  <!-- Overview + quick facts -->
-  <section class="project-layout">
-    <div class="project-section">
-      <h2>Overview</h2>
-      <p>
-        <!-- Replace this paragraph with your own description -->
-        Mossaratus is a <strong>[genre]</strong> game where players
-        <strong>[very short summary of what the player actually does]</strong>.
-        It was created as part of <strong>[course / context]</strong> together
-        with three amazing teammates.
+      <p class="project-tagline">
+        A short, cozy tower-defence shooter about protecting your strange mossy
+        home from ever-growing purple blobs.
+        <!-- tweak this line however you like -->
       </p>
+
+      <div class="project-meta">
+        <span>Team size: <strong>4 students</strong></span>
+        <span>Role: <strong>[Your role here]</strong></span>
+        <span>Scope: <strong>[Course / time frame]</strong></span>
+        <span>Tools: <strong>[Unity, C#, Blender, etc.]</strong></span>
+      </div>
+    </section>
+
+    <!-- Overview + quick facts -->
+    <section class="project-layout">
+      <div class="project-section">
+        <h2>Overview</h2>
+        <p>
+          <!-- Replace this paragraph with your own description -->
+          Mossaratus is a <strong>[genre]</strong> game where players
+          <strong>[short summary of what the player actually does]</strong>.
+          It was created as part of <strong>[course / context]</strong> together
+          with three amazing teammates.
+        </p>
+        <p>Use this space for 1–3 short paragraphs:</p>
+        <ul>
+          <li>
+            What the game is really about (theme, fantasy, or little story
+            hook).
+          </li>
+          <li>
+            What makes it different or special (core mechanic, visual style,
+            narrative tone, etc.).
+          </li>
+          <li>
+            Anything you’re especially proud of (design, art, narrative, tech).
+          </li>
+        </ul>
+      </div>
+
+      <aside class="project-section project-side">
+        <h2>Quick facts</h2>
+        <ul class="project-pill-list">
+          <li><strong>Genre:</strong> [e.g. tower defence / horde shooter]</li>
+          <li><strong>Platform:</strong> [PC / controller / etc.]</li>
+          <li><strong>Engine:</strong> Unity</li>
+          <li><strong>Playtime:</strong> ~[X] minutes</li>
+          <li><strong>Team:</strong> You + [names of team members]</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Highlights -->
+    <section class="project-section">
+      <h2>What I’m proud of</h2>
+      <div class="project-highlight-grid">
+        <article class="project-highlight">
+          <h3>Core experience</h3>
+          <p>
+            Describe the main feeling you wanted players to have
+            (for example “gentle tension in a strange world” or “arcadey chaos
+            with cute monsters”) and how your mechanics, art, and sound support
+            that.
+          </p>
+        </article>
+
+        <article class="project-highlight">
+          <h3>My contribution</h3>
+          <p>
+            Summarise what <strong>you</strong> did:
+            design decisions, systems you implemented, assets you created,
+            or coordination you handled.
+          </p>
+        </article>
+
+        <article class="project-highlight">
+          <h3>What I learned</h3>
+          <p>
+            One or two key lessons — about teamwork, scope,
+            iteration, or how you’d approach your next game differently.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Screens / art gallery -->
+    <section class="project-section">
+      <h2>Snapshots from the world of Mossaratus</h2>
+      <div class="project-gallery">
+        <!-- Swap src paths for your real screenshots once you upload them -->
+        <figure>
+          <img
+            src="images/mossaratus-01.jpg"
+            alt="Gameplay screenshot of Mossaratus – combat against moss creatures"
+          />
+          <figcaption>[Caption for screenshot 1]</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="images/mossaratus-02.jpg"
+            alt="Screenshot of the upgrade shop in Mossaratus"
+          />
+          <figcaption>[Caption for screenshot 2]</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="images/mossaratus-03.jpg"
+            alt="Title art or mood illustration for Mossaratus"
+          />
+          <figcaption>[Caption for screenshot 3]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Calls to action -->
+    <section class="project-section project-cta">
+      <h2>Experience the project</h2>
       <p>
-        Use this space for 1–3 short paragraphs:
+        When you’re ready, you can hook these buttons up to wherever people can
+        actually explore Mossaratus.
       </p>
-      <ul>
-        <li>What the game is really about (theme / fantasy).</li>
-        <li>What makes it different or special (core mechanic, story tone, etc.).</li>
-        <li>Anything you’re especially proud of (design, art, narrative, tech).</li>
-      </ul>
-    </div>
 
-    <aside class="project-section project-side">
-      <h2>Quick facts</h2>
-      <ul class="project-pill-list">
-        <li><strong>Genre:</strong> [e.g. Narrative puzzle / Cozy exploration]</li>
-        <li><strong>Platform:</strong> [PC / Browser / Controller, etc.]</li>
-        <li><strong>Engine:</strong> [Unity / Godot / …]</li>
-        <li><strong>Playtime:</strong> ~[X] minutes</li>
-        <li><strong>Team:</strong> You + [names of team members]</li>
-      </ul>
-    </aside>
-  </section>
+      <div class="project-cta-buttons">
+        <!-- TODO: replace with your real build / play link -->
+        <a
+          href="https://example.com/play-mossaratus"
+          class="button"
+          target="_blank"
+          rel="noreferrer"
+        >
+          ▶ Play Mossaratus
+        </a>
 
-  <!-- Highlights -->
-  <section class="project-section">
-    <h2>What I’m proud of</h2>
-    <div class="project-highlight-grid">
-      <article class="project-highlight">
-        <h3>Core experience</h3>
-        <p>
-          Describe the main feeling you wanted players to have
-          (e.g. “quiet awe”, “gentle tension”, “playful experimentation”)
-          and how your mechanics / art / music support that.
-        </p>
-      </article>
-
-      <article class="project-highlight">
-        <h3>My contribution</h3>
-        <p>
-          Summarise what <strong>you</strong> did:
-          design decisions, systems you implemented, assets you created,
-          or coordination you handled.
-        </p>
-      </article>
-
-      <article class="project-highlight">
-        <h3>What I learned</h3>
-        <p>
-          One or two key lessons — about teamwork, scope,
-          iteration, or how you’d approach your next game differently.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Screens / art gallery -->
-  <section class="project-section">
-    <h2>Snapshots from the world of Mossaratus</h2>
-    <div class="project-gallery">
-      <!-- Replace these src values with your actual screenshots -->
-      <figure>
-        <img src="images/mossaratus-01.jpg" alt="Gameplay screenshot of Mossaratus – scene 1" />
-        <figcaption>Caption for screenshot 1.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/mossaratus-02.jpg" alt="Gameplay screenshot of Mossaratus – scene 2" />
-        <figcaption>Caption for screenshot 2.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/mossaratus-03.jpg" alt="Concept art or mood shot from Mossaratus" />
-        <figcaption>Caption for screenshot 3.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Calls to action -->
-  <section class="project-section project-cta">
-    <h2>Experience the project</h2>
-    <p>
-      When you’re ready, you can hook these buttons up to wherever people can
-      actually explore Mossaratus.
-    </p>
-
-    <div class="project-cta-buttons">
-      <!-- TODO: replace with your real play/download link -->
-      <a href="https://example.com/play-mossaratus" class="button" target="_blank" rel="noreferrer">
-        ▶ Play Mossaratus
-      </a>
-
-      <!-- Notion: keep this link, just update if the URL changes -->
-      <a
-        href="https://art-andand-impact.notion.site/Mossaratus-27288488af498031be19da2f0efc3255?source=copy_link"
-        class="ghost-button"
-        target="_blank"
-        rel="noreferrer"
-      >
-        ✨ Read the full Notion page
-      </a>
-    </div>
-  </section>
-
-</main>
-
+        <!-- Notion page: keep this link (update if URL changes) -->
+        <a
+          href="https://art-andand-impact.notion.site/Mossaratus-27288488af498031be19da2f0efc3255?source=copy_link"
+          class="ghost-button"
+          target="_blank"
+          rel="noreferrer"
+        >
+          ✨ Read the full Notion page
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <a href="hidden-corner.html" class="hidden-link">✨</a>

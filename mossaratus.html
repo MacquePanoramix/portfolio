@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mossaratus | Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="stars"></div>
+
+  <!-- Same header, but links point back to index sections -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+            <span class="music-icon" aria-hidden="true">♪</span>
+            <span class="music-label">Music</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Music controls (same as index) -->
+  <button id="audioToggle" class="audio-toggle" aria-label="Next track" title="Next track">⏭</button>
+  <audio
+    id="bgm"
+    preload="metadata"
+    muted
+    data-playlist='[
+      "audio/Carroussel Cafe (Instrumental).mp3",
+      "audio/Starlit Atelier (Instrumental).mp3",
+      "audio/Title_ Waterwheel Café (Instrumental).mp3",
+      "audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3",
+      "audio/lamp Cafe.mp3"
+    ]'
+  ></audio>
+
+  <main>
+    <!-- Hero for Mossaratus -->
+    <section class="project-hero">
+      <div class="project-hero-inner">
+        <div class="project-hero-text">
+          <p class="featured-label">Featured project</p>
+          <h1>Mossaratus</h1>
+          <p class="project-hero-tagline">
+            <!-- 1 sentence: mood of the game -->
+            Write your one-line magical tagline here (for example: “A quiet wander through
+            a mossy world full of small secrets.”)
+          </p>
+          <a href="index.html#projects" class="button button-ghost">
+            ← Back to portfolio
+          </a>
+        </div>
+
+        <div class="project-hero-image">
+          <!-- Replace placeholder with a big hero screenshot later -->
+          <img
+            src="https://via.placeholder.com/800x500.png/D8BFD8/333333?text=Mossaratus+Hero+Image"
+            alt="Screenshot from Mossaratus"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>
+        Write 2–3 short paragraphs here. Explain what Mossaratus is, what the player does,
+        and what kind of emotional experience you wanted to create (cozy? mysterious?
+        melancholic?).
+      </p>
+      <p>
+        You can also mention which course or context it was made for, and that it was a
+        team project made over X weeks.
+      </p>
+    </section>
+
+    <!-- My role + project info -->
+    <section class="project-section project-section-split">
+      <div>
+        <h2>My role</h2>
+        <p>
+          Use bullet points to keep it readable. For example:
+        </p>
+        <ul>
+          <li>Designed the core game loop and player experience.</li>
+          <li>Implemented [systems/mechanics] in [engine].</li>
+          <li>Worked on level layout and pacing for the main area.</li>
+          <li>Helped shape the mood through sound choices and visual details.</li>
+        </ul>
+      </div>
+
+      <aside class="project-sidebar">
+        <h3>Project details</h3>
+        <dl>
+          <dt>Team size</dt>
+          <dd>4 students (replace if different)</dd>
+
+          <dt>Role</dt>
+          <dd>Write your main roles here (design, programming, art…)</dd>
+
+          <dt>Tools</dt>
+          <dd>Engine + tools you used (e.g. Unity, Blender, FMOD, etc.)</dd>
+
+          <dt>Timeline</dt>
+          <dd>Approximate duration (e.g. “6 weeks, B2 course project”)</dd>
+
+          <dt>Platform</dt>
+          <dd>PC / Web / Controller etc. (optional)</dd>
+        </dl>
+      </aside>
+    </section>
+
+    <!-- Process / Making-of -->
+    <section class="project-section">
+      <h2>How we made it</h2>
+      <p>
+        Tell a short story about the process. You can split it into 3–4 steps:
+      </p>
+      <ul>
+        <li><strong>From idea to concept:</strong> Where did the idea come from?</li>
+        <li><strong>Prototyping:</strong> What did your first playable version look like?</li>
+        <li><strong>Polishing the world:</strong> How did you give the game its cozy / strange atmosphere?</li>
+        <li><strong>Playtesting:</strong> What did players struggle with or love, and what did you change?</li>
+      </ul>
+    </section>
+
+    <!-- Gallery -->
+    <section class="project-section">
+      <h2>Screenshots & moments</h2>
+      <p>
+        Add 2–6 images here: environments, UI, small details you are proud of, etc. You can
+        keep the placeholders until you have your own screenshots.
+      </p>
+
+      <div class="project-gallery">
+        <img
+          src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Screenshot+1"
+          alt="Mossaratus screenshot placeholder 1"
+        />
+        <img
+          src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Screenshot+2"
+          alt="Mossaratus screenshot placeholder 2"
+        />
+        <img
+          src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Screenshot+3"
+          alt="Mossaratus screenshot placeholder 3"
+        />
+      </div>
+    </section>
+
+    <!-- Learnings -->
+    <section class="project-section">
+      <h2>What I learned</h2>
+      <p>
+        Finish with a few reflections. For example:
+      </p>
+      <ul>
+        <li>What you learned about scope and finishing a complete experience.</li>
+        <li>What you learned about working in a small team.</li>
+        <li>Something you’d like to improve if you had more time.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="hidden-corner.html" class="hidden-link">✨</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

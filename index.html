@@ -120,8 +120,26 @@
     </footer>
   </main>
 
-<!-- Bottom-right: Skip current track -->
-<button id="audioToggle" class="audio-toggle" aria-label="Next track" title="Next track">⏭</button>
+<!-- Bottom-right controls: skip + volume -->
+<button
+  id="audioToggle"
+  class="audio-toggle"
+  aria-label="Next track"
+  title="Next track"
+>
+  ⏭
+</button>
+
+<input
+  id="audioVolume"
+  class="audio-volume"
+  type="range"
+  min="0"
+  max="1"
+  step="0.05"
+  value="0.6"
+  aria-label="Music volume"
+/>
 
 <!-- Background music (muted until the user turns it on) -->
 <audio
@@ -136,6 +154,7 @@
     "audio/lamp Cafe.mp3"
   ]'
 ></audio>
+
 
 
 

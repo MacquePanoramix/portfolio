@@ -158,4 +158,28 @@ if (bgm) {
       bgm.volume = Math.min(1, Math.max(0, isNaN(v) ? defaultVolume : v));
     });
   }
+
+  /* ---------- Tiny page/section animations ---------- */
+(function () {
+  // Skip animations if user prefers reduced motion
+  const prefersReduce = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduce) return;
+
+  // Scroll-reveal for elements with .reveal
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  els.forEach(el => io.observe(el));
+})();
+
 }

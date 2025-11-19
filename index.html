@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
 </head>
-<body>
+
+<body class="page-in">
   <div class="stars"></div>
 
   <header>
@@ -18,6 +19,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About Me</a></li>
+
         <li class="audio-controls">
           <button
             id="audioPower"
@@ -59,24 +61,21 @@
 
       <!-- Featured project: Mossaratus -->
       <article class="featured-project">
-        <div class="featured-image">
-          <!-- Replace the src with a nice Mossaratus screenshot when you have it -->
-          <img
-            src="FinalScene.png"
-            alt="Screenshot from Mossaratus"
-          />
+        <div class="featured-image reveal">
+          <img src="FinalScene.png" alt="Screenshot from Mossaratus" />
         </div>
 
-        <div class="featured-content">
+        <div class="featured-content reveal">
           <p class="featured-label">Featured project</p>
 
           <h3 class="featured-title">Mossaratus</h3>
 
-          <p class="featured-tagline">
+          <!-- pull-quote styling applied here -->
+          <p class="featured-tagline pull-quote">
             I am quite fond of the final result we managed to achieve with this game in so few days.
           </p>
 
-          <!-- New hook line that gets the special styling -->
+          <!-- optional extra hook line -->
           <p class="featured-hook">
             A six-armed movement shooter in a mossy CRT world, where every trigger pull fires three guns at once.
           </p>
@@ -102,7 +101,7 @@
       <!-- Other projects (placeholders for now) -->
       <div class="project-grid">
         <!-- Future project 1 -->
-        <div class="project-card">
+        <div class="project-card reveal">
           <img
             src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Future+Project+1"
             alt="Future project placeholder"
@@ -121,7 +120,7 @@
         </div>
 
         <!-- Future project 2 -->
-        <div class="project-card">
+        <div class="project-card reveal">
           <img
             src="https://via.placeholder.com/600x400.png/D8BFD8/333333?text=Future+Project+2"
             alt="Second future project placeholder"

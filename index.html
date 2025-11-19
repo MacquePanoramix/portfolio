@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
-
 </head>
 <body>
   <div class="stars"></div>
@@ -20,32 +19,29 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About Me</a></li>
         <li class="audio-controls">
-  <button
-    id="audioPower"
-    class="music-btn"
-    type="button"
-    aria-pressed="false"
-    title="Music power"
-  >
-    <span class="music-icon" aria-hidden="true">♪</span>
-    <span class="music-label">Music</span>
-  </button>
+          <button
+            id="audioPower"
+            class="music-btn"
+            type="button"
+            aria-pressed="false"
+            title="Music power"
+          >
+            <span class="music-icon" aria-hidden="true">♪</span>
+            <span class="music-label">Music</span>
+          </button>
 
-  <!-- Cozy little volume slider -->
-  <input
-    id="audioVolume"
-    class="volume-slider"
-    type="range"
-    min="0"
-    max="1"
-    step="0.05"
-    value="0.6"
-    aria-label="Music volume"
-  />
-</li>
-
-
-
+          <!-- Cozy little volume slider -->
+          <input
+            id="audioVolume"
+            class="volume-slider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
+            value="0.6"
+            aria-label="Music volume"
+          />
+        </li>
       </ul>
     </nav>
   </header>
@@ -57,7 +53,7 @@
       <p class="fade-in poetic-tagline">A portfolio full of aspirations, growing with every dream.</p>
     </section>
 
-           <!-- Projects -->
+    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
 
@@ -78,6 +74,11 @@
 
           <p class="featured-tagline">
             I am quite fond of the final result we managed to achieve with this game in so few days.
+          </p>
+
+          <!-- New hook line that gets the special styling -->
+          <p class="featured-hook">
+            A six-armed movement shooter in a mossy CRT world, where every trigger pull fires three guns at once.
           </p>
 
           <p>
@@ -140,8 +141,6 @@
       </div>
     </section>
 
-
-
     <!-- About -->
     <section id="about">
       <div class="about-container">
@@ -158,26 +157,24 @@
           <div id="journey-line">
             <p class="journey-text">This portfolio is a collection of my journeys.</p>
 
-           <svg class="journey-svg" aria-hidden="true">
-  <!-- Path is drawn by script.js to hug the sentence -->
-  <path id="journey-track-path" class="track" d="" />
+            <svg class="journey-svg" aria-hidden="true">
+              <!-- Path is drawn by script.js to hug the sentence -->
+              <path id="journey-track-path" class="track" d="" />
 
-  <!-- Train sprite group that follows the path -->
-  <g class="train-sprite">
-    <!-- We keep the image in its own wrapper so we can flip it cleanly -->
-    <g class="sprite-body">
-      <!-- size & center (half width/height as negative x/y) -->
-      <image href="train.svg" x="-36" y="-14" width="72" height="28" />
-    </g>
+              <!-- Train sprite group that follows the path -->
+              <g class="train-sprite">
+                <!-- We keep the image in its own wrapper so we can flip it cleanly -->
+                <g class="sprite-body">
+                  <!-- size & center (half width/height as negative x/y) -->
+                  <image href="train.svg" x="-36" y="-14" width="72" height="28" />
+                </g>
 
-    <!-- Follow the path, orient with tangent -->
-    <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-      <mpath href="#journey-track-path" />
-    </animateMotion>
-  </g>
-</svg>
-
-
+                <!-- Follow the path, orient with tangent -->
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#journey-track-path" />
+                </animateMotion>
+              </g>
+            </svg>
           </div>
 
           <p></p>
@@ -197,33 +194,29 @@
     </footer>
   </main>
 
-<!-- Bottom-right controls: skip + volume -->
-<button
-  id="audioToggle"
-  class="audio-toggle"
-  aria-label="Next track"
-  title="Next track"
->
-  ⏭
-</button>
+  <!-- Bottom-right controls: skip -->
+  <button
+    id="audioToggle"
+    class="audio-toggle"
+    aria-label="Next track"
+    title="Next track"
+  >
+    ⏭
+  </button>
 
-<!-- Background music (muted until the user turns it on) -->
-<audio
-  id="bgm"
-  preload="metadata"
-  muted
-  data-playlist='[
-    "audio/Carroussel Cafe (Instrumental).mp3",
-    "audio/Starlit Atelier (Instrumental).mp3",
-    "audio/Title_ Waterwheel Café (Instrumental).mp3",
-    "audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3",
-    "audio/lamp Cafe.mp3"
-  ]'
-></audio>
-
-
-
-
+  <!-- Background music (muted until the user turns it on) -->
+  <audio
+    id="bgm"
+    preload="metadata"
+    muted
+    data-playlist='[
+      "audio/Carroussel Cafe (Instrumental).mp3",
+      "audio/Starlit Atelier (Instrumental).mp3",
+      "audio/Title_ Waterwheel Café (Instrumental).mp3",
+      "audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3",
+      "audio/lamp Cafe.mp3"
+    ]'
+  ></audio>
 
   <script src="script.js"></script>
 </body>

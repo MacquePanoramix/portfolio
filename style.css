@@ -182,8 +182,9 @@ main > section:last-of-type { border-bottom: none; }
   
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-  /* UPDATED: Stretch items so image and text are equal height */
-  align-items: stretch; 
+  
+  /* REVERTED: Back to center alignment (no stretching) */
+  align-items: center; 
   gap: 2.5rem;
   
   position: relative;
@@ -242,19 +243,15 @@ main > section:last-of-type { border-bottom: none; }
   background: rgba(255, 255, 255, 0.92);
 }
 
-/* UPDATED: Image container fills height */
+/* REVERTED: Removed height:100% and display:flex */
 .featured-image { 
   position: relative; 
   z-index: 1; 
-  height: 100%; 
-  display: flex; 
 }
 
-/* UPDATED: Image covers area without stretching */
+/* REVERTED: Removed object-fit:cover and height:100% */
 .featured-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
   border-radius: 10px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
@@ -301,17 +298,17 @@ main > section:last-of-type { border-bottom: none; }
   box-shadow: 0 0 0 1px rgba(255,255,255,.6) inset, 0 4px 10px rgba(0,0,0,.06);
 }
 
-/* UPDATED: Darker purple for better readability */
+/* KEPT: The nicer, darker purple for readability */
 .featured-hook {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-style: italic;
-  color: #8871A0; /* New Amethyst color */
+  color: #8871A0; 
   margin: 0 0 1.3rem;
   line-height: 1.6;
 }
 
-/* UPDATED: Metadata layout cleanup */
+/* KEPT: The nicer metadata layout (vertical stack) */
 .featured-meta {
   list-style: none;
   padding: 0;
@@ -634,153 +631,6 @@ footer { text-align: center; padding: 2rem; }
 .audio-toggle:active{ transform: translateY(0); }
 .audio-toggle.on{ background:#c9a9c9; }
 .audio-toggle:focus-visible{ outline: 2px solid #FFDAB9; outline-offset: 3px; }
-
-/* --- Project detail pages --- */
-.project-main {
-  max-width: 960px;
-  margin: 7rem auto 4rem;
-  padding: 0 2rem 4rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  text-decoration: none;
-  color: #777;
-}
-.back-link:hover { color: var(--typography); }
-
-.project-hero { text-align: center; margin-bottom: 3rem; }
-.project-eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 0.5rem;
-}
-.project-hero h1 { font-size: 3rem; margin: 0.2rem 0; }
-.project-tagline {
-  font-family: var(--font-heading);
-  font-style: italic;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-}
-.project-meta span {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.project-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-@media (max-width: 900px) {
-  .project-layout { grid-template-columns: 1fr; }
-}
-
-.project-section { margin-bottom: 3rem; }
-.project-section h2 { font-size: 1.7rem; margin-bottom: 1rem; }
-.project-section p { margin-bottom: 0.9rem; }
-
-.project-side {
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 12px;
-  padding: 1.25rem 1.4rem;
-  border: 1px dashed rgba(0, 0, 0, 0.08);
-}
-
-.project-pill-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.project-pill-list li { font-size: 0.95rem; }
-
-.project-highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-.project-highlight {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 1.2rem 1.4rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-}
-.project-gallery figure { margin: 0; }
-.project-gallery img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  object-fit: cover;
-}
-.project-gallery figcaption {
-  margin-top: 0.4rem;
-  font-size: 0.85rem;
-  color: #777;
-}
-
-.project-cta { text-align: center; }
-.project-cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* ghost-style secondary button for Notion link */
-.ghost-button {
-  display: inline-block;
-  padding: 0.9rem 1.8rem;
-  border-radius: 50px;
-  border: 1px solid var(--accent);
-  color: var(--typography);
-  background: transparent;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: var(--font-body);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-}
-.ghost-button:hover {
-  background: rgba(216, 191, 216, 0.12);
-  transform: translateY(-1px);
-}
-
-/* Top-nav music power button */
-.nav-audio{
-  background: transparent;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  padding: 0 .25rem;
-  line-height: 1;
-}
-.nav-audio.on{ color: var(--accent); }
 
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce){

@@ -271,23 +271,17 @@ main > section:last-of-type { border-bottom: none; }
   margin: 0 0 1rem 0;
 }
 
-/* Pull-quote styling used for the tagline line under the title */
-.pull-quote{
-  position: relative;
-  padding-left: 1rem;
-  color: #7a6a88;
+/* Pull-quote styling: now a soft reflective line, not a hard quote */
+.pull-quote {
+  padding-left: 0;
+  color: #7a6a88;  /* keeps the gentle purple tone */
 }
-.pull-quote::before{
-  content:'';
-  position:absolute;
-  left:0;
-  top:.2rem;
-  bottom:.2rem;
-  width:4px;
-  border-radius: 4px;
-  background: linear-gradient(180deg, var(--accent), var(--highlight));
-  box-shadow: 0 0 0 1px rgba(255,255,255,.6) inset, 0 4px 10px rgba(0,0,0,.06);
+
+/* remove the vertical bar */
+.pull-quote::before {
+  content: none;
 }
+
 
 /* extra hook line under the tagline */
 .featured-hook {

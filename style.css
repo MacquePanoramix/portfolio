@@ -745,6 +745,55 @@ footer { text-align: center; padding: 2rem; }
 }
 .nav-audio.on{ color: var(--accent); }
 
+/* --- Quiet Corner page --- */
+.quiet-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.quiet-title {
+  font-family: var(--font-handwriting);
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.quiet-subtitle {
+  margin-bottom: 1.25rem;
+}
+
+.quiet-quote {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  font-style: italic;
+}
+
+.quiet-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+.quiet-back {
+  margin-top: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--typography);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.1rem;
+}
+
+.quiet-back:hover {
+  background: rgba(216, 191, 216, 0.12);
+}
+
+
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   .page-in, .reveal, .reveal.in { animation: none !important; transition: none !important; }

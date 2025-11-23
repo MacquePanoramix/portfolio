@@ -145,7 +145,14 @@ if (bgm) {
   }
 
   // Auto-advance when a track ends
-  bgm.addEventListener('ended', () => nextTrack(true));
+  bgm.addEventListener('ended', () => {
+  // If the audio element has "loop" set, let the browser handle looping.
+  if (bgm.loop) return;
+
+  // Otherwise (like on the main page), go to the next track.
+  nextTrack(true);
+});
+
 
   // Keep UI in sync when user pauses/resumes via native controls (mobile etc.)
   bgm.addEventListener('play',  updateTopUI);

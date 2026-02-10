@@ -174,6 +174,7 @@ main > section:last-of-type { border-bottom: none; }
 
 /* Featured Mossaratus block */
 .featured-project {
+  z-index: 2;
   margin-bottom: 3rem;
   padding: 2.5rem;
   border-radius: 12px;
@@ -311,6 +312,56 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 
+.subproject-strip{
+  margin: -2rem 0 3rem 0;   /* tuck under featured */
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.subproject-thumb video{
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+.subproject-kicker{
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  opacity: 0.65;
+  margin: 0 0 0.4rem 0;
+}
+
+.subproject-title{
+  margin: 0 0 0.5rem 0;
+}
+
+.subproject-text{
+  margin: 0 0 0.6rem 0;
+  line-height: 1.6;
+}
+
+.subproject-note{
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.subproject-strip.reveal { transform: translateY(-14px); }
+.subproject-strip.reveal.in { transform: none; }
+
+
 /* Grid cards below the featured one */
 .project-card {
   background: white;
@@ -370,6 +421,16 @@ main > section:last-of-type { border-bottom: none; }
     object-fit: cover;
   }
 }
+
+@media (max-width: 700px){
+  .subproject-strip{
+    grid-template-columns: 1fr;
+  }
+  .subproject-thumb video{
+    height: 200px;
+  }
+}
+
 
 /* --- Project detail page (Mossaratus) --- */
 .project-hero {

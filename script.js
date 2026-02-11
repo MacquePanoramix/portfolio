@@ -190,3 +190,29 @@ if (bgm) {
 })();
 
 }
+
+
+/* ---------- Mossaratus trailer preview swap ---------- */
+document.querySelectorAll('.video-preview-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const embed = btn.closest('.video-embed');
+    if (!embed) return;
+
+    const youtubeId = embed.dataset.youtubeId;
+    if (!youtubeId) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+    iframe.title = 'Mossaratus — Animated Trailer';
+    iframe.loading = 'lazy';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.display = 'block';
+
+    embed.replaceChildren(iframe);
+    embed.classList.remove('video-preview');
+  });
+});
+

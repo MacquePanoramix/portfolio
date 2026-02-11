@@ -327,7 +327,7 @@ main > section:last-of-type { border-bottom: none; }
   overflow: hidden;
 }
 
-.subproject-thumb img{
+.subproject-thumb video{
   width: 100%;
   height: 120px;
   object-fit: cover;
@@ -426,7 +426,7 @@ main > section:last-of-type { border-bottom: none; }
   .subproject-strip{
     grid-template-columns: 1fr;
   }
-  .subproject-thumb img{
+  .subproject-thumb video{
     height: 200px;
   }
 }

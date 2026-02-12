@@ -485,6 +485,19 @@ main > section:last-of-type { border-bottom: none; }
 }
 .project-link:hover { background-color: var(--highlight); }
 
+.project-link--disabled{
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.project-link--disabled:hover,
+.project-link--disabled:focus{
+  text-decoration: none;
+}
+
+
 /* Scroll-reveal animation hooks */
 .reveal { opacity: 0; transform: translateY(8px); }
 .reveal.in {

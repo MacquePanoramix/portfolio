@@ -398,6 +398,14 @@ main > section:last-of-type { border-bottom: none; }
   opacity: 0.8;
 }
 
+.subproject-role,
+.subproject-tools{
+  margin: 0.5rem 0 0 0;
+  font-size: 0.98rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
 .subproject-credits-figure{
   margin: 0.6rem 0 0 0;
   max-width: 260px;

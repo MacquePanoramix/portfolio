@@ -216,3 +216,27 @@ document.querySelectorAll('.video-preview-btn').forEach(btn => {
   });
 });
 
+
+(() => {
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) return;
+
+  document.querySelectorAll('.project-media--swap').forEach((wrap) => {
+    const vid = wrap.querySelector('video.project-media-demo');
+    if (!vid) return;
+
+    const play = () => {
+      try { vid.currentTime = 0; } catch (e) {}
+      const p = vid.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+
+    const stop = () => {
+      vid.pause();
+      try { vid.currentTime = 0; } catch (e) {}
+    };
+
+    wrap.addEventListener('mouseenter', play);
+    wrap.addEventListener('mouseleave', stop);
+  });
+})();

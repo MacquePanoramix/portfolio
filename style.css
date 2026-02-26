@@ -477,7 +477,8 @@ main > section:last-of-type { border-bottom: none; }
   overflow: hidden;
 }
 
-.project-media--swap img{
+.project-media--swap img,
+.project-media--swap video{
   width: 100%;
   height: 220px;
   object-fit: cover;
@@ -489,6 +490,7 @@ main > section:last-of-type { border-bottom: none; }
   inset: 0;
   opacity: 0;
   transition: opacity 220ms ease;
+  pointer-events: none;
 }
 
 .project-media--swap:hover .project-media-demo{

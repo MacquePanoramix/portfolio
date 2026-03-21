@@ -743,6 +743,51 @@ main > section:last-of-type { border-bottom: none; }
 
 .about-text { flex: 1; }
 
+.github-note {
+  position: relative;
+  display: inline-block;
+  margin-top: 1.2rem;
+  max-width: 220px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: #f5f2ec;
+  color: #5b5250;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(91, 82, 80, 0.08);
+  transform: rotate(-2deg);
+  transform-origin: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.github-note::before {
+  content: "";
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  width: 68px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(222, 208, 188, 0.55);
+  transform: translateX(-50%) rotate(3deg);
+  box-shadow: 0 1px 2px rgba(91, 82, 80, 0.08);
+}
+
+.github-note-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.github-note-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.78;
+}
+
+.github-note:hover {
+  transform: rotate(-1deg) scale(1.02);
+  box-shadow: 0 12px 22px rgba(91, 82, 80, 0.12);
+}
+
 /* --- Contact Section --- */
 #contact { text-align: center; }
 

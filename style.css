@@ -542,6 +542,27 @@ main > section:last-of-type { border-bottom: none; }
   text-decoration: none;
 }
 
+.project-meta-link-wrap{
+  margin: 0.4rem 0 0;
+}
+
+.project-meta-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.98rem;
+  color: #9c7fb8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(156, 127, 184, 0.3);
+  padding-bottom: 0.08rem;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.project-meta-link:hover,
+.project-meta-link:focus-visible{
+  color: #8566a8;
+  border-color: rgba(133, 102, 168, 0.55);
+}
 
 .credits-details{
   margin-top: 1rem;

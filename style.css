@@ -357,6 +357,57 @@ main > section:last-of-type { border-bottom: none; }
   z-index: 1;
 }
 
+.companion-piece{
+  --cloth-shadow: 0 7px 14px rgba(84, 72, 62, 0.08);
+}
+
+.companion-cloth{
+  position: absolute;
+  top: -0.95rem;
+  width: 74px;
+  height: 18px;
+  border-radius: 6px;
+  opacity: 0.72;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: var(--cloth-shadow);
+  backdrop-filter: blur(0.6px);
+}
+
+.companion-cloth::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.06)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.14) 0 2px, rgba(255,255,255,0.02) 2px 5px);
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+}
+
+.companion-cloth--left{
+  left: clamp(1.5rem, 9%, 5rem);
+  background: linear-gradient(135deg, rgba(198, 187, 214, 0.68), rgba(228, 219, 205, 0.54));
+  transform: rotate(-7deg);
+}
+
+.companion-cloth--right{
+  left: clamp(6.5rem, 28%, 12rem);
+  width: 68px;
+  background: linear-gradient(135deg, rgba(191, 204, 184, 0.62), rgba(232, 224, 212, 0.52));
+  transform: rotate(5deg);
+}
+
+.companion-piece:nth-of-type(odd) .companion-cloth--left{
+  transform: rotate(-5deg) translateY(-1px);
+}
+
+.companion-piece:nth-of-type(odd) .companion-cloth--right{
+  transform: rotate(7deg) translateY(1px);
+}
+
+
 .subproject-thumb video{
   width: 100%;
   height: 120px;
@@ -525,6 +576,21 @@ main > section:last-of-type { border-bottom: none; }
 
 .subproject-strip.reveal { transform: translateY(-14px); }
 .subproject-strip.reveal.in { transform: none; }
+
+.companion-reveal{
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.companion-reveal.in{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--companion-delay, 0s);
+}
+
 
 
 /* Grid cards below the featured one */
@@ -709,6 +775,15 @@ main > section:last-of-type { border-bottom: none; }
   .subproject-strip{
     grid-template-columns: 1fr;
     margin-left: 0;
+  }
+  .companion-cloth{
+    top: -0.8rem;
+    width: 60px;
+    height: 16px;
+  }
+  .companion-cloth--right{
+    left: clamp(5.4rem, 30%, 8.4rem);
+    width: 56px;
   }
   .subproject-strip--artifact{
     grid-template-columns: 1fr;

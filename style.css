@@ -173,6 +173,13 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 /* Featured Mossaratus block */
+.featured-project,
+.subproject-strip{
+  --mossaratus-glow-lilac: rgba(183, 165, 214, 0.18);
+  --mossaratus-glow-mist: rgba(226, 210, 240, 0.14);
+  --mossaratus-glow-pearl: rgba(255, 255, 255, 0.72);
+}
+
 .featured-project {
   z-index: 2;
   margin-bottom: 3rem;
@@ -197,13 +204,15 @@ main > section:last-of-type { border-bottom: none; }
 .featured-project::before {
   content: '';
   position: absolute;
-  inset: -40%;
+  inset: -36%;
   background:
     radial-gradient(circle at top left,
-      rgba(216, 191, 216, 0.25), transparent 60%),
+      var(--mossaratus-glow-lilac), transparent 62%),
     radial-gradient(circle at bottom right,
-      rgba(255, 218, 185, 0.22), transparent 55%);
-  opacity: 0.9;
+      rgba(255, 218, 185, 0.16), transparent 58%),
+    radial-gradient(circle at center,
+      var(--mossaratus-glow-pearl), transparent 70%);
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -313,7 +322,8 @@ main > section:last-of-type { border-bottom: none; }
 
 
 .subproject-strip{
-  margin: -2rem 0 3rem 0;   /* tuck under featured */
+  margin: -2.3rem 0 1.2rem 0;   /* tuck under featured */
+  margin-left: 0.75rem;
   padding: 1.25rem;
   border-radius: 12px;
   background: rgba(255,255,255,0.78);
@@ -325,6 +335,26 @@ main > section:last-of-type { border-bottom: none; }
   position: relative;
   z-index: 1;
   overflow: hidden;
+}
+
+.subproject-strip::before{
+  content: '';
+  position: absolute;
+  inset: -34%;
+  background:
+    radial-gradient(circle at top left,
+      rgba(183, 165, 214, 0.12), transparent 60%),
+    radial-gradient(circle at bottom right,
+      var(--mossaratus-glow-mist), transparent 58%),
+    radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.38), transparent 72%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.subproject-strip > *{
+  position: relative;
+  z-index: 1;
 }
 
 .subproject-thumb video{
@@ -450,6 +480,7 @@ main > section:last-of-type { border-bottom: none; }
 
 .subproject-strip--artifact{
   grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  margin-bottom: 4.25rem;
 }
 
 .subproject-gallery{
@@ -677,6 +708,7 @@ main > section:last-of-type { border-bottom: none; }
 @media (max-width: 700px){
   .subproject-strip{
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
   .subproject-strip--artifact{
     grid-template-columns: 1fr;

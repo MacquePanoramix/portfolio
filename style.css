@@ -173,6 +173,20 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 /* Featured Mossaratus block */
+.mossaratus-cluster{
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 1.2rem;
+}
+
+.mossaratus-cluster > .featured-project{
+  margin-bottom: 0;
+}
+
+.mossaratus-cluster > #mossaratus-trailer{
+  margin-top: 0.95rem;
+}
+
 .featured-project,
 .subproject-strip{
   --mossaratus-glow-lilac: rgba(183, 165, 214, 0.18);
@@ -526,6 +540,21 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-strip.reveal { transform: translateY(-14px); }
 .subproject-strip.reveal.in { transform: none; }
 
+.companion-reveal{
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.companion-reveal.in{
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.82s ease,
+    transform 0.82s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--companion-delay, 0s);
+}
+
+
 
 /* Grid cards below the featured one */
 .project-card {
@@ -709,6 +738,9 @@ main > section:last-of-type { border-bottom: none; }
   .subproject-strip{
     grid-template-columns: 1fr;
     margin-left: 0;
+  }
+  .mossaratus-cluster > #mossaratus-trailer{
+    margin-top: 0.8rem;
   }
   .subproject-strip--artifact{
     grid-template-columns: 1fr;

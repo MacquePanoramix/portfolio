@@ -357,56 +357,41 @@ main > section:last-of-type { border-bottom: none; }
   z-index: 1;
 }
 
-.companion-piece{
-  --cloth-shadow: 0 7px 14px rgba(84, 72, 62, 0.08);
-}
-
-.companion-cloth{
+.subproject-strip--bridged .companion-cloth{
   position: absolute;
-  top: -0.95rem;
-  width: 74px;
-  height: 18px;
-  border-radius: 6px;
-  opacity: 0.72;
-  z-index: 2;
+  top: -2.2rem;
+  width: 14px;
+  height: 58px;
+  border-radius: 7px;
+  opacity: 0.82;
+  z-index: 3;
   pointer-events: none;
-  box-shadow: var(--cloth-shadow);
-  backdrop-filter: blur(0.6px);
+  box-shadow: 0 8px 18px rgba(84, 72, 62, 0.08);
 }
 
-.companion-cloth::before{
+.subproject-strip--bridged .companion-cloth::before{
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background-image:
-    linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.06)),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.14) 0 2px, rgba(255,255,255,0.02) 2px 5px);
+    linear-gradient(180deg, rgba(255,255,255,0.32), rgba(255,255,255,0.05)),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.16) 0 3px, rgba(255,255,255,0.02) 3px 6px);
   mix-blend-mode: soft-light;
-  opacity: 0.8;
+  opacity: 0.72;
 }
 
-.companion-cloth--left{
-  left: clamp(1.5rem, 9%, 5rem);
-  background: linear-gradient(135deg, rgba(198, 187, 214, 0.68), rgba(228, 219, 205, 0.54));
-  transform: rotate(-7deg);
+.subproject-strip--bridged .companion-cloth--left{
+  left: clamp(2.1rem, 11%, 5.8rem);
+  background: linear-gradient(180deg, rgba(233, 226, 214, 0.9), rgba(221, 211, 196, 0.72));
+  transform: rotate(-4.5deg);
 }
 
-.companion-cloth--right{
-  left: clamp(6.5rem, 28%, 12rem);
-  width: 68px;
-  background: linear-gradient(135deg, rgba(191, 204, 184, 0.62), rgba(232, 224, 212, 0.52));
-  transform: rotate(5deg);
+.subproject-strip--bridged .companion-cloth--right{
+  right: clamp(2.5rem, 10%, 6.2rem);
+  background: linear-gradient(180deg, rgba(203, 193, 217, 0.86), rgba(188, 204, 191, 0.68));
+  transform: rotate(3.5deg);
 }
-
-.companion-piece:nth-of-type(odd) .companion-cloth--left{
-  transform: rotate(-5deg) translateY(-1px);
-}
-
-.companion-piece:nth-of-type(odd) .companion-cloth--right{
-  transform: rotate(7deg) translateY(1px);
-}
-
 
 .subproject-thumb video{
   width: 100%;
@@ -776,14 +761,16 @@ main > section:last-of-type { border-bottom: none; }
     grid-template-columns: 1fr;
     margin-left: 0;
   }
-  .companion-cloth{
-    top: -0.8rem;
-    width: 60px;
-    height: 16px;
+  .subproject-strip--bridged .companion-cloth{
+    top: -1.9rem;
+    width: 12px;
+    height: 50px;
   }
-  .companion-cloth--right{
-    left: clamp(5.4rem, 30%, 8.4rem);
-    width: 56px;
+  .subproject-strip--bridged .companion-cloth--left{
+    left: clamp(1.3rem, 12%, 3.2rem);
+  }
+  .subproject-strip--bridged .companion-cloth--right{
+    right: clamp(1.6rem, 12%, 3.6rem);
   }
   .subproject-strip--artifact{
     grid-template-columns: 1fr;

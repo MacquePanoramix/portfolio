@@ -520,7 +520,6 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-gallery{
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  grid-template-rows: minmax(250px, 1.16fr) minmax(180px, 0.84fr);
   gap: 0.95rem;
   align-items: stretch;
 }
@@ -534,10 +533,6 @@ main > section:last-of-type { border-bottom: none; }
 
 .subproject-gallery-item--hero{
   grid-row: span 2;
-}
-
-.subproject-gallery-item--timelapse .video-embed{
-  min-height: 250px;
 }
 
 .subproject-gallery-item img,
@@ -773,7 +768,6 @@ main > section:last-of-type { border-bottom: none; }
   }
   .subproject-gallery{
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
   }
   .subproject-gallery-item--hero{
     grid-row: auto;

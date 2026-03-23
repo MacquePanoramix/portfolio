@@ -578,7 +578,7 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 .subproject-gallery-item--timelapse{
-  width: min(100%, 380px);
+  width: min(100%, 356px);
   margin-top: 0.55rem;
 }
 

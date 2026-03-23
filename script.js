@@ -243,3 +243,31 @@ document.querySelectorAll('.video-preview-btn').forEach(btn => {
     wrap.addEventListener('mouseleave', stop);
   });
 })();
+
+(() => {
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('.subproject-motion-item').forEach((card) => {
+    const video = card.querySelector('.subproject-motion-video');
+    if (!video) return;
+
+    const play = () => {
+      const promise = video.play();
+      if (promise && promise.catch) promise.catch(() => {});
+    };
+
+    const stop = () => {
+      video.pause();
+      if (reduced) return;
+      try { video.currentTime = 0; } catch (e) {}
+    };
+
+    card.addEventListener('mouseenter', play);
+    card.addEventListener('focusin', play);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('focusout', (event) => {
+      if (card.contains(event.relatedTarget)) return;
+      stop();
+    });
+  });
+})();

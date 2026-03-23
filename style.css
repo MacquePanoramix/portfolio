@@ -520,8 +520,8 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-gallery{
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: 0.95rem;
-  align-items: stretch;
+  gap: 1.1rem 1.35rem;
+  align-items: start;
 }
 
 .subproject-gallery-item{
@@ -532,7 +532,7 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 .subproject-gallery-item--hero{
-  grid-row: span 2;
+  grid-row: auto;
 }
 
 .subproject-gallery-item img,
@@ -540,11 +540,11 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-gallery-item .video-embed{
   width: 100%;
   height: 100%;
-  min-height: 160px;
+  min-height: 200px;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(70, 56, 79, 0.10);
   background: #161616;
 }
 
@@ -561,13 +561,17 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-motion{
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
+  grid-column: 1 / -1;
   min-width: 0;
+  width: min(100%, 860px);
+  margin: 0.45rem auto 0;
+  padding: 0 0.5rem;
 }
 
 .subproject-motion-title{
   margin: 0;
-  padding-left: 0.15rem;
+  padding-left: 0.2rem;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   color: rgba(73, 58, 83, 0.72);
@@ -577,15 +581,15 @@ main > section:last-of-type { border-bottom: none; }
 .subproject-motion-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.95rem 1rem;
+  gap: 1.5rem;
 }
 
 .subproject-motion-item{
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  --motion-sheen: radial-gradient(circle at top left, rgba(255,255,255,0.28), transparent 52%);
+  gap: 0.65rem;
+  --motion-sheen: radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 54%);
 }
 
 .subproject-motion-item.reveal{
@@ -604,19 +608,20 @@ main > section:last-of-type { border-bottom: none; }
 
 .subproject-motion-video{
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
   display: block;
   object-fit: cover;
   border: 0;
-  border-radius: 18px;
+  border-radius: 14px;
   background:
     var(--motion-sheen),
-    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04)),
+    linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02)),
     rgba(18, 16, 24, 0.94);
   box-shadow:
-    0 16px 30px rgba(71, 54, 84, 0.14),
-    0 8px 16px rgba(0,0,0,0.10);
-  filter: saturate(0.92) brightness(0.94) contrast(0.96);
+    0 12px 30px rgba(71, 54, 84, 0.09),
+    0 4px 12px rgba(0,0,0,0.05);
+  filter: saturate(0.94) brightness(0.96) contrast(0.97);
   transition:
     transform 240ms ease,
     filter 240ms ease,
@@ -625,19 +630,19 @@ main > section:last-of-type { border-bottom: none; }
 
 .subproject-motion-item:hover .subproject-motion-video,
 .subproject-motion-item:focus-within .subproject-motion-video{
-  transform: scale(1.02);
-  filter: saturate(1) brightness(1) contrast(1.02);
+  transform: translateY(-2px);
+  filter: saturate(0.98) brightness(0.99) contrast(1);
   box-shadow:
-    0 18px 36px rgba(71, 54, 84, 0.18),
-    0 10px 20px rgba(0,0,0,0.12);
+    0 16px 34px rgba(71, 54, 84, 0.12),
+    0 6px 16px rgba(0,0,0,0.07);
 }
 
 .subproject-motion-item figcaption{
   margin: 0;
-  padding-left: 0.15rem;
+  padding-left: 0.2rem;
   font-size: 0.84rem;
   line-height: 1.4;
-  color: rgba(73, 58, 83, 0.72);
+  color: rgba(93, 81, 103, 0.72);
 }
 
 .subproject-strip.reveal { transform: translateY(-14px); }
@@ -851,17 +856,22 @@ main > section:last-of-type { border-bottom: none; }
   .subproject-gallery{
     grid-template-columns: 1fr;
   }
+  .subproject-motion{
+    width: 100%;
+    padding: 0;
+    margin-top: 0.2rem;
+  }
   .subproject-motion-grid{
     grid-template-columns: 1fr;
-  }
-  .subproject-gallery-item--hero{
-    grid-row: auto;
   }
   .subproject-gallery-item img,
   .subproject-gallery-item video,
   .subproject-gallery-item .video-embed,
   .subproject-gallery-item--hero img{
     min-height: 200px;
+  }
+  .subproject-motion-video{
+    min-height: 210px;
   }
   .subproject-thumb video{
     height: 200px;

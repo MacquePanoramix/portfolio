@@ -752,6 +752,75 @@ main > section:last-of-type { border-bottom: none; }
   pointer-events:none;
 }
 
+.project-card--leaving-trace{
+  border-radius: 14px;
+  border: 1px solid rgba(187, 173, 200, 0.4);
+  box-shadow:
+    0 8px 28px rgba(92, 73, 109, 0.08),
+    0 2px 10px rgba(32, 21, 42, 0.04);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 247, 235, 0.56), transparent 38%),
+    radial-gradient(circle at 85% 16%, rgba(222, 209, 236, 0.42), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+}
+
+.project-media--placeholder{
+  min-height: 220px;
+  border-radius: 12px;
+  border: 1px dashed rgba(128, 109, 145, 0.44);
+  background:
+    linear-gradient(130deg, rgba(246, 239, 250, 0.95), rgba(250, 245, 238, 0.9)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(161, 138, 183, 0.08) 0 14px,
+      rgba(255, 255, 255, 0) 14px 28px
+    );
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-media--placeholder::before{
+  content: "";
+  position: absolute;
+  inset: -25% -20% auto auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  pointer-events: none;
+}
+
+.project-media-label{
+  display: inline-block;
+  font-size: 0.82rem;
+  color: rgba(85, 69, 99, 0.72);
+  letter-spacing: 0.01em;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(136, 117, 153, 0.28);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.project-media--primary{
+  min-height: 245px;
+}
+
+.project-media-fragments{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.project-media--fragment{
+  min-height: 110px;
+  padding: 0.7rem;
+}
+
 .project-content { padding: 1.5rem; }
 .project-subtle {
   font-size: 0.92rem;
@@ -785,6 +854,12 @@ main > section:last-of-type { border-bottom: none; }
 .project-link--disabled:hover,
 .project-link--disabled:focus{
   text-decoration: none;
+}
+
+@media (max-width: 640px){
+  .project-media-fragments{
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-meta-link-wrap{

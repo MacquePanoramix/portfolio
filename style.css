@@ -828,6 +828,23 @@ main > section:last-of-type { border-bottom: none; }
   padding: 0.7rem;
 }
 
+.project-card--leaving-trace .project-media--primary{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-card--leaving-trace .project-media--primary img{
+  height: 245px;
+  display: block;
+}
+
+.project-card--leaving-trace .project-media--fragment{
+  border-radius: 12px;
+  padding: 0;
+  height: 110px;
+  display: block;
+}
+
 .project-fragment-label{
   margin: 0;
   padding-left: 0.2rem;

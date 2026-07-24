@@ -834,7 +834,7 @@ main > section:last-of-type { border-bottom: none; }
 }
 
 .project-card--leaving-trace .project-media--primary img{
-  height: 245px;
+  height: auto;
   display: block;
 }
 

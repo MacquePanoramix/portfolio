@@ -271,3 +271,90 @@ document.querySelectorAll('.video-preview-btn').forEach(btn => {
     });
   });
 })();
+
+/* ---------- Time to Sleep film fragment ---------- */
+(() => {
+  const video = document.querySelector('.sleep-feature-video');
+  const toggle = document.querySelector('.sleep-feature-film-toggle');
+  if (!video || !toggle) return;
+
+  const motionPreference = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : { matches: false };
+
+  let isVisible = false;
+  let userPaused = motionPreference.matches;
+
+  const updateToggle = () => {
+    const isPlaying = !video.paused;
+    toggle.textContent = isPlaying ? 'Pause film' : 'Play film';
+    toggle.setAttribute(
+      'aria-label',
+      isPlaying ? 'Pause the Time to Sleep film excerpt' : 'Play the Time to Sleep film excerpt'
+    );
+  };
+
+  const pauseFilm = () => {
+    video.pause();
+    updateToggle();
+  };
+
+  const playFilm = (allowReducedMotion = false) => {
+    if ((motionPreference.matches && !allowReducedMotion) || document.hidden) {
+      pauseFilm();
+      return;
+    }
+
+    const promise = video.play();
+    if (promise && promise.then) {
+      promise.then(updateToggle).catch(pauseFilm);
+    } else {
+      updateToggle();
+    }
+  };
+
+  const syncPlayback = () => {
+    if (isVisible && !userPaused && !motionPreference.matches) {
+      playFilm();
+    } else {
+      pauseFilm();
+    }
+  };
+
+  toggle.addEventListener('click', () => {
+    if (video.paused) {
+      userPaused = false;
+      playFilm(true);
+    } else {
+      userPaused = true;
+      pauseFilm();
+    }
+  });
+
+  video.addEventListener('play', updateToggle);
+  video.addEventListener('pause', updateToggle);
+  document.addEventListener('visibilitychange', syncPlayback);
+
+  if (typeof IntersectionObserver === 'function') {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isVisible = entry.isIntersecting;
+        syncPlayback();
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(video);
+  } else {
+    isVisible = true;
+    syncPlayback();
+  }
+
+  if (motionPreference.addEventListener) {
+    motionPreference.addEventListener('change', () => {
+      userPaused = motionPreference.matches;
+      syncPlayback();
+    });
+  }
+
+  updateToggle();
+})();

@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="journey-train.css" />
+  <link rel="stylesheet" href="aquarium-background.css" />
 </head>
 
 <body class="page-in">
@@ -143,7 +145,7 @@
               <figcaption>In-trailer credits</figcaption>
             </figure>
             <p class="subproject-note">Companion to: Mossaratus</p>
-            <span class="project-link project-link--disabled" aria-disabled="true">Deep dive — coming soon</span>
+            <a class="project-link" href="mossaratus-trailer.html">Explore the animated trailer →</a>
           </div>
         </div>
       </div>
@@ -161,7 +163,7 @@
               <strong>Tools:</strong> Blender, Unity
             </p>
             <p class="subproject-note">Companion to: Mossaratus</p>
-            <span class="project-link project-link--disabled" aria-disabled="true">Deep dive — coming soon</span>
+            <a class="project-link" href="mossaratus-final-boss.html">Explore the final boss →</a>
           </div>
           <figure class="subproject-gallery-item subproject-gallery-item--timelapse">
             <div class="video-embed video-embed--timelapse">
@@ -291,15 +293,15 @@
           <h3 id="time-to-sleep-title">Time to Sleep</h3>
           <p class="sleep-feature-subtitle">A data-driven sleep installation</p>
           <p class="sleep-feature-quote">
-            Your habits become your sleep — and your sleep becomes your next day.
+            We used everyday habits as a starting point, exploring their possible effects through light, sound and a cognitive challenge.
           </p>
           <p>
-            A data-driven interactive installation where visitors log everyday habits, perform a sleep gesture, and experience the predicted after-effects of their choices through changing light, sound, stress, and a cognitive challenge.
+            A data-driven interactive installation where visitors log everyday habits, perform a sleep gesture, and explore a research-informed representation of sleep through changing light, sound, a stress visualization, and a cognitive challenge.
           </p>
 
-          <ol class="sleep-feature-data-thread" aria-label="The project's data story">
+          <ol class="sleep-feature-data-thread" aria-label="A journey through the installation">
             <li>Daily habits</li>
-            <li>Sleep score</li>
+            <li>Sleep estimates</li>
             <li>Stress &amp; cognition</li>
             <li>Light, sound &amp; play</li>
           </ol>
@@ -421,29 +423,15 @@
           <h2>About Me</h2>
           <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
 
-          <!-- Journey line with tiny train orbiting a rounded-rectangle path -->
+          <!-- The tiny train follows the journey sentence as its layout changes. -->
           <div id="journey-line">
             <p class="journey-text">This portfolio is a collection of my journeys.</p>
-
             <svg class="journey-svg" aria-hidden="true">
-              <!-- Path is drawn by script.js to hug the sentence -->
-              <path id="journey-track-path" class="track" d="" />
-
-              <!-- Train sprite group that follows the path -->
-              <g class="train-sprite">
-                <!-- We keep the image in its own wrapper so we can flip it cleanly -->
-                <g class="sprite-body">
-                  <!-- size & center (half width/height as negative x/y) -->
-                  <image href="train.svg" x="-36" y="-14" width="72" height="28" />
-                </g>
-
-                <!-- Follow the path, orient with tangent -->
-                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                  <mpath href="#journey-track-path" />
-                </animateMotion>
-              </g>
+              <path id="journey-loop" class="track" d="" />
+              <g class="journey-cars"></g>
             </svg>
           </div>
+          <button class="journey-motion-toggle" type="button">Pause train</button>
 
           <a href="https://github.com/MacquePanoramix" class="github-note" target="_blank" rel="noopener noreferrer">
             <div class="github-note-title">GitHub</div>
@@ -494,5 +482,7 @@
   ></audio>
 
   <script src="script.js"></script>
+  <script src="journey-train.js"></script>
+  <script src="aquarium-background.js"></script>
 </body>
 </html>

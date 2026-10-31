@@ -8,50 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ---------- Train path around the journey text ---------- */
-function updateJourneyPath() {
-  const wrap = document.getElementById('journey-line');
-  if (!wrap) return;
-
-  const text = wrap.querySelector('.journey-text');
-  const svg  = wrap.querySelector('.journey-svg');
-  const path = document.getElementById('journey-track-path');
-  if (!text || !svg || !path) return;
-
-  const r = text.getBoundingClientRect();
-
-  // Slightly tighter padding so the train "hugs" the sentence
-  const padX = 14, padY = 10;
-  const radius = 16;
-
-  const w = Math.max(60, Math.round(r.width  + padX * 2));
-  const h = Math.max(40, Math.round(r.height + padY * 2));
-
-  svg.setAttribute('width',  w);
-  svg.setAttribute('height', h);
-  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-
-  const d = [
-    `M ${radius} 0`,
-    `H ${w - radius}`,
-    `A ${radius} ${radius} 0 0 1 ${w} ${radius}`,
-    `V ${h - radius}`,
-    `A ${radius} ${radius} 0 0 1 ${w - radius} ${h}`,
-    `H ${radius}`,
-    `A ${radius} ${radius} 0 0 1 0 ${h - radius}`,
-    `V ${radius}`,
-    `A ${radius} ${radius} 0 0 1 ${radius} 0`,
-    'Z'
-  ].join(' ');
-  path.setAttribute('d', d);
-
-  // Reveal SVG after we draw the path to avoid the initial "jump"
-  svg.style.visibility = 'visible';
-}
-
-window.addEventListener('load',   updateJourneyPath);
-window.addEventListener('resize', () => requestAnimationFrame(updateJourneyPath));
-
 /* ---------- Music player (shuffle + skip + volume) ---------- */
 const bgm          = document.getElementById('bgm');
 const toggleBtn    = document.getElementById('audioPower');   // top button

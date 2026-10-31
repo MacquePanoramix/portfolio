@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The creation and animation of the final boss in Mossaratus." />
+  <title>Final Boss: Creation &amp; Animation | Mossaratus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="companion.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body class="companion-page">
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="audio-controls">
+          <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+            <span class="music-icon" aria-hidden="true">♪</span>
+            <span class="music-label">Music</span>
+          </button>
+          <input id="audioVolume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" />
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="companion-main">
+    <a class="back-link" href="mossaratus.html">← Back to Mossaratus</a>
+    <section class="companion-hero">
+      <p class="companion-eyebrow">Mossaratus · Companion piece</p>
+      <h1>Final Boss: Creation &amp; Animation</h1>
+      <p class="companion-lede">A closer look at the boss I made for the final fight in Mossaratus.</p>
+      <div class="companion-meta">
+        <span><strong>My role:</strong> Modelling, rigging, animation and integration</span>
+        <span><strong>Tools:</strong> Blender and Unity</span>
+        <span><strong>Context:</strong> Four students · about five days</span>
+      </div>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div class="companion-copy">
+        <h2>Bringing the boss to life</h2>
+        <p>In Mossaratus, the player moves through waves of enemies, returning to a shop between rounds. The final fight brings that journey to a close.</p>
+        <p>I modelled, rigged, animated and integrated the boss in Blender and Unity. Below are a timelapse of the work and a few of its animations.</p>
+      </div>
+      <aside class="companion-aside">
+        <h3>The game</h3>
+        <p>Mossaratus was a collaboration with Ernests Malnacs, Edina Depner and Tycho Heijmans. I also built the core shop features, which Ernests later refined.</p>
+        <a href="mossaratus.html">Explore the full game →</a>
+      </aside>
+    </section>
+
+    <section class="companion-panel">
+      <h2>Making the boss</h2>
+      <div class="companion-layout">
+        <figure class="companion-figure companion-media">
+          <div class="companion-frame">
+            <iframe src="https://www.youtube.com/embed/P_IBXDDKHrk?modestbranding=1&amp;rel=0" title="Blender timelapse of the Mossaratus final boss" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption class="companion-caption">Blender timelapse · <a href="https://www.youtube.com/watch?v=P_IBXDDKHrk" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></figcaption>
+        </figure>
+        <figure class="companion-figure companion-media">
+          <a href="images/MossaratusFinalBossRender.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/MossaratusFinalBossRender.png" alt="The Mossaratus final boss shown with scene guides" loading="lazy" />
+          </a>
+          <figcaption class="companion-caption">The boss as shown in the project</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="companion-panel">
+      <h2>Animation studies</h2>
+      <p>Four movements from the boss, shown separately.</p>
+      <div class="companion-grid">
+        <figure class="companion-figure">
+          <video controls muted loop preload="metadata" playsinline><source src="images/MossaratusFinalBossLeftWhip.mp4" type="video/mp4" />Your browser does not support video.</video>
+          <figcaption class="companion-caption">Left — whip</figcaption>
+        </figure>
+        <figure class="companion-figure">
+          <video controls muted loop preload="metadata" playsinline><source src="images/MossaratusFinalBossRightWhip.mp4" type="video/mp4" />Your browser does not support video.</video>
+          <figcaption class="companion-caption">Right — whip</figcaption>
+        </figure>
+        <figure class="companion-figure">
+          <video controls muted loop preload="metadata" playsinline><source src="images/MossaratusFinalBossLeftWhisker.mp4" type="video/mp4" />Your browser does not support video.</video>
+          <figcaption class="companion-caption">Left — whisker</figcaption>
+        </figure>
+        <figure class="companion-figure">
+          <video controls muted loop preload="metadata" playsinline><source src="images/MossaratusFinalBossRightWhisker.mp4" type="video/mp4" />Your browser does not support video.</video>
+          <figcaption class="companion-caption">Right — whisker</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="companion-panel companion-copy">
+      <h2>Looking back</h2>
+      <p>The short testing period meant the boss fight ended up harder than we had planned. With more time, we would have adjusted the difficulty. I was still very satisfied with how the boss looked and fought, and it was interesting to see players take on the challenge.</p>
+    </section>
+
+    <section class="companion-panel companion-credits">
+      <h2>Credits</h2>
+      <p><strong>Mossaratus team:</strong> Luís Antônio de Albuquerque Hollanda, <a href="https://github.com/sodiumts" target="_blank" rel="noopener noreferrer">Ernests Malnacs</a>, Edina Depner and Tycho Heijmans.</p>
+      <div class="companion-links">
+        <a class="companion-button" href="mossaratus.html">Explore Mossaratus</a>
+        <a class="companion-ghost" href="mossaratus-trailer.html">See the animated trailer</a>
+        <a class="companion-ghost" href="https://www.notion.so/Mossaratus-2ac32f3496bf816c84c3c35ae2da1131?source=copy_link" target="_blank" rel="noopener noreferrer">Full Notion page ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
+  <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
+  <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

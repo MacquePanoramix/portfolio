@@ -1,0 +1,37 @@
+/* A paper aquarium: the animation is decorative; the control remains operable. */
+#projects { position: relative; isolation: isolate; }
+#projects > :not(.aquarium-canvas) { position: relative; z-index: 1; }
+#projects > .aquarium-canvas {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+}
+/* Solid bases keep fish entirely behind the project and companion cards. */
+#projects .featured-project,
+#projects .subproject-strip { background-color: #fffdfb; }
+#projects .sleep-feature,
+#projects .project-card--leaving-trace { background-color: #fffdf9; }
+.aquarium-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .35rem .7rem;
+  margin: -1rem 0 2rem;
+  font-size: .8rem;
+  color: #61576a;
+}
+.aquarium-controls button {
+  font: inherit;
+  color: #54495e;
+  border: 1px solid #b5a4bd;
+  border-radius: 999px;
+  padding: .25rem .7rem;
+  background: #fcf8f2;
+  cursor: pointer;
+}
+.aquarium-controls button:hover { background: #eee4ee; }
+.aquarium-controls button:focus-visible { outline: 2px solid #6b5477; outline-offset: 3px; }
+.aquarium-controls a { color: #604d70; text-underline-offset: .15em; }

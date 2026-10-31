@@ -1,0 +1,17 @@
+/* A small, local control for the decorative journey train. */
+.journey-motion-toggle {
+  display: block;
+  margin: -.5rem auto 1.25rem;
+  padding: .2rem .65rem;
+  border: 1px solid #a797b7;
+  border-radius: 999px;
+  background: #fdfbf5;
+  color: #594d63;
+  font: .82rem var(--font-body);
+  cursor: pointer;
+}
+.journey-motion-toggle:hover,
+.journey-motion-toggle:focus-visible {
+  background: #efe8f2;
+  outline-color: #594d63;
+}

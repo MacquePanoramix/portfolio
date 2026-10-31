@@ -107,7 +107,7 @@ main > section:last-of-type { border-bottom: none; }
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-style: italic;
-  color: #666;
+  color: #514b54;
   margin-top: 1rem;
 }
 
@@ -267,7 +267,7 @@ main > section:last-of-type { border-bottom: none; }
 .sleep-feature-film > figcaption,
 .sleep-feature-fragments figcaption{
   margin-top: 0.5rem;
-  color: rgba(76, 65, 87, 0.69);
+  color: rgba(76, 65, 87, 0.88);
   font-family: var(--font-handwriting);
   font-size: 1rem;
 }
@@ -320,7 +320,7 @@ main > section:last-of-type { border-bottom: none; }
 
 .sleep-feature-kicker{
   margin-bottom: 0.35rem !important;
-  color: rgba(81, 67, 98, 0.62);
+  color: rgba(81, 67, 98, 0.84);
   font-size: 0.74rem !important;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -345,7 +345,7 @@ main > section:last-of-type { border-bottom: none; }
 
 .sleep-feature-quote{
   margin: 0 0 1.1rem !important;
-  color: #9b7eb1;
+  color: #6f557f;
   font-family: var(--font-handwriting);
   font-size: clamp(1.38rem, 2.5vw, 1.75rem) !important;
   line-height: 1.35 !important;
@@ -571,7 +571,7 @@ main > section:last-of-type { border-bottom: none; }
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-style: italic;
-  color: #9c7fb8;
+  color: #6f557f;
   margin: 0 0 1.1rem;
 }
 
@@ -1114,13 +1114,13 @@ main > section:last-of-type { border-bottom: none; }
 .project-content { padding: 1.5rem; }
 .project-subtle {
   font-size: 0.92rem;
-  opacity: 0.7;
+  opacity: 0.88;
   margin-top: -0.1rem;
 }
 .project-quote {
   font-family: var(--font-handwriting);
   font-size: 1.3rem;
-  color: var(--accent);
+  color: #6f557f;
   margin-top: 0;
 }
 .project-link {
@@ -1161,7 +1161,7 @@ main > section:last-of-type { border-bottom: none; }
   align-items: center;
   gap: 0.2rem;
   font-size: 0.98rem;
-  color: #9c7fb8;
+  color: #6f557f;
   text-decoration: none;
   border-bottom: 1px solid rgba(156, 127, 184, 0.3);
   padding-bottom: 0.08rem;
@@ -1170,7 +1170,7 @@ main > section:last-of-type { border-bottom: none; }
 
 .project-meta-link:hover,
 .project-meta-link:focus-visible{
-  color: #8566a8;
+  color: #584065;
   border-color: rgba(133, 102, 168, 0.55);
 }
 

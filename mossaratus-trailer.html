@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mossaratus — Animated Trailer | Luís Hollanda</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="companion.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body class="companion-page">
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="audio-controls">
+          <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+            <span class="music-icon" aria-hidden="true">♪</span>
+            <span class="music-label">Music</span>
+          </button>
+          <input id="audioVolume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" />
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="companion-main">
+    <a class="back-link" href="index.html#mossaratus-trailer">← Back to projects</a>
+
+    <section class="companion-hero">
+      <p class="companion-eyebrow">Mossaratus · Companion piece</p>
+      <h1>Animated Trailer</h1>
+      <p class="companion-lede">An animated preview of Mossaratus, made for Creative Composition.</p>
+      <div class="companion-meta">
+        <span><strong>My contribution:</strong> Enemy illustration and animation</span>
+        <span><strong>Tools:</strong> Photoshop and After Effects</span>
+      </div>
+    </section>
+
+    <section class="companion-panel companion-media" aria-labelledby="trailer-title">
+      <h2 id="trailer-title">The trailer</h2>
+      <div class="companion-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/kjfZIvFxCKM?rel=0"
+          title="Mossaratus animated trailer"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="companion-caption">If the video does not load, <a href="https://www.youtube.com/watch?v=kjfZIvFxCKM" target="_blank" rel="noopener noreferrer">watch it on YouTube</a>.</p>
+    </section>
+
+    <section class="companion-layout" aria-label="About the trailer">
+      <article class="companion-panel companion-copy">
+        <h2>My contribution</h2>
+        <p>I drew all the enemies in Photoshop and animated them in After Effects in every scene where they appeared.</p>
+        <p>This was a separate companion piece to the game, created with a five-person team for Creative Composition.</p>
+      </article>
+      <aside class="companion-panel companion-aside">
+        <h2>The team</h2>
+        <ul class="companion-credits">
+          <li>Luís Antônio de Albuquerque Hollanda</li>
+          <li><a href="https://github.com/sodiumts" target="_blank" rel="noopener noreferrer">Ernests Malnacs</a></li>
+          <li>Edina Depner</li>
+          <li>Tycho Heijmans</li>
+          <li>Niels Walraven</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div class="companion-copy">
+        <p class="companion-eyebrow">From the team's documentation</p>
+        <h2>Drawing a moving horde</h2>
+        <p>The team wanted the enemies to feel like a single chaotic wave, while still giving the individual creatures different shapes and shades of purple. Their colours stand apart from the mossy grey-green cave and the bronze robot.</p>
+        <p>In the animation, a simple sideways movement felt too still for the horde. The team added a jelly-like wiggle and adapted the groupings for each scene: a long wave in the cave, smaller groups moving into the open space, and stacked layers for the fight.</p>
+      </div>
+      <aside class="companion-aside">
+        <h3>Setting the scene</h3>
+        <p>The trailer follows the robot from an uneasy cave encounter to the shop, where it finds the firepower to face the horde. The team designed it as a glimpse of the game's world.</p>
+      </aside>
+    </section>
+
+    <section class="companion-panel" aria-labelledby="credits-title">
+      <h2 id="credits-title">In the trailer</h2>
+      <figure class="companion-figure">
+        <a href="TrailerCredits.png" target="_blank" rel="noopener noreferrer"><img src="TrailerCredits.png" alt="The trailer's illustrated credits, showing the five team members' first names" loading="lazy" /></a>
+        <figcaption>In-trailer credits</figcaption>
+      </figure>
+      <p class="companion-source-note">Music: <a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300012" target="_blank" rel="noopener noreferrer">“Local Forecast - Elevator” by Kevin MacLeod</a> (used with reverb; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>) and “Brutal Rock Logo” by DHcz, sourced from Pixabay. Sound effects include the team's own recordings and sounds from Freesound.</p>
+    </section>
+
+    <section class="companion-panel" aria-labelledby="related-title">
+      <h2 id="related-title">More from Mossaratus</h2>
+      <div class="companion-links">
+        <a class="companion-button" href="mossaratus.html">Explore the game</a>
+        <a class="companion-ghost" href="mossaratus-final-boss.html">Final boss: creation &amp; animation</a>
+        <a class="companion-ghost" href="https://www.notion.so/Mossaratus-2ac32f3496bf816c84c3c35ae2da1131?source=copy_link" target="_blank" rel="noopener noreferrer">Read the full Notion page ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><a href="hidden-corner.html" class="hidden-link">✨</a></footer>
+  <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
+  <audio id="bgm" preload="metadata" muted data-playlist='[
+    "audio/Carroussel Cafe (Instrumental).mp3",
+    "audio/Starlit Atelier (Instrumental).mp3",
+    "audio/Title_ Waterwheel Café (Instrumental).mp3",
+    "audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3",
+    "audio/lamp Cafe.mp3"
+  ]'></audio>
+  <script src="script.js"></script>
+</body>
+</html>

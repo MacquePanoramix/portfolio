@@ -1,0 +1,6 @@
+.trace-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.trace-steps article { background: #f5f4eb; border: 1px solid #e3e3d3; border-radius: 10px; padding: 1.15rem; }
+.trace-steps span { color: #6c7664; font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
+.trace-steps h3 { margin: .3rem 0 .55rem; }
+.trace-steps p { font-size: .98rem; }
+@media (max-width: 700px) { .trace-steps { grid-template-columns: 1fr; } }

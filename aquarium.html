@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A closer look at the moving fish and interactions in Dynamic Aquarium, a Processing project by Luís Hollanda and Tzuling Lin." />
+  <title>Dynamic Aquarium | Luís Hollanda</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="companion.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body class="companion-page">
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="audio-controls">
+          <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power">
+            <span class="music-icon" aria-hidden="true">♪</span>
+            <span class="music-label">Music</span>
+          </button>
+          <input id="audioVolume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" />
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="companion-main">
+    <a class="back-link" href="index.html#projects">← Back to projects</a>
+
+    <section class="companion-hero">
+      <p class="companion-eyebrow">Interactive experiment · Processing</p>
+      <h1>Dynamic Aquarium</h1>
+      <p class="companion-lede">A small aquarium of colourful fish, swimming together among rocks and swaying seaweed.</p>
+      <div class="companion-meta">
+        <span><strong>Team:</strong> Luís Hollanda and Tzuling Lin</span>
+        <span><strong>Tool:</strong> Processing</span>
+      </div>
+    </section>
+
+    <section class="companion-panel" aria-labelledby="aquarium-demo-title">
+      <h2 id="aquarium-demo-title">A look inside</h2>
+      <figure class="companion-figure">
+        <video controls muted preload="metadata" playsinline poster="images/AquariumStill.png" aria-label="Recording of the Dynamic Aquarium sketch">
+          <source src="images/AquariumDemo.mp4" type="video/mp4" />
+          Your browser does not support video. <a href="images/AquariumDemo.mp4">Open the aquarium recording</a>.
+        </video>
+        <figcaption>Recording of the aquarium. The controls for feeding and changing the light belong to the original Processing sketch.</figcaption>
+      </figure>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div class="companion-copy">
+        <h2>Fish that move together</h2>
+        <p>We made an aquarium where fish of different sizes and colours move through the same space. Each fish has a chain of joints: as the head moves, the rest of the body follows, giving it the flexibility to bend and turn.</p>
+        <p>The fish also respond to their neighbours. The sketch combines cohesion, separation and alignment with attraction to food and avoidance of the rocks, walls and floor. Together these behaviours shape the movement of the group.</p>
+      </div>
+      <aside class="companion-aside">
+        <h3>In the original sketch</h3>
+        <p>Click to drop food into the water. Press <strong>L</strong> to switch between day and night, changing the light and the prototype's music.</p>
+        <p>The video above is a recording, so it does not respond to these inputs.</p>
+      </aside>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div class="companion-copy">
+        <h2>Making the water feel alive</h2>
+        <p>The aquarium has a sandy floor, rocks, bubbles and clumps of seaweed. A water current follows the fish group's average velocity with a little smoothing, and its horizontal force moves the seaweed.</p>
+        <p>At night the background darkens and glowing particles appear in the water. Food falls through the aquarium, swaying as it descends, and nearby fish can move towards it.</p>
+      </div>
+      <figure class="companion-figure">
+        <a href="images/AquariumStill.png" target="_blank" rel="noopener noreferrer"><img src="images/AquariumStill.png" alt="Colourful fish swimming above seaweed and rocks in the aquarium" loading="lazy" /></a>
+        <figcaption>A still from the aquarium</figcaption>
+      </figure>
+    </section>
+
+    <section class="companion-panel companion-credits" aria-labelledby="aquarium-credits-title">
+      <h2 id="aquarium-credits-title">Team and inspirations</h2>
+      <p><strong>Team:</strong> Luís Antônio de Albuquerque Hollanda and <a href="https://tzulinglin.com/" target="_blank" rel="noopener noreferrer">Tzuling Lin</a>.</p>
+      <p><strong>Procedural fish animation:</strong> Based on and adapted from <a href="https://github.com/argonautcode/animal-proc-anim" target="_blank" rel="noopener noreferrer">argonautcode/animal-proc-anim</a> and its related <a href="https://www.youtube.com/watch?v=qlfh_rv6khY&amp;t=10s" target="_blank" rel="noopener noreferrer">tutorial video</a>.</p>
+      <p><strong>Music used in class demos:</strong> <a href="https://www.youtube.com/watch?v=HpPYQMnk39g" target="_blank" rel="noopener noreferrer">Dire Dire Docks (underwater)</a> for day and <a href="https://www.youtube.com/watch?v=CH9hnfJXpF8&amp;t=668s" target="_blank" rel="noopener noreferrer">Cosmic Cove Galaxy (slowed + rain ambience)</a> for night. These tracks were used during class demos of the prototype.</p>
+      <div class="companion-links">
+        <a class="companion-button" href="https://github.com/MacquePanoramix/Aquarium" target="_blank" rel="noopener noreferrer">Explore the repository ↗</a>
+        <a class="companion-ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
+  <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
+  <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
+  <script src="script.js"></script>
+</body>
+</html>

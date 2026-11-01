@@ -1,0 +1,13 @@
+/* Soft, readable notes for the installation's two data paths. */
+.sleep-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; }
+.sleep-film video { aspect-ratio: 16 / 9; object-fit: contain; }
+.sleep-branches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin: 1.6rem 0; }
+.sleep-branch { border-radius: 12px; border: 1px solid #dfd2e4; background: #f7f1f8; padding: 1.25rem; }
+.sleep-branch:nth-child(2) { background: #fbf3ed; border-color: #ead8cd; }
+.sleep-branch h3 { color: #654d70; }
+.sleep-branch ol { list-style: none; padding: 0; margin: .9rem 0 0; }
+.sleep-branch li { position: relative; padding: .6rem .8rem; border-radius: 7px; background: rgba(255,255,255,.78); line-height: 1.45; }
+.sleep-branch li + li { margin-top: 1rem; }
+.sleep-branch li + li::before { content: '↓'; position: absolute; top: -1.05rem; left: 1rem; color: #755b7d; line-height: 1; }
+.sleep-note { border-left: 3px solid #b9a1c4; padding-left: 1rem; color: #625469; font-size: .96rem; }
+@media (max-width: 700px) { .sleep-intro, .sleep-branches { grid-template-columns: 1fr; } }

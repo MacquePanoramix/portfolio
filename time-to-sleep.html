@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Time to Sleep, an interactive installation about daily habits and sleep." />
+  <title>Time to Sleep | Luís Hollanda</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="companion.css" />
+  <link rel="stylesheet" href="time-to-sleep.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body class="companion-page sleep-page">
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="audio-controls">
+        <button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power"><span class="music-icon" aria-hidden="true">♪</span><span class="music-label">Music</span></button>
+        <input id="audioVolume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" />
+      </li>
+    </ul></nav>
+  </header>
+
+  <main class="companion-main">
+    <a class="back-link" href="index.html#projects">← Back to projects</a>
+    <section class="companion-hero">
+      <p class="companion-eyebrow">Collaborative installation</p>
+      <h1>Time to Sleep</h1>
+      <p class="companion-lede">An interactive installation that turns everyday habits into a way to reflect on sleep.</p>
+      <div class="companion-meta"><span>14-person team</span><span>Data, interaction &amp; physical installation</span><span>Python · ESP32 · Arduino</span></div>
+    </section>
+
+    <section class="companion-panel sleep-intro">
+      <div>
+        <p class="companion-eyebrow">The experience</p>
+        <h2>A day, a night, and the next morning</h2>
+        <p>We wanted to make a subject that often feels distant more tangible. Visitors entered their habits at physical stations, from drinks and exercise to screen time, then made a sleep gesture to begin the transition to the next day.</p>
+        <p>Light, sound and a memory-sequence challenge responded to values calculated from those inputs. Visitors could also take an NFC card linking to a personalised overview of their experience.</p>
+        <p>The installation was designed to encourage reflection. Its values are research-informed estimates for an educational experience, not a diagnosis or a validated prediction of an individual's health.</p>
+      </div>
+      <figure class="companion-figure sleep-film">
+        <video controls playsinline preload="metadata" poster="images/time-to-sleep-poster.jpg" aria-label="A short clip from the Time to Sleep installation">
+          <source src="videos/time-to-sleep-teaser.mp4" type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+        <figcaption>A short clip from our installation</figcaption>
+      </figure>
+    </section>
+
+    <section class="companion-panel">
+      <p class="companion-eyebrow">My contribution</p>
+      <h2>Connecting the data to the experience</h2>
+      <p>I worked on the data story and processing. I connected public sleep datasets with research-backed mappings, shaped the sleep-score, stress and cognition pipeline, and translated its outputs into values the physical installation could respond to.</p>
+      <p>The installation was built by a larger team. The stations, electronics, visuals, sound and game came together through that collaboration.</p>
+    </section>
+
+    <section class="companion-panel">
+      <p class="companion-eyebrow">From input to interaction</p>
+      <h2>Two paths through the data</h2>
+      <p>The project used two connected but distinct routes. The sleep score did not feed the cognition model: each path used the inputs it needed and produced values for the installation.</p>
+      <div class="sleep-branches">
+        <article class="sleep-branch">
+          <h3>Sleep quality &amp; stress</h3>
+          <ol><li>Screen time, caffeine, alcohol and exercise</li><li>A paper-derived sleep-quality estimate</li><li>Sleep quality feeds a sleep score and a separate stress estimate</li><li>The stress estimate shapes sound and the neuron wall</li></ol>
+        </article>
+        <article class="sleep-branch">
+          <h3>Sleep duration &amp; cognition</h3>
+          <ol><li>Caffeine, alcohol and exercise</li><li>A decision tree selects a sleep-duration group</li><li>A research-based mapping gives a cognition value</li><li>The memory game's sequence and timing are adjusted</li></ol>
+        </article>
+      </div>
+      <p class="sleep-note">The sleep-quality calculation used a PSQI-based estimate with an assumed baseline. It was made for this installation and should not be read as a clinical assessment.</p>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div>
+        <p class="companion-eyebrow">The data story</p>
+        <h2>When the first models did not work</h2>
+        <p>Our first plan was to link the datasets with regression. Instead, the sleep-duration model tended to predict close to the average for almost everyone. We tried other approaches and datasets, but the physical installation was already taking shape, so changing the whole interaction was no longer a simple option.</p>
+        <p>After discussing the problem with a teaching assistant, the team explored grouped sleep durations and values derived from research papers. A decision tree replaced the continuous duration model; separate research-based mappings helped connect the inputs to the installation's other outputs.</p>
+      </div>
+      <aside class="companion-aside"><h3>Making it run</h3><p>The team joined NHANES data using participant identifiers, exported the decision tree as a C++ header and ran the calculations on an ESP32. Missing inputs were handled before values were sent to the other stations.</p></aside>
+    </section>
+
+    <section class="companion-panel">
+      <p class="companion-eyebrow">The installation</p>
+      <h2>Small interactions, shared space</h2>
+      <div class="companion-grid">
+        <figure class="companion-figure"><img src="images/time-to-sleep-screen-time.jpg" alt="The screen-time station, with a strip pulled from a phone-shaped display" loading="lazy" /><figcaption>Entering screen time</figcaption></figure>
+        <figure class="companion-figure"><img src="images/time-to-sleep-clouds.jpg" alt="The illuminated cloud display at the sleep gesture station" loading="lazy" /><figcaption>The sleep gesture station</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="companion-panel companion-layout">
+      <div>
+        <p class="companion-eyebrow">Trying it with visitors</p>
+        <h2>What the feedback showed</h2>
+        <p>Five participants answered a post-session survey. They rated the physical objects and inputs more positively than how clearly they noticed their inputs affecting the memory game's difficulty. Three participants mentioned confusion at the drinks station.</p>
+        <p>That feedback points to a useful next step: make the connection between a visitor's choices and the response easier to notice. It is a small evaluation, and it does not establish lasting changes in sleep habits or the accuracy of the final models.</p>
+      </div>
+      <aside class="companion-aside"><h3>Five participants</h3><p>A small post-session survey about the interactions, the memory game and reflection on daily habits.</p></aside>
+    </section>
+
+    <section class="companion-panel">
+      <h2>Team &amp; sources</h2>
+      <p><strong>Time to Sleep team:</strong> Adi Soebdhan, Arthur Godthelp, Daniel Chiapparini, Gabriela Llieva, Gijs Wiltink, Kristina Kapperud, Lars Gerritsen, Tzuling Lin, Lorenzo Ranise, Luca Pastor, Luís Antônio de Albuquerque Hollanda, Nadya Bildoy, Thibaud Pastor and Urtė Valeisate.</p>
+      <p>The team's data work drew on <a href="https://wwwn.cdc.gov/nchs/nhanes/" target="_blank" rel="noopener noreferrer">NHANES</a>, research on <a href="https://doi.org/10.3390/healthcare9091091" target="_blank" rel="noopener noreferrer">electronic device use and sleep quality</a> and <a href="https://doi.org/10.1016/j.jad.2023.10.122" target="_blank" rel="noopener noreferrer">sleep duration and cognition</a>, and the <a href="https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset" target="_blank" rel="noopener noreferrer">Sleep Health and Lifestyle dataset</a>.</p>
+      <div class="companion-links"><a class="companion-button" href="index.html#projects">Back to projects</a></div>
+    </section>
+  </main>
+
+  <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
+  <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
+  <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

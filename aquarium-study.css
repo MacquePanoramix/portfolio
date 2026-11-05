@@ -1,0 +1,77 @@
+/* A small, self-contained study beside the Aquarium project story. */
+.aquarium-page header { box-sizing: border-box; }
+.aquarium-page .aquarium-cover { max-width: none !important; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.aquarium-cover h1 { font-size: clamp(3rem, 5vw, 4.8rem); line-height: .95; }
+.aquarium-cover h1 em { color: #806487; font-weight: 400; }
+.aquarium-cover figure { margin: 0; padding: .7rem; background: #fffdfa; box-shadow: 0 12px 30px rgba(72, 55, 77, .1); transform: rotate(1.5deg); }
+.aquarium-cover img { display: block; width: 100%; height: auto; }
+.aquarium-cover figcaption { color: #685b69; font: 1.05rem/1.4 var(--font-handwriting); margin-top: .5rem; }
+.aquarium-page .aquarium-field-notes { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.5rem; align-items: start; padding: 1rem 0 3rem; }
+.aquarium-field-notes h2 { text-align: left; }
+.aquarium-field-notes dl { margin: 0; border-top: 1px solid #ded1dd; }
+.aquarium-field-notes dl > div { display: grid; grid-template-columns: minmax(120px, .8fr) 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #ded1dd; }
+.aquarium-field-notes dt { font-weight: 700; color: #65516c; }
+.aquarium-field-notes dt span { display: inline-block; width: 1.4rem; color: #987d9e; }
+.aquarium-field-notes dd { margin: 0; }
+.aquarium-study-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, .8fr);
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.aquarium-study-figure { margin: 0; min-width: 0; }
+.aquarium-study-stage {
+  overflow: hidden;
+  border: 1px solid #dccbdc;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at 25% 25%, #fffefa, #f5edf3 75%);
+}
+.aquarium-study-stage svg,
+.aquarium-study-stage canvas { display: block; width: 100%; height: auto; }
+.aquarium-study-stage [hidden], .aquarium-study-controls[hidden] { display: none; }
+.study-fish-body { fill: #a98aaf; stroke: #fffaf4; stroke-width: 3; }
+.study-fish-fin, .study-fish-tail { fill: #d6b5bc; stroke: #fffaf4; stroke-width: 3; }
+.study-spine-line { fill: none; stroke: #5e475f; stroke-width: 2; }
+.study-joints { fill: #fffaf4; stroke: #5e475f; stroke-width: 2; }
+.aquarium-study-figure figcaption {
+  margin-top: .55rem;
+  color: #685b69;
+  font-family: var(--font-handwriting);
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+.aquarium-study-controls {
+  border-left: 1px dashed #d2bdd2;
+  padding-left: 1.5rem;
+}
+.aquarium-study-controls .aquarium-study-prompt { margin-bottom: 1rem; }
+.aquarium-study-controls label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-weight: 700; }
+.aquarium-study-controls output { color: #695274; font-weight: 400; }
+.aquarium-study-controls input[type="range"] { display: block; width: 100%; margin: .7rem 0; accent-color: #806187; }
+.aquarium-study-controls .aquarium-study-help { color: #61566a; font-size: .9rem; line-height: 1.5; margin: .5rem 0 1rem; }
+.aquarium-study-buttons { display: flex; flex-wrap: wrap; gap: .5rem; }
+.aquarium-study-buttons button {
+  padding: .45rem .7rem;
+  border: 1px solid #b7a1bb;
+  border-radius: 999px;
+  background: #fffcfa;
+  color: #604b68;
+  font: 600 .9rem var(--font-body);
+  cursor: pointer;
+}
+.aquarium-study-buttons button:hover { background: #f1e6f0; }
+.aquarium-study-buttons button:focus-visible,
+.aquarium-study-controls input:focus-visible { outline: 2px solid #70577c; outline-offset: 3px; }
+.aquarium-study-code { border-top: 1px solid #e7dbe7; padding-top: 1rem; }
+.aquarium-study-code summary { cursor: pointer; color: #604b68; font-weight: 700; }
+.aquarium-study-code summary:focus-visible { outline: 2px solid #70577c; outline-offset: 3px; }
+.aquarium-study-code p { margin: .9rem 0 !important; }
+.aquarium-study-code pre { max-width: 100%; overflow-x: auto; padding: 1rem; border-radius: 9px; background: #f5f0f4; font-size: .8rem; line-height: 1.6; }
+@media (max-width: 700px) {
+  .aquarium-page .aquarium-cover, .aquarium-page .aquarium-field-notes { grid-template-columns: 1fr; }
+  .aquarium-cover figure { max-width: 480px; }
+  .aquarium-page .aquarium-field-notes { gap: 1rem; }
+  .aquarium-study-layout { grid-template-columns: 1fr; }
+  .aquarium-study-controls { border-left: 0; border-top: 1px dashed #d2bdd2; padding: 1rem 0 0; }
+}

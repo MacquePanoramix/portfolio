@@ -7,12 +7,12 @@
   <title>Leaving a Trace | Luís Hollanda</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="companion.css" />
-  <link rel="stylesheet" href="leaving-a-trace.css" />
+  <link rel="stylesheet" href="leaving-a-trace.css?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
 </head>
-<body class="companion-page">
+<body class="companion-page trace-page">
   <div class="stars" aria-hidden="true"></div>
   <header>
     <nav aria-label="Main navigation">
@@ -35,21 +35,24 @@
   <main class="companion-main">
     <a class="companion-back" href="index.html#projects">← Back to projects</a>
 
-    <section class="companion-hero">
-      <p class="companion-eyebrow">Interactive installation</p>
-      <h1>Leaving a Trace</h1>
-      <p class="companion-lede">A landscape that responds to the factories visitors place and remove.</p>
-      <div class="companion-meta">
-        <span><strong>My contribution:</strong> Interactive visuals and atmospheric audio</span>
-        <span><strong>Team:</strong> Six people</span>
+    <section class="companion-hero trace-cover">
+      <div>
+        <p class="companion-eyebrow">Interactive installation</p>
+        <h1>Leaving<br /><em>a Trace</em></h1>
+        <p class="companion-lede">A landscape that responds to the factories visitors place and remove.</p>
+        <div class="companion-meta">
+          <span><strong>My contribution:</strong> Interactive visuals and atmospheric audio</span>
+          <span><strong>Team:</strong> Six people</span>
+        </div>
       </div>
+      <figure><img src="images/Leaving%20a%20trace%20installation.jpg" alt="A projected landscape and figure inside the installation" /><figcaption>The landscape in its physical space</figcaption></figure>
     </section>
 
-    <section class="companion-panel companion-layout">
+    <section class="companion-panel companion-layout trace-introduction">
       <div class="companion-copy">
         <h2>A changing landscape</h2>
-        <p>Leaving a Trace is an interactive installation where visitors reshape a wounded landscape by placing and removing factories. The landscape responds through projection, light, fog and sound.</p>
-        <p>I worked on the interactive and visual side of the installation, helping shape how the projection and atmospheric audio responded to visitors’ actions so that the changing landscape felt natural.</p>
+        <p>Leaving a Trace is an interactive installation where visitors reshape a wounded landscape by placing and removing factories. The landscape responds through projection, light and sound, with fog adding to the atmosphere.</p>
+        <p>I worked on the interactive visuals and atmospheric audio, helping the projection respond to visitors’ actions.</p>
       </div>
       <aside class="companion-aside">
         <h3>Tools and materials</h3>
@@ -57,20 +60,35 @@
       </aside>
     </section>
 
-    <section class="companion-panel">
-      <p class="companion-eyebrow">The interaction</p>
-      <h2>A landscape in your hands</h2>
-      <div class="trace-steps">
-        <article><span>01</span><h3>Place</h3><p>Visitors add factories to the landscape.</p></article>
-        <article><span>02</span><h3>Observe</h3><p>Projection, light, fog and sound give the landscape a response.</p></article>
-        <article><span>03</span><h3>Change</h3><p>Factories can be removed again, changing the scene through the visitor's choices.</p></article>
+    <section class="companion-panel companion-layout">
+      <div class="companion-copy">
+        <h2>A concept sketch</h2>
+        <p>This sketch explores another way for visitors to affect a landscape, using litter and recycling. Its handwritten notes imagine projection across the table and a figure representing nature.</p>
+        <p>The installation described above uses a factory interaction; the sketch preserves a different idea for the experience.</p>
       </div>
+      <figure class="companion-figure">
+          <a href="images/Leaving%20a%20trace%20concept%20sketch.png" target="_blank" rel="noopener noreferrer"><img src="images/Leaving%20a%20trace%20concept%20sketch.png" alt="Concept sketch showing a figure and a landscape with handwritten ideas for visitor interaction" loading="lazy" /></a>
+        <figcaption>Concept sketch</figcaption>
+      </figure>
+    </section>
+
+    <section class="companion-panel trace-prototype" aria-labelledby="prototype-title">
+      <p class="companion-eyebrow">A look at the prototype</p>
+      <h2 id="prototype-title">A landscape that changes over time</h2>
+      <p>These three moments come from a recording of a six-factory Processing prototype. Urban areas spread across the green field; later in the same recording, green patches appear again among them.</p>
+      <div class="trace-filmstrip">
+        <figure class="companion-figure"><img src="images/trace-prototype-start.jpg" alt="A green digital field with six small grey areas" loading="lazy" /><figcaption>Small starting areas</figcaption></figure>
+        <figure class="companion-figure"><img src="images/trace-prototype-expansion.jpg" alt="A digital landscape almost completely covered by grey urban cells" loading="lazy" /><figcaption>Urban areas spread</figcaption></figure>
+        <figure class="companion-figure"><img src="images/trace-prototype-recovery.jpg" alt="Green patches appearing within the grey digital landscape" loading="lazy" /><figcaption>Green appears again</figcaption></figure>
+      </div>
+      <p class="trace-note">We originally intended to use six factories. On the day, one factory-proximity Arduino was not working, so I changed it to five.</p>
     </section>
 
     <section class="companion-panel" aria-labelledby="installation-title">
-      <h2 id="installation-title">Inside the installation</h2>
-      <p>The landscape and its surroundings brought the interaction into a physical space.</p>
-      <div class="companion-grid">
+      <p class="companion-eyebrow">The physical piece</p>
+      <h2 id="installation-title">A world to step into</h2>
+      <p>The installation brought the landscape into a space of its own. Visitors could place and remove factories and watch the scene respond.</p>
+      <div class="trace-physical-grid">
         <figure class="companion-figure">
           <a href="images/Leaving%20a%20trace%20installation.jpg" target="_blank" rel="noopener noreferrer"><img src="images/Leaving%20a%20trace%20installation.jpg" alt="Projected landscape and figure inside the Leaving a Trace installation" loading="lazy" /></a>
           <figcaption>The installation</figcaption>
@@ -82,15 +100,17 @@
       </div>
     </section>
 
-    <section class="companion-panel companion-layout">
-      <div class="companion-copy">
-        <h2>A concept sketch</h2>
-        <p>This sketch explores another way for visitors to affect a landscape, using litter and recycling. The factory interaction is a different way to explore visitors’ effects on the landscape.</p>
+    <section class="companion-panel" aria-labelledby="system-title">
+      <p class="companion-eyebrow">Behind the scene</p>
+      <h2 id="system-title">From a signal to a landscape</h2>
+      <p>In the Processing files, an Arduino connection supplies factory states to a grid-based simulation. The sketch combines the expanding urban areas with a system for nature to reclaim space.</p>
+      <div class="trace-process">
+        <article><span>01</span><h3>Factory states</h3><p>Serial messages switch the simulation’s factories on or off.</p></article>
+        <article><span>02</span><h3>Urban growth &amp; nature</h3><p>Active factories expand and repair urban cells; nature affects their edges and can reclaim them.</p></article>
+        <article><span>03</span><h3>Drawing the ground</h3><p>Layered noise gives the ground grass, moss and pebble textures, while gravel appears around urban areas.</p></article>
+        <article><span>04</span><h3>Listening to the landscape</h3><p>Wind and birds change with urban coverage, alongside industrial sounds linked to active factories.</p></article>
       </div>
-      <figure class="companion-figure">
-        <a href="images/Leaving%20a%20trace%20concept%20sketch.png" target="_blank" rel="noopener noreferrer"><img src="images/Leaving%20a%20trace%20concept%20sketch.png" alt="Early concept sketch showing a figure and a landscape with handwritten ideas for visitor interaction" loading="lazy" /></a>
-        <figcaption>Concept sketch</figcaption>
-      </figure>
+      <p class="trace-note">This is a look at a Processing version of the project.</p>
     </section>
 
     <section class="companion-panel companion-credits">

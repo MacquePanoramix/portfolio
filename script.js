@@ -69,7 +69,7 @@ if (bgm) {
   }
 
   function isPlaying() {
-    return !bgm.paused && !bgm.ended && bgm.currentTime > 0 && !bgm.muted;
+    return !bgm.paused && !bgm.ended && !bgm.muted;
   }
 
   // Sync the top button’s pressed state

@@ -1,0 +1,28 @@
+.film-page header { box-sizing: border-box; }
+.film-main { max-width: 1140px; }
+.film-main p { line-height: 1.75; }
+.film-cover { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding: 3.5rem 0 5rem !important; }
+.film-cover h1 { font-size: clamp(3.5rem, 7vw, 6.4rem); line-height: .95; letter-spacing: -.035em; margin: 0 0 1.3rem; }
+.film-cover h1 em { color: #89718b; font-weight: normal; }
+.film-cover-art { margin: 0; padding: .8rem .8rem 1.1rem; background: #fffdf8; box-shadow: 0 14px 35px rgba(72,55,77,.14); transform: rotate(1.1deg); }
+.film-cover-art img, .film-pair img { display: block; width: 100%; height: auto; }
+.film-cover-art figcaption, .film-pair figcaption { margin-top: .65rem; color: #625368; font: 1.1rem var(--font-handwriting); }
+.film-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 5vw, 4rem); padding: 2.5rem 0 3rem !important; border-top: 1px solid #ddd1d8 !important; }
+.film-main h2 { text-align: left; font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.15; margin: 0 0 1rem; }
+.film-comparison { margin: 0 0 3rem !important; padding: clamp(1.4rem, 4vw, 3rem) !important; border-radius: 18px; background: #f3edf1; }
+.film-comparison > p { max-width: 67ch; }
+.film-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(1.2rem, 3vw, 2.5rem); margin-top: 2rem; }
+.film-pair figure { min-width: 0; margin: 0; }
+.film-pair figure:first-child { padding: .7rem; background: #fffdf8; box-shadow: 0 8px 20px rgba(72,55,77,.09); }
+.film-watch { display: flex; aspect-ratio: 16 / 9; flex-direction: column; justify-content: center; align-items: center; gap: .75rem; padding: 1rem; border-radius: 8px; background: radial-gradient(circle at 75% 25%, #6f5a70, transparent 55%), #282330; color: #fff !important; text-align: center; text-decoration: none; font-weight: 700; }
+.film-watch-icon { display: grid; place-items: center; width: 3.4rem; height: 3.4rem; padding-left: .2rem; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; }
+.film-watch small { color: #f2e8ed; font-weight: 400; }
+.film-watch:hover { background-color: #3a3042; }
+.film-page a:focus-visible { outline: 3px solid #70577c; outline-offset: 4px; }
+@media (max-width: 700px) {
+  .film-cover { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem 0 3.5rem !important; }
+  .film-cover h1 { font-size: clamp(3.3rem, 13vw, 5rem); }
+  .film-intro, .film-pair { grid-template-columns: 1fr; }
+  .film-cover-art { max-width: 540px; transform: rotate(.5deg); }
+}
+@media (prefers-reduced-motion: reduce) { .film-cover-art { transform: none; } }

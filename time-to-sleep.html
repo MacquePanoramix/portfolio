@@ -29,81 +29,71 @@
 
   <main class="companion-main">
     <a class="back-link" href="index.html#projects">← Back to projects</a>
-    <section class="companion-hero">
-      <p class="companion-eyebrow">Collaborative installation</p>
-      <h1>Time to Sleep</h1>
-      <p class="companion-lede">An interactive installation that turns everyday habits into a way to reflect on sleep.</p>
-      <div class="companion-meta"><span>14-person team</span><span>Data, interaction &amp; physical installation</span><span>Python · ESP32 · Arduino</span></div>
-    </section>
-
-    <section class="companion-panel sleep-intro">
-      <div>
-        <p class="companion-eyebrow">The experience</p>
-        <h2>A day, a night, and the next morning</h2>
-        <p>We wanted to make a subject that often feels distant more tangible. Visitors entered their habits at physical stations, from drinks and exercise to screen time, then made a sleep gesture to begin the transition to the next day.</p>
-        <p>Light, sound and a memory-sequence challenge responded to values calculated from those inputs. Visitors could also take an NFC card linking to a personalised overview of their experience.</p>
-        <p>The installation was designed to encourage reflection. Its values are research-informed estimates for an educational experience, not a diagnosis or a validated prediction of an individual's health.</p>
+    <section class="sleep-cover">
+      <div class="sleep-cover-copy">
+        <p class="companion-eyebrow">A collaborative installation · 14 people</p>
+        <h1>Time to<br /><em>Sleep</em></h1>
+        <p class="sleep-cover-lede">An installation that begins with the habits of a day and follows them into a night of sleep.</p>
+        <p>Our installation invited visitors to walk through their habits, make a sleep gesture, and explore a possible next morning.</p>
+        <a class="sleep-text-link" href="#journey">Follow the experience ↓</a>
       </div>
-      <figure class="companion-figure sleep-film">
-        <video controls playsinline preload="metadata" poster="images/time-to-sleep-poster.jpg" aria-label="A short clip from the Time to Sleep installation">
-          <source src="videos/time-to-sleep-teaser.mp4" type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
-        <figcaption>A short clip from our installation</figcaption>
-      </figure>
+      <figure class="sleep-cover-photo"><img src="images/time-to-sleep-clouds.jpg" alt="A glowing cloud at the sleep gesture station" /><figcaption>Between day and night</figcaption></figure>
     </section>
 
-    <section class="companion-panel">
-      <p class="companion-eyebrow">My contribution</p>
-      <h2>Connecting the data to the experience</h2>
-      <p>I worked on the data story and processing. I connected public sleep datasets with research-backed mappings, shaped the sleep-score, stress and cognition pipeline, and translated its outputs into values the physical installation could respond to.</p>
-      <p>The installation was built by a larger team. The stations, electronics, visuals, sound and game came together through that collaboration.</p>
+    <section class="sleep-opening" id="journey">
+      <div><p class="sleep-kicker">The visitor journey</p><h2>A day, a night,<br />and the next morning</h2></div>
+      <div><p>We wanted to make a subject that can feel distant more tangible. Instead of filling in a form, visitors moved between physical stations. Each one added a piece of the story.</p><p class="sleep-small-note">The installation offers a research-informed representation for reflection, not a diagnosis or a validated prediction of an individual’s health.</p></div>
     </section>
 
-    <section class="companion-panel">
-      <p class="companion-eyebrow">From input to interaction</p>
-      <h2>Two paths through the data</h2>
-      <p>The project used two connected but distinct routes. The sleep score did not feed the cognition model: each path used the inputs it needed and produced values for the installation.</p>
-      <div class="sleep-branches">
-        <article class="sleep-branch">
-          <h3>Sleep quality &amp; stress</h3>
-          <ol><li>Screen time, caffeine, alcohol and exercise</li><li>A paper-derived sleep-quality estimate</li><li>Sleep quality feeds a sleep score and a separate stress estimate</li><li>The stress estimate shapes sound and the neuron wall</li></ol>
-        </article>
-        <article class="sleep-branch">
-          <h3>Sleep duration &amp; cognition</h3>
-          <ol><li>Caffeine, alcohol and exercise</li><li>A decision tree selects a sleep-duration group</li><li>A research-based mapping gives a cognition value</li><li>The memory game's sequence and timing are adjusted</li></ol>
-        </article>
-      </div>
-      <p class="sleep-note">The sleep-quality calculation used a PSQI-based estimate with an assumed baseline. It was made for this installation and should not be read as a clinical assessment.</p>
+    <ol class="sleep-journey" aria-label="The installation journey">
+      <li class="sleep-stop">
+        <div class="sleep-stop-copy"><span class="sleep-step-number">01 / During the day</span><h3>Choose a drink</h3><p>The first station used physical drink objects to enter caffeine and alcohol. Lights on the table gave feedback as visitors scanned their choices.</p></div>
+        <figure><img src="images/time-to-sleep/report-drinks.jpg" alt="The drinks station with a can, coffee cup, bottle and cocktail glass on a table" loading="lazy" /><figcaption>The drinks station · project documentation</figcaption></figure>
+      </li>
+      <li class="sleep-stop sleep-stop--exercise">
+        <div class="sleep-stop-copy"><span class="sleep-step-number">02 / Moving</span><h3>Set the weight</h3><p>A small weight stack made exercise time physical: visitors selected their weekly hours with a pin, like choosing a weight at the gym.</p><p class="sleep-annotation">A closer look at the real interaction →</p></div>
+        <figure><video controls muted playsinline preload="metadata" poster="images/time-to-sleep/exercise-clip-poster.jpg" aria-label="Silent footage showing the exercise station and its selection pin"><source src="videos/time-to-sleep-exercise-h264.mp4" type="video/mp4" />Your browser does not support video playback.</video><figcaption>Exercise station · silent excerpt from the project footage</figcaption></figure>
+      </li>
+      <li class="sleep-stop">
+        <div class="sleep-stop-copy"><span class="sleep-step-number">03 / Scrolling</span><h3>How long on the phone?</h3><p>Visitors pulled a scroll from a phone-shaped display to enter screen time. A rotary encoder translated the movement into an amount of time.</p></div>
+        <figure><img src="images/time-to-sleep/report-screen.jpg" alt="The screen-time station with a paper scroll extending from a phone-shaped display" loading="lazy" /><figcaption>The screen-time station · project documentation</figcaption></figure>
+      </li>
+      <li class="sleep-stop sleep-stop--night">
+        <div class="sleep-stop-copy"><span class="sleep-step-number">04 / Time to sleep</span><h3>A gesture under the clouds</h3><p>With the inputs collected, a sleep gesture triggered the transition. Light and sound helped carry the visitor into the next phase.</p></div>
+        <figure><img src="images/time-to-sleep-clouds.jpg" alt="The illuminated cloud display at the sleep gesture station" loading="lazy" /><figcaption>The sleep transition</figcaption></figure>
+      </li>
+      <li class="sleep-stop">
+        <div class="sleep-stop-copy"><span class="sleep-step-number">05 / The next morning</span><h3>A little memory challenge</h3><p>A sequence game translated the calculated cognition value into the length and timing of a pattern. An NFC card could then link visitors to an overview of their experience.</p></div>
+        <figure><img src="images/time-to-sleep/report-memory-table.jpg" alt="The brain-shaped table for the memory game during construction" loading="lazy" /><figcaption>Building the game table · project documentation</figcaption></figure>
+      </li>
+    </ol>
+
+    <section class="sleep-personal">
+      <p class="sleep-kicker">My contribution</p><h2>Connecting the data<br />to the experience</h2>
+      <div><p>I worked with public sleep datasets and research, turning the results into values the installation could use for sleep quality, stress and cognition.</p><p>The stations, electronics, visuals, sound and game came together through the work of the whole team.</p></div>
     </section>
 
-    <section class="companion-panel companion-layout">
-      <div>
-        <p class="companion-eyebrow">The data story</p>
-        <h2>When the first models did not work</h2>
-        <p>Our first plan was to link the datasets with regression. Instead, the sleep-duration model tended to predict close to the average for almost everyone. We tried other approaches and datasets, but the physical installation was already taking shape, so changing the whole interaction was no longer a simple option.</p>
-        <p>After discussing the problem with a teaching assistant, the team explored grouped sleep durations and values derived from research papers. A decision tree replaced the continuous duration model; separate research-based mappings helped connect the inputs to the installation's other outputs.</p>
-      </div>
-      <aside class="companion-aside"><h3>Making it run</h3><p>The team joined NHANES data using participant identifiers, exported the decision tree as a C++ header and ran the calculations on an ESP32. Missing inputs were handled before values were sent to the other stations.</p></aside>
+    <section class="sleep-lab">
+      <div class="sleep-lab-copy"><p class="sleep-kicker">The data story · an early attempt</p><h2>When the first model kept choosing the average</h2><p>Our first plan was to connect the datasets with regression. But the sleep-duration model tended to predict almost the same value for everyone, even when the actual values were very different.</p><p>We tried other approaches and datasets while the physical installation was already taking shape. After talking with a teaching assistant, the team explored grouped sleep durations and relationships derived from research papers.</p><p class="sleep-annotation">The diagonal is the ideal line; the dots gathered near the average instead.</p></div>
+      <figure class="sleep-plot"><a href="images/time-to-sleep/report-regression.png" target="_blank" rel="noopener noreferrer"><img src="images/time-to-sleep/report-regression.png" alt="Early regression plot: predicted sleep duration clusters around 7.8 hours while actual duration varies" loading="lazy" /></a><figcaption>Early sleep-duration regression · project documentation · select image to enlarge</figcaption></figure>
     </section>
 
-    <section class="companion-panel">
-      <p class="companion-eyebrow">The installation</p>
-      <h2>Small interactions, shared space</h2>
-      <div class="companion-grid">
-        <figure class="companion-figure"><img src="images/time-to-sleep-screen-time.jpg" alt="The screen-time station, with a strip pulled from a phone-shaped display" loading="lazy" /><figcaption>Entering screen time</figcaption></figure>
-        <figure class="companion-figure"><img src="images/time-to-sleep-clouds.jpg" alt="The illuminated cloud display at the sleep gesture station" loading="lazy" /><figcaption>The sleep gesture station</figcaption></figure>
-      </div>
+    <section class="sleep-map-section">
+      <p class="sleep-kicker">The revised data story</p><h2>Two paths, one installation</h2>
+      <p>The final structure used two distinct routes. Sleep quality fed a score and a separate stress estimate; sleep duration fed the cognition mapping for the memory game. The sleep score did not feed that cognition model.</p>
+      <figure class="sleep-map"><a href="images/time-to-sleep/report-data-structure.jpg" target="_blank" rel="noopener noreferrer"><img src="images/time-to-sleep/report-data-structure.jpg" alt="Team diagram: alcohol, caffeine and exercise connect to sleep-duration groups and cognition; those three inputs plus screen use connect to sleep quality, sleep score and stress" loading="lazy" /></a><figcaption>The team’s revised data structure · project documentation · select image to enlarge</figcaption></figure>
+      <div class="sleep-path-notes"><p><strong>Quality → score &amp; stress.</strong> A paper-derived sleep-quality estimate fed both a sleep score and a separate stress estimate. Stress was used in the sound and neuron-wall response.</p><p><strong>Duration → cognition.</strong> A decision tree grouped sleep duration from caffeine, alcohol and exercise. A research-based mapping connected the group to a value for the memory game.</p></div>
+      <p class="sleep-small-note">The PSQI-based calculation used an assumed baseline for the installation. The report does not provide quantitative validation of the final models as individual health predictions.</p>
     </section>
 
-    <section class="companion-panel companion-layout">
-      <div>
-        <p class="companion-eyebrow">Trying it with visitors</p>
-        <h2>What the feedback showed</h2>
-        <p>Five participants answered a post-session survey. They rated the physical objects and inputs more positively than how clearly they noticed their inputs affecting the memory game's difficulty. Three participants mentioned confusion at the drinks station.</p>
-        <p>That feedback points to a useful next step: make the connection between a visitor's choices and the response easier to notice. It is a small evaluation, and it does not establish lasting changes in sleep habits or the accuracy of the final models.</p>
-      </div>
-      <aside class="companion-aside"><h3>Five participants</h3><p>A small post-session survey about the interactions, the memory game and reflection on daily habits.</p></aside>
+    <section class="sleep-evaluation">
+      <div><p class="sleep-kicker">Trying it with visitors</p><h2>What five people told us</h2><p>The small post-session survey suggested that the physical objects were easier to understand than the connection between choices and the memory-game difficulty. Three participants mentioned confusion at the drinks station.</p><p>A useful next step would be to make that connection easier to notice. This was a small evaluation; it does not establish lasting changes in sleep habits or the accuracy of the models.</p></div>
+      <div class="sleep-feedback" aria-label="Two reported average survey scores"><p><strong>4.6</strong><span>Physical objects and inputs felt intuitive</span></p><p><strong>3.2</strong><span>Noticed the effect of inputs on game difficulty</span></p><small>Reported averages from five responses; the report does not specify the scale.</small></div>
+    </section>
+
+    <section class="sleep-watch">
+      <div><p class="sleep-kicker">A look around</p><h2>The installation in motion</h2><p>Here is a short clip from the shared installation, from the stations to the game.</p></div>
+      <figure><video controls playsinline preload="metadata" poster="images/time-to-sleep-poster.jpg" aria-label="A short clip from the Time to Sleep installation"><source src="videos/time-to-sleep-teaser.mp4" type="video/mp4" />Your browser does not support video playback.</video><figcaption>A short clip from our installation</figcaption></figure>
     </section>
 
     <section class="companion-panel">

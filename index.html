@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luís Antônio de Albuquerque Hollanda | Creative Technologist</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261105" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="journey-train.css" />
   <link rel="stylesheet" href="aquarium-background.css" />
+  <link rel="stylesheet" href="portfolio-refresh.css" />
 </head>
 
 <body class="page-in">
@@ -54,7 +55,7 @@
     <!-- Hero -->
     <section id="home" class="hero">
       <h1 class="fade-in">Luís Antônio de Albuquerque Hollanda</h1>
-      <p class="fade-in poetic-tagline">A portfolio full of aspirations, growing with every dream.</p>
+      <p class="fade-in poetic-tagline">A collection of projects, ideas and things I’ve learned along the way.</p>
     </section>
 
     <!-- Projects -->
@@ -84,9 +85,8 @@
             </p>
 
             <p>
-              Mossaratus is a first person movement shooter where the objective is for the player to survive increasingly harder hordes of enemies.
-              The core distintion that separates it from other similar games is that you are a robot with 6 arms allowing you to carry 6 total weapons simultaneously!
-              You can shoot either all your right side weapons or your left side weapons at a time. A surprise awaits you at the last wave.
+              You play as a six-armed robot, fighting increasingly difficult waves and buying new weapons between rounds.
+              You can fire the guns on either side at once. A surprise awaits you in the final wave.
             </p>
 
             <ul class="featured-meta">
@@ -270,45 +270,26 @@
             <figcaption>A short clip from our installation</figcaption>
           </figure>
 
-          <div class="sleep-feature-fragments" aria-label="Fragments from the installation">
-            <figure>
-              <img
-                src="images/time-to-sleep-screen-time.jpg"
-                alt="Visitor interacting with the screen-time station in the Time to Sleep installation"
-              />
-              <figcaption>Habits become input</figcaption>
-            </figure>
-            <figure>
-              <img
-                src="images/time-to-sleep-clouds.jpg"
-                alt="Glowing blue sleep-time station in the Time to Sleep installation"
-              />
-              <figcaption>Data changes the atmosphere</figcaption>
-            </figure>
+          <div class="sleep-feature-fragments" aria-label="Scenes from the installation">
+            <figure><img src="images/time-to-sleep-screen-time.jpg" alt="Visitor using the screen-time station" loading="lazy" /><figcaption>The screen-time station</figcaption></figure>
+            <figure><img src="images/time-to-sleep-clouds.jpg" alt="Glowing clouds at the sleep station" loading="lazy" /><figcaption>The sleep gesture</figcaption></figure>
           </div>
+
         </div>
 
         <div class="sleep-feature-story">
           <p class="sleep-feature-kicker">Collaborative installation</p>
           <h3 id="time-to-sleep-title">Time to Sleep</h3>
-          <p class="sleep-feature-subtitle">A data-driven sleep installation</p>
           <p class="sleep-feature-quote">
-            We used everyday habits as a starting point, exploring their possible effects through light, sound and a cognitive challenge.
+            An installation that takes you from the habits of a day into a night of sleep.
           </p>
           <p>
-            A data-driven interactive installation where visitors log everyday habits, perform a sleep gesture, and explore a research-informed representation of sleep through changing light, sound, a stress visualization, and a cognitive challenge.
+            Visitors entered daily habits at physical stations, made a sleep gesture, and explored a research-informed representation of the next morning through light, sound and a memory challenge.
           </p>
-
-          <ol class="sleep-feature-data-thread" aria-label="A journey through the installation">
-            <li>Daily habits</li>
-            <li>Sleep estimates</li>
-            <li>Stress &amp; cognition</li>
-            <li>Light, sound &amp; play</li>
-          </ol>
 
           <p class="sleep-feature-role">
             <strong>My role:</strong>
-            I connected public sleep datasets with research-backed mappings, shaped the sleep-score, stress, and cognition pipeline, and translated its outputs into values the physical installation could respond to.
+            I worked with sleep data and research, turning the results into values the installation could use.
           </p>
           <p><strong>Team:</strong> 14-person interdisciplinary team</p>
           <p><strong>Tools:</strong> Python, regression and decision-tree modelling, ESP32/Arduino</p>
@@ -347,10 +328,11 @@
             </video>
           </div>
           <div class="project-content">
-            <h3>Dynamic aquarium</h3>
+            <h3>Dynamic Aquarium</h3>
             <p class="project-quote">
-              A small interactive aquarium filled with fish of different colors that have dynamic movement and school behavior. Click to feed, press L to toggle a day/night mood.
+              A small aquarium where colourful fish swim together among rocks and seaweed. In the sketch, you can feed them and switch between day and night.
             </p>
+            <p><strong>My role:</strong> I made and tuned the flocking behaviour, worked on the fish, and built the current and parts of the environment.</p>
             <p><strong>Team:</strong> Luís Antônio de Albuquerque Hollanda, <a href="https://tzulinglin.com/" target="_blank" rel="noopener noreferrer">Tzuling Lin</a></p>
             <p><strong>Tools:</strong> Processing</p>
             <p class="project-meta-link-wrap">
@@ -390,9 +372,9 @@
           <div class="project-content">
             <h3>Leaving a Trace</h3>
             <p class="project-quote">
-              An interactive installation where visitors reshape a wounded landscape by placing and removing factories, watching nature respond through projection, light, fog, and sound.
+              An interactive installation where visitors reshape a wounded landscape by placing and removing factories, watching nature respond through projection, light, and sound, with fog adding to the atmosphere.
             </p>
-            <p><strong>My role:</strong> I worked on the interactive visuals and atmospheric audio, helping the landscape respond naturally to visitors’ actions.</p>
+            <p><strong>My role:</strong> I worked on the interactive visuals and atmospheric audio, helping the projection respond to visitors’ actions.</p>
             <p><strong>Team:</strong> Luís Antônio de Albuquerque Hollanda, Felix A. Smelik, Amina I. Tatieva, Ebben M. R. van Reen, Eva Pos, Yanara P.C. Hoogwoud</p>
             <p><strong>Tools:</strong> Processing, ESP32/Arduino, projection, sound, fabrication</p>
             <section class="project-media-fragments" aria-label="Supporting project images">
@@ -409,6 +391,20 @@
             <p class="project-meta-link-wrap"><a class="project-meta-link" href="https://app.notion.com/p/Leaving-a-Trace-c2f32f3496bf8297845d0130e0aa82bf?source=copy_link" target="_blank" rel="noopener noreferrer">Full project notes ↗</a></p>
           </div>
         </div>
+
+        <article class="project-card project-card--film reveal">
+          <a class="film-card-art" href="behaviour-change-film.html" aria-label="Explore the behaviour-change film">
+            <img src="images/behaviour-change/storyboard.jpg" alt="The team's six-panel hand-drawn storyboard" loading="lazy" />
+          </a>
+          <div class="project-content">
+            <p class="film-card-kicker">Short film · 2024</p>
+            <h3>A film about grey days</h3>
+            <p class="project-quote">A short story about grey mornings, a conversation in the park and a reminder to get outside.</p>
+            <p><strong>My role:</strong> Direction, acting and developing the idea with the team.</p>
+            <p><strong>Team:</strong> Luís Hollanda, Tzuling Lin, Precious Akpieyi and Mare Bouman</p>
+            <a class="project-link" href="behaviour-change-film.html">Explore the film and storyboard →</a>
+          </div>
+        </article>
       </div>
 
     </section>
@@ -423,11 +419,11 @@
 
         <div class="about-text">
           <h2>About Me</h2>
-          <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a 25-year-old student of Creative Technology at VU.</p>
+          <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a Creative Technology student at VU.</p>
 
           <!-- The tiny train follows the journey sentence as its layout changes. -->
           <div id="journey-line">
-            <p class="journey-text">This portfolio is a collection of my journeys.</p>
+            <p class="journey-text">Here are some of the projects I’ve worked on.</p>
             <svg class="journey-svg" aria-hidden="true">
               <path id="journey-loop" class="track" d="" />
               <g class="journey-cars"></g>

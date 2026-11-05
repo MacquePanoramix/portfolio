@@ -1,13 +1,55 @@
-/* Soft, readable notes for the installation's two data paths. */
-.sleep-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; }
-.sleep-film video { aspect-ratio: 16 / 9; object-fit: contain; }
-.sleep-branches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin: 1.6rem 0; }
-.sleep-branch { border-radius: 12px; border: 1px solid #dfd2e4; background: #f7f1f8; padding: 1.25rem; }
-.sleep-branch:nth-child(2) { background: #fbf3ed; border-color: #ead8cd; }
-.sleep-branch h3 { color: #654d70; }
-.sleep-branch ol { list-style: none; padding: 0; margin: .9rem 0 0; }
-.sleep-branch li { position: relative; padding: .6rem .8rem; border-radius: 7px; background: rgba(255,255,255,.78); line-height: 1.45; }
-.sleep-branch li + li { margin-top: 1rem; }
-.sleep-branch li + li::before { content: '↓'; position: absolute; top: -1.05rem; left: 1rem; color: #755b7d; line-height: 1; }
-.sleep-note { border-left: 3px solid #b9a1c4; padding-left: 1rem; color: #625469; font-size: .96rem; }
-@media (max-width: 700px) { .sleep-intro, .sleep-branches { grid-template-columns: 1fr; } }
+/* The project is a walk through a day, then a closer look at its data. */
+.sleep-page .companion-main { max-width: 1100px; }
+.sleep-page header { box-sizing: border-box; }
+.sleep-page h2 { text-align: left; font-size: clamp(2.1rem, 3.5vw, 3rem); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 1.15rem; }
+.sleep-page h3 { font-family: var(--font-heading); font-size: 1.65rem; line-height: 1.15; margin: .4rem 0 .8rem; }
+.sleep-page p { max-width: 65ch; }
+.sleep-page .sleep-kicker { font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #795e78; margin: 0 0 .8rem; }
+.sleep-page figure { margin: 0; min-width: 0; }
+.sleep-page figcaption { color: #6c5b67; font-family: var(--font-handwriting); font-size: 1.05rem; line-height: 1.4; margin-top: .65rem; }
+.sleep-page .sleep-cover { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; padding: 1rem 0 5rem; }
+.sleep-cover h1 { font-size: clamp(4rem, 8vw, 7.4rem); line-height: .87; letter-spacing: -.04em; margin: 0 0 1.5rem; }
+.sleep-cover h1 em { color: #816789; font-weight: 400; }
+.sleep-cover-lede { font-family: var(--font-heading); font-size: clamp(1.45rem, 2.5vw, 1.8rem); line-height: 1.35; color: #625369; }
+.sleep-text-link { display: inline-block; margin-top: .6rem; font-weight: 700; }
+.sleep-cover-photo { background: #fffdf9; padding: .8rem .8rem 1rem; box-shadow: 0 14px 36px rgba(75, 54, 72, .14); transform: rotate(2deg); }
+.sleep-cover-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.sleep-page .sleep-opening { border-top: 1px solid #e5d9e0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 0 2rem; }
+.sleep-small-note { border-left: 3px solid #b9a1c4; padding-left: 1rem; color: #5e5362; font-size: .95rem; }
+.sleep-journey { list-style: none; margin: 0 0 5rem; padding: 0; }
+.sleep-stop { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; border-top: 1px dashed #d7cbd4; padding: 2.5rem 0; }
+.sleep-stop-copy { padding-left: 1.25rem; border-left: 3px solid #c7afc6; }
+.sleep-step-number { color: #786174; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.sleep-stop figure { background: #fffdfa; padding: .7rem; box-shadow: 0 8px 24px rgba(72, 55, 77, .09); }
+.sleep-stop img, .sleep-stop video { display: block; width: 100%; max-height: 410px; object-fit: contain; background: #1c1821; }
+.sleep-stop video { aspect-ratio: 16 / 9; }
+.sleep-stop figcaption { padding: 0 .3rem .15rem; }
+.sleep-annotation { color: #795d7a; font: 1.2rem/1.4 var(--font-handwriting); }
+.sleep-page .sleep-personal { padding: 2.5rem clamp(1.4rem, 4vw, 3rem); margin: 0 0 5rem; background: #f3e9f1; border-left: 5px solid #b89eb8; }
+.sleep-personal p { max-width: 76ch; }
+.sleep-page .sleep-lab { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding: 0 0 5rem; }
+.sleep-plot { background: #fffdf9; padding: .75rem; box-shadow: 0 12px 30px rgba(72, 55, 77, .1); }
+.sleep-plot img { display: block; width: 100%; height: auto; }
+.sleep-page .sleep-map-section { padding: 3rem clamp(1.3rem, 4vw, 3rem); margin: 0 0 5rem; background: #f1edf5; }
+.sleep-map { margin: 1.5rem 0 !important; padding: .75rem; background: #fffdfa; }
+.sleep-map img { display: block; width: 100%; height: auto; }
+.sleep-path-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.sleep-path-notes p { font-size: 1rem; }
+.sleep-page .sleep-evaluation { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .65fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; padding: 0 0 5rem; }
+.sleep-feedback { background: #fff9f2; border: 1px solid #eadbce; padding: 1.5rem; }
+.sleep-feedback p { display: flex; align-items: baseline; gap: 1rem; margin: 0 0 1rem; line-height: 1.35; }
+.sleep-feedback strong { font: 700 2.4rem/1 var(--font-heading); color: #806188; }
+.sleep-feedback span { font-size: .94rem; }
+.sleep-feedback small { color: #655b61; line-height: 1.5; display: block; }
+.sleep-page .sleep-watch { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 2rem; align-items: start; border-top: 1px solid #e5d9e0; padding: 3rem 0 4rem; }
+.sleep-watch video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #1c1821; }
+@media (max-width: 700px) {
+  .sleep-page .sleep-cover, .sleep-page .sleep-opening, .sleep-stop, .sleep-page .sleep-lab, .sleep-page .sleep-evaluation, .sleep-page .sleep-watch, .sleep-path-notes { grid-template-columns: 1fr; }
+  .sleep-page .sleep-cover { padding-bottom: 3.5rem; }
+  .sleep-cover-photo { max-width: 450px; transform: rotate(1deg); }
+  .sleep-page .sleep-opening { gap: .3rem; }
+  .sleep-journey { margin-bottom: 3rem; }
+  .sleep-stop { gap: 1rem; padding: 2rem 0; }
+  .sleep-page .sleep-personal, .sleep-page .sleep-map-section { margin-bottom: 3rem; }
+  .sleep-page .sleep-lab, .sleep-page .sleep-evaluation { padding-bottom: 3rem; }
+}

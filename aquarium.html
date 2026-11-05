@@ -7,11 +7,12 @@
   <title>Dynamic Aquarium | Luís Hollanda</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="companion.css" />
+  <link rel="stylesheet" href="aquarium-study.css?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
 </head>
-<body class="companion-page">
+<body class="companion-page aquarium-page">
   <div class="stars" aria-hidden="true"></div>
   <header>
     <nav aria-label="Main navigation">
@@ -34,14 +35,17 @@
   <main class="companion-main">
     <a class="back-link" href="index.html#projects">← Back to projects</a>
 
-    <section class="companion-hero">
-      <p class="companion-eyebrow">Interactive experiment · Processing</p>
-      <h1>Dynamic Aquarium</h1>
-      <p class="companion-lede">A small aquarium of colourful fish, swimming together among rocks and swaying seaweed.</p>
-      <div class="companion-meta">
-        <span><strong>Team:</strong> Luís Hollanda and Tzuling Lin</span>
-        <span><strong>Tool:</strong> Processing</span>
+    <section class="companion-hero aquarium-cover">
+      <div>
+        <p class="companion-eyebrow">Interactive experiment · Processing</p>
+        <h1>Dynamic<br /><em>Aquarium</em></h1>
+        <p class="companion-lede">A small aquarium of colourful fish, swimming together among rocks and swaying seaweed.</p>
+        <div class="companion-meta">
+          <span><strong>Team:</strong> Luís Hollanda and Tzuling Lin</span>
+          <span><strong>Tool:</strong> Processing</span>
+        </div>
       </div>
+      <figure><img src="images/AquariumStill.png" alt="Colourful procedural fish swimming among seaweed and rocks" /><figcaption>A moment in the aquarium</figcaption></figure>
     </section>
 
     <section class="companion-panel" aria-labelledby="aquarium-demo-title">
@@ -58,8 +62,8 @@
     <section class="companion-panel companion-layout">
       <div class="companion-copy">
         <h2>Fish that move together</h2>
-        <p>We made an aquarium where fish of different sizes and colours move through the same space. Each fish has a chain of joints: as the head moves, the rest of the body follows, giving it the flexibility to bend and turn.</p>
-        <p>The fish also respond to their neighbours. The sketch combines cohesion, separation and alignment with attraction to food and avoidance of the rocks, walls and floor. Together these behaviours shape the movement of the group.</p>
+        <p>We made an aquarium where fish of different sizes and colours move through the same space. I worked on the fish code, adapting the jointed animation credited below and building the behaviours that guide the fish through the water.</p>
+        <p>I made and tuned the flocking algorithm, combining cohesion, separation and alignment with attraction to food and avoidance of the rocks, walls and floor. Together these behaviours shape the movement of the group.</p>
       </div>
       <aside class="companion-aside">
         <h3>In the original sketch</h3>
@@ -68,11 +72,78 @@
       </aside>
     </section>
 
+    <section class="companion-panel aquarium-study" aria-labelledby="spine-title">
+      <p class="companion-eyebrow">A closer look at the animation</p>
+      <h2 id="spine-title">Following the head</h2>
+      <p>In the Processing sketch, each fish has a spine of twelve joints. Each joint follows the one in front, staying a fixed distance away. Its angle is limited to 22.5° from the previous joint, so a turn travels down the body instead of snapping the whole fish around.</p>
+      <div class="aquarium-study-layout">
+        <figure class="aquarium-study-figure">
+          <div class="aquarium-study-stage" id="spine-study">
+            <svg class="aquarium-study-fallback" viewBox="0 0 800 320" role="img" aria-labelledby="spine-diagram-title spine-diagram-desc">
+              <title id="spine-diagram-title">A fish and its jointed spine</title>
+              <desc id="spine-diagram-desc">Twelve dots form a gently curved line from the fish's head toward its tail. Its body is drawn around that line.</desc>
+              <path class="study-fish-fin" d="M444 141 Q420 95 398 106 Q408 135 422 145 M392 173 Q365 211 349 199 Q361 173 376 165" />
+              <path class="study-fish-tail" d="M285 152 Q260 137 239 128 Q247 151 238 171 Q259 165 285 157 Z" />
+              <path class="study-fish-body" d="M477 158 C465 133 440 125 412 131 C369 140 327 145 282 150 Q275 154 282 159 C325 164 367 170 409 177 C442 182 469 175 477 158 Z" />
+              <path class="study-spine-line" d="M461 158 C418 151 388 152 352 154 S307 154 281 154" />
+              <g class="study-joints"><circle cx="461" cy="158" r="4"/><circle cx="444" cy="155" r="4"/><circle cx="427" cy="153" r="4"/><circle cx="410" cy="152" r="4"/><circle cx="393" cy="152" r="4"/><circle cx="376" cy="153" r="4"/><circle cx="359" cy="154" r="4"/><circle cx="342" cy="154" r="4"/><circle cx="325" cy="154" r="4"/><circle cx="308" cy="154" r="4"/><circle cx="294" cy="154" r="4"/><circle cx="281" cy="154" r="4"/></g>
+            </svg>
+            <canvas class="aquarium-study-canvas" width="800" height="320" aria-hidden="true" hidden></canvas>
+          </div>
+          <figcaption>Body drawn around a joint chain. This browser study isolates the spine; it is not the full flocking simulation.</figcaption>
+        </figure>
+        <div class="aquarium-study-controls" hidden>
+          <p class="aquarium-study-prompt">Guide the fish, then watch the rest of its body follow.</p>
+          <label for="spine-direction">Head direction <output for="spine-direction" id="spine-direction-value">Straight</output></label>
+          <input id="spine-direction" type="range" min="-60" max="60" step="5" value="0" aria-describedby="spine-direction-help" />
+          <p id="spine-direction-help" class="aquarium-study-help">Use the arrow keys or drag the slider. The angle points above or below the rightward direction.</p>
+          <div class="aquarium-study-buttons">
+            <button type="button" id="spine-motion">Play motion</button>
+            <button type="button" id="spine-joints" aria-pressed="true">Show joints</button>
+            <button type="button" id="spine-reset">Reset pose</button>
+          </div>
+          <p class="aquarium-study-help">Motion starts paused. You can change the direction and inspect the pose without playing it.</p>
+        </div>
+      </div>
+      <details class="aquarium-study-code">
+        <summary>See the original body update</summary>
+        <p>For each joint after the head, the sketch finds the angle to the joint ahead, constrains it, and places the joint one link length behind.</p>
+        <pre><code>for (int i = 1; i &lt; spine.joints.size(); i++) {
+  float curAngle = PVector.sub(spine.joints.get(i - 1), spine.joints.get(i)).heading();
+  spine.angles.set(i, constrainAngle(curAngle, spine.angles.get(i - 1), spine.angleConstraint));
+  spine.joints.set(i, PVector.sub(spine.joints.get(i - 1), PVector.fromAngle(spine.angles.get(i)).setMag(spine.linkSize)));
+}</code></pre>
+        <p><a href="https://github.com/MacquePanoramix/Aquarium/blob/main/Fish.pde" target="_blank" rel="noopener noreferrer">Read Fish.pde</a> · <a href="https://github.com/MacquePanoramix/Aquarium/blob/main/Chain.pde" target="_blank" rel="noopener noreferrer">Read Chain.pde</a></p>
+      </details>
+      <details class="aquarium-study-code">
+        <summary>How the original sketch guides the head</summary>
+        <p>The full aquarium calculates cohesion, separation, alignment, avoidance and food attraction for each fish. It combines these as weighted acceleration; the fish's orientation also uses alignment and its current velocity. The update then moves the head and asks the spine to follow.</p>
+        <pre><code>updateAcceleration();
+updateOrientation();
+velocity.add(acceleration);
+pos.add(velocity);
+this.fish.spine.joints.set(0, this.pos);
+this.fish.spine.angles.set(0, this.direction);
+this.fish.updateBody();</code></pre>
+        <p>In the study above, the slider takes the place of that steering so the spine can be examined on its own. <a href="https://github.com/MacquePanoramix/Aquarium/blob/main/Creature.pde" target="_blank" rel="noopener noreferrer">Read Creature.pde</a> · <a href="https://github.com/MacquePanoramix/Aquarium/blob/main/Fish_Flocks.pde" target="_blank" rel="noopener noreferrer">Read Fish_Flocks.pde</a></p>
+      </details>
+    </section>
+
+    <section class="aquarium-field-notes" aria-labelledby="forces-title">
+      <div><p class="companion-eyebrow">Beyond one fish</p><h2 id="forces-title">How the fish move together</h2><p>In the original sketch the head is guided by several weighted steering behaviours. Their combination changes from moment to moment as the fish and their surroundings move.</p></div>
+      <dl>
+        <div><dt><span aria-hidden="true">↗</span> Cohesion</dt><dd>Move towards nearby fish.</dd></div>
+        <div><dt><span aria-hidden="true">↔</span> Separation</dt><dd>Keep space from close neighbours.</dd></div>
+        <div><dt><span aria-hidden="true">→</span> Alignment</dt><dd>Steer with the group’s direction.</dd></div>
+        <div><dt><span aria-hidden="true">✦</span> Food &amp; obstacles</dt><dd>Approach food while avoiding rocks and the aquarium boundaries.</dd></div>
+      </dl>
+    </section>
+
     <section class="companion-panel companion-layout">
       <div class="companion-copy">
         <h2>Making the water feel alive</h2>
-        <p>The aquarium has a sandy floor, rocks, bubbles and clumps of seaweed. A water current follows the fish group's average velocity with a little smoothing, and its horizontal force moves the seaweed.</p>
-        <p>At night the background darkens and glowing particles appear in the water. Food falls through the aquarium, swaying as it descends, and nearby fish can move towards it.</p>
+        <p>I made the rocks, sand and boundaries, and a water current that follows the fish group's average velocity with a little smoothing. Its horizontal force moves the seaweed.</p>
+        <p>Tzuling created the bubbles, lighting, music and food, and handled the day and night modes. Tzuling also made the glowing particles that rise through the water at night.</p>
       </div>
       <figure class="companion-figure">
         <a href="images/AquariumStill.png" target="_blank" rel="noopener noreferrer"><img src="images/AquariumStill.png" alt="Colourful fish swimming above seaweed and rocks in the aquarium" loading="lazy" /></a>
@@ -96,5 +167,6 @@
   <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
   <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
   <script src="script.js"></script>
+  <script src="aquarium-study.js?v=3"></script>
 </body>
 </html>

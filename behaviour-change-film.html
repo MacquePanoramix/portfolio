@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A short film and storyboard made for a Design for Behaviour Change hackathon." />
+  <title>A film about grey days | Luís Hollanda</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="companion.css" />
+  <link rel="stylesheet" href="behaviour-film.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body class="companion-page film-page">
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <nav aria-label="Main navigation"><ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="audio-controls"><button id="audioPower" class="music-btn" type="button" aria-pressed="false" title="Music power"><span class="music-icon" aria-hidden="true">♪</span><span class="music-label">Music</span></button><input id="audioVolume" class="volume-slider" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" /></li>
+    </ul></nav>
+  </header>
+  <main class="companion-main film-main">
+    <a class="back-link" href="index.html#projects">← Back to projects</a>
+    <section class="film-cover">
+      <div>
+        <p class="companion-eyebrow">Design for Behaviour Change · short film · 2024</p>
+        <h1>A film about<br /><em>grey days</em></h1>
+        <p class="companion-lede">A short story about a grey morning, a conversation in the park and a reminder to get outside.</p>
+        <div class="companion-meta"><span><strong>My role:</strong> Direction, acting and shared concept</span><span><strong>Team:</strong> Four people</span></div>
+      </div>
+      <figure class="film-cover-art">
+        <a href="images/behaviour-change/storyboard.jpg" target="_blank" rel="noopener noreferrer"><img src="images/behaviour-change/storyboard.jpg" alt="A hand-drawn storyboard showing six moments from the team's film" /></a>
+        <figcaption>The team's storyboard · select to look closer</figcaption>
+      </figure>
+    </section>
+    <section class="film-intro" aria-labelledby="film-intro-title">
+      <div><p class="companion-eyebrow">The project</p><h2 id="film-intro-title">From a conversation to a short film</h2></div>
+      <div><p>For a Design for Behaviour Change hackathon in Intro to CreaTe, our four-person team made a short film around grey days and vitamin D. We developed the idea together and planned the story in a six-panel storyboard.</p><p>I directed how the shots should be filmed and acted in the film. Tzuling was the other actor and edited the video.</p></div>
+    </section>
+    <section class="film-comparison" aria-labelledby="film-comparison-title">
+      <p class="companion-eyebrow">Storyboard &amp; film</p>
+      <h2 id="film-comparison-title">From the page to the screen</h2>
+      <p>The storyboard follows the character from a morning at home to a conversation on a park bench. In the film, those moments unfold alongside a calendar that changes as the days pass.</p>
+      <div class="film-pair">
+        <figure><a href="images/behaviour-change/storyboard.jpg" target="_blank" rel="noopener noreferrer"><img src="images/behaviour-change/storyboard.jpg" alt="Six storyboard panels: a morning at home, a run, a conversation, a shop and another morning" loading="lazy" /></a><figcaption>01 · The team's storyboard</figcaption></figure>
+        <figure><a class="film-watch" href="https://www.youtube.com/watch?v=gIJImY0E4tM" target="_blank" rel="noopener noreferrer"><span class="film-watch-icon" aria-hidden="true">▶</span><span>Watch the film on YouTube ↗</span><small>2 minutes 45 seconds</small></a><figcaption>02 · The finished film</figcaption></figure>
+      </div>
+    </section>
+    <section class="companion-panel film-credits">
+      <p class="companion-eyebrow">Made together</p>
+      <h2>The team</h2>
+      <p>Luís Antônio de Albuquerque Hollanda, Tzuling Lin, Precious Akpieyi and Mare Bouman.</p>
+      <p>We developed the idea together. I directed and acted; Tzuling acted and edited the film.</p>
+      <div class="companion-links"><a class="companion-ghost" href="index.html#projects">Back to projects</a></div>
+    </section>
+  </main>
+  <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
+  <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
+  <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
+  <script src="script.js"></script>
+</body>
+</html>

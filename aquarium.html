@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="companion.css" />
   <link rel="stylesheet" href="aquarium-study.css?v=2" />
+  <link rel="stylesheet" href="notebook-atmosphere.css?v=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
@@ -48,8 +49,16 @@
       <figure><img src="images/AquariumStill.png" alt="Colourful procedural fish swimming among seaweed and rocks" /><figcaption>A moment in the aquarium</figcaption></figure>
     </section>
 
-    <section class="companion-panel" aria-labelledby="aquarium-demo-title">
-      <h2 id="aquarium-demo-title">A look inside</h2>
+    <section class="companion-panel companion-layout" aria-labelledby="aquarium-demo-title">
+      <div class="companion-copy">
+        <h2 id="aquarium-demo-title">Fish that move together</h2>
+        <p>I used the procedural fish animation from the <a href="https://www.youtube.com/watch?v=qlfh_rv6khY&amp;t=10s" target="_blank" rel="noopener noreferrer">tutorial</a>, where the fish followed the mouse. I connected it to a flocking algorithm I’d written for an earlier exercise with small birds.</p>
+        <p>The birds were all one size, so I adjusted the behaviour for fish of different sizes. I wanted the small fish to feel agile and respond quickly, and the bigger fish to move more slowly. It looked strange when the bigger ones moved too much.</p>
+        <p>I wanted it to feel like a living aquarium: the fish move together as a school, but still feel distinct. Of all my projects, this is the one where I’m happiest with the fine-tuning.</p>
+        <p>The flocking combines cohesion, separation and alignment with attraction to food and avoidance of the rocks, walls and floor.</p>
+        <h3>In the original sketch</h3>
+        <p>Click to drop food into the water. Press <strong>L</strong> to switch between day and night, changing the light and the prototype’s music. The recording does not respond to these inputs.</p>
+      </div>
       <figure class="companion-figure">
         <video controls muted preload="metadata" playsinline poster="images/AquariumStill.png" aria-label="Recording of the Dynamic Aquarium sketch">
           <source src="images/AquariumDemo.mp4" type="video/mp4" />
@@ -57,19 +66,6 @@
         </video>
         <figcaption>Recording of the aquarium. The controls for feeding and changing the light belong to the original Processing sketch.</figcaption>
       </figure>
-    </section>
-
-    <section class="companion-panel companion-layout">
-      <div class="companion-copy">
-        <h2>Fish that move together</h2>
-        <p>We made an aquarium where fish of different sizes and colours move through the same space. I worked on the fish code, adapting the jointed animation credited below and building the behaviours that guide the fish through the water.</p>
-        <p>I made and tuned the flocking algorithm, combining cohesion, separation and alignment with attraction to food and avoidance of the rocks, walls and floor. Together these behaviours shape the movement of the group.</p>
-      </div>
-      <aside class="companion-aside">
-        <h3>In the original sketch</h3>
-        <p>Click to drop food into the water. Press <strong>L</strong> to switch between day and night, changing the light and the prototype's music.</p>
-        <p>The video above is a recording, so it does not respond to these inputs.</p>
-      </aside>
     </section>
 
     <section class="companion-panel aquarium-study" aria-labelledby="spine-title">
@@ -166,7 +162,7 @@ this.fish.updateBody();</code></pre>
   <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
   <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
   <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261106"></script>
   <script src="aquarium-study.js?v=3"></script>
 </body>
 </html>

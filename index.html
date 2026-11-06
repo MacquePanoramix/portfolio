@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="journey-train.css" />
   <link rel="stylesheet" href="aquarium-background.css" />
   <link rel="stylesheet" href="portfolio-refresh.css" />
+  <link rel="stylesheet" href="notebook-atmosphere.css?v=1" />
 </head>
 
-<body class="page-in">
+<body class="page-in notebook-home">
   <div class="stars"></div>
 
   <header>
@@ -54,8 +55,27 @@
   <main>
     <!-- Hero -->
     <section id="home" class="hero">
-      <h1 class="fade-in">Luís Antônio de Albuquerque Hollanda</h1>
-      <p class="fade-in poetic-tagline">A collection of projects, ideas and things I’ve learned along the way.</p>
+      <div class="notebook-opening">
+        <div class="opening-copy">
+          <p class="opening-kicker">Creative Technology · Portfolio</p>
+          <h1>Hello, I’m <em>Luís.</em></h1>
+          <p class="opening-full-name">Luís Antônio de Albuquerque Hollanda</p>
+          <p class="opening-intro">This is a collection of work I feel passionate about. I wanted to share it in a way that feels like me.</p>
+          <a class="opening-link" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+          <svg class="opening-path" viewBox="0 0 250 76" aria-hidden="true" focusable="false"><path d="M5 13 C67 8 65 62 133 58 C177 56 191 31 232 40" /><path d="M220 29 L234 40 L219 49" /></svg>
+        </div>
+        <div class="opening-art">
+          <figure class="opening-photo">
+            <img src="me.jpg" alt="Luís standing on a tree-lined path in autumn" />
+            <figcaption>Hello from my little corner</figcaption>
+          </figure>
+          <a class="opening-fragment" href="aquarium.html" aria-label="Explore Dynamic Aquarium">
+            <img src="images/AquariumStill.png" alt="" />
+            <span>a little world in motion ↗</span>
+          </a>
+        </div>
+      </div>
+      <p class="opening-margin" aria-hidden="true">a few things I’ve made ↓</p>
     </section>
 
     <!-- Projects -->
@@ -66,7 +86,7 @@
       <div class="mossaratus-cluster">
         <article class="featured-project">
           <div class="featured-image reveal">
-            <img src="FinalScene.png" alt="Screenshot from Mossaratus" />
+            <img src="FinalScene.png" alt="Mossaratus title art" />
           </div>
 
           <div class="featured-content reveal">
@@ -74,20 +94,8 @@
 
             <h3 class="featured-title">Mossaratus</h3>
 
-            <!-- pull-quote styling applied here -->
-            <p class="featured-tagline pull-quote">
-              I am quite fond of the final result we managed to achieve with this game in so few days.
-            </p>
-
-            <!-- optional extra hook line -->
-            <p class="featured-hook">
-              A six-armed movement shooter in a mossy world, where every trigger pull fires up to three guns at once.
-            </p>
-
-            <p>
-              You play as a six-armed robot, fighting increasingly difficult waves and buying new weapons between rounds.
-              You can fire the guns on either side at once. A surprise awaits you in the final wave.
-            </p>
+            <p class="featured-tagline pull-quote">Mossaratus is one of the university projects I’m most proud of, both for the game and the animated trailer we made.</p>
+            <p>It’s a shooter where you fight waves of enemies as a six-armed robot. You buy different guns between rounds, and when you fire on one side, all the guns on that side go off together.</p>
 
             <ul class="featured-meta">
               <li>
@@ -100,7 +108,7 @@
     Edina Depner, Tycho Heijmans
   </li>
 
-              <li><strong>Role:</strong> I was responsible for building the core implementation of the shop features (later refined by Ernest) and for modelling/fully implementing the boss and the final fight.</li>
+              <li><strong>Role:</strong> I built the core of the shop system, which Ernests later refined, and designed and implemented the final boss and its attacks.</li>
               <li><strong>Tools:</strong> Unity and Blender</li>
             </ul>
 
@@ -289,7 +297,7 @@
 
           <p class="sleep-feature-role">
             <strong>My role:</strong>
-            I worked with sleep data and research, turning the results into values the installation could use.
+            I processed sleep data and research, then worked with the team to bring those values into the installation.
           </p>
           <p><strong>Team:</strong> 14-person interdisciplinary team</p>
           <p><strong>Tools:</strong> Python, regression and decision-tree modelling, ESP32/Arduino</p>
@@ -330,9 +338,9 @@
           <div class="project-content">
             <h3>Dynamic Aquarium</h3>
             <p class="project-quote">
-              A small aquarium where colourful fish swim together among rocks and seaweed. In the sketch, you can feed them and switch between day and night.
+              A living aquarium where fish of different sizes move together as a school while keeping their own character.
             </p>
-            <p><strong>My role:</strong> I made and tuned the flocking behaviour, worked on the fish, and built the current and parts of the environment.</p>
+            <p><strong>My role:</strong> I made the fish code and tuned the flocking behaviour, and built the current, rocks, sand and boundaries.</p>
             <p><strong>Team:</strong> Luís Antônio de Albuquerque Hollanda, <a href="https://tzulinglin.com/" target="_blank" rel="noopener noreferrer">Tzuling Lin</a></p>
             <p><strong>Tools:</strong> Processing</p>
             <p class="project-meta-link-wrap">
@@ -372,9 +380,9 @@
           <div class="project-content">
             <h3>Leaving a Trace</h3>
             <p class="project-quote">
-              An interactive installation where visitors reshape a wounded landscape by placing and removing factories, watching nature respond through projection, light, and sound, with fog adding to the atmosphere.
+              An interactive installation about the damage people can do to the environment, and how resilient nature can be. Visitors place and remove factories to change the landscape.
             </p>
-            <p><strong>My role:</strong> I worked on the interactive visuals and atmospheric audio, helping the projection respond to visitors’ actions.</p>
+            <p><strong>My role:</strong> I tuned how the landscape spreads and recovers, and worked on the interactive visuals and atmospheric audio.</p>
             <p><strong>Team:</strong> Luís Antônio de Albuquerque Hollanda, Felix A. Smelik, Amina I. Tatieva, Ebben M. R. van Reen, Eva Pos, Yanara P.C. Hoogwoud</p>
             <p><strong>Tools:</strong> Processing, ESP32/Arduino, projection, sound, fabrication</p>
             <section class="project-media-fragments" aria-label="Supporting project images">
@@ -399,7 +407,7 @@
           <div class="project-content">
             <p class="film-card-kicker">Short film · 2024</p>
             <h3>A film about grey days</h3>
-            <p class="project-quote">A short story about grey mornings, a conversation in the park and a reminder to get outside.</p>
+            <p class="project-quote">A short film we made at university, from a grey morning and a look out the window to a conversation on a park bench.</p>
             <p><strong>My role:</strong> Direction, acting and developing the idea with the team.</p>
             <p><strong>Team:</strong> Luís Hollanda, Tzuling Lin, Precious Akpieyi and Mare Bouman</p>
             <a class="project-link" href="behaviour-change-film.html">Explore the film and storyboard →</a>
@@ -419,7 +427,7 @@
 
         <div class="about-text">
           <h2>About Me</h2>
-          <p>Hello! I'm Luís Antônio de Albuquerque Hollanda, a Creative Technology student at VU.</p>
+          <p>I study Creative Technology at Vrije Universiteit Amsterdam, in a joint programme with the University of Twente. I’m doing a minor in Network Science, and when I have the time, I like to dive deep into the projects I work on.</p>
 
           <!-- The tiny train follows the journey sentence as its layout changes. -->
           <div id="journey-line">
@@ -443,8 +451,7 @@
     <section id="contact">
   <h2>Get in touch</h2>
   <p>
-    Collaborations, questions, or just a friendly hello are all welcome.<br />
-    I’d be happy to hear from you.
+    If you’d like to talk about my work, discuss a project we could do together, or just say hello, I’d be happy to hear from you.
   </p>
   <a href="mailto:luis.hollanda1@gmail.com" class="button">Say hello</a>
 </section>
@@ -479,7 +486,7 @@
     ]'
   ></audio>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261106"></script>
   <script src="journey-train.js"></script>
   <script src="aquarium-background.js"></script>
 </body>

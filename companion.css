@@ -126,3 +126,6 @@
   .companion-grid { grid-template-columns: 1fr; }
   .companion-hero { padding-bottom: 2rem !important; }
 }
+
+.boss-animation-stories > .companion-layout + .companion-layout { margin-top: 2rem; }
+.boss-animation-stories > h3 { margin-top: 2rem; }

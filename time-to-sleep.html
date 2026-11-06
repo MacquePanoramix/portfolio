@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="companion.css" />
   <link rel="stylesheet" href="time-to-sleep.css" />
+  <link rel="stylesheet" href="notebook-atmosphere.css?v=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Karla:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
@@ -70,11 +71,11 @@
 
     <section class="sleep-personal">
       <p class="sleep-kicker">My contribution</p><h2>Connecting the data<br />to the experience</h2>
-      <div><p>I worked with public sleep datasets and research, turning the results into values the installation could use for sleep quality, stress and cognition.</p><p>The stations, electronics, visuals, sound and game came together through the work of the whole team.</p></div>
+      <div><p>The group helped find possible datasets at the start, and I did the data processing. I worked with the rest of the group to get the resulting values into the installation.</p><p>The stations, electronics, visuals, sound and game came together through the work of the whole team.</p></div>
     </section>
 
     <section class="sleep-lab">
-      <div class="sleep-lab-copy"><p class="sleep-kicker">The data story · an early attempt</p><h2>When the first model kept choosing the average</h2><p>Our first plan was to connect the datasets with regression. But the sleep-duration model tended to predict almost the same value for everyone, even when the actual values were very different.</p><p>We tried other approaches and datasets while the physical installation was already taking shape. After talking with a teaching assistant, the team explored grouped sleep durations and relationships derived from research papers.</p><p class="sleep-annotation">The diagonal is the ideal line; the dots gathered near the average instead.</p></div>
+      <div class="sleep-lab-copy"><p class="sleep-kicker">The data story · an early attempt</p><h2>When the first model kept choosing the average</h2><p>My first approach was to predict how long someone would sleep, but the model kept giving answers close to the average. By the time I found that out, the installation was already taking shape, so I had to find another way to work with the data we had.</p><p>I switched to a decision tree that used caffeine, alcohol and exercise to estimate a sleep-duration group. For some of the other connections, I used relationships that had already been reported in research papers.</p><p>The data we could access had its limits, but I was happy I’d found a way to make it work and let the rest of the installation shine.</p><p class="sleep-annotation">The diagonal is the ideal line; the dots gathered near the average instead.</p></div>
       <figure class="sleep-plot"><a href="images/time-to-sleep/report-regression.png" target="_blank" rel="noopener noreferrer"><img src="images/time-to-sleep/report-regression.png" alt="Early regression plot: predicted sleep duration clusters around 7.8 hours while actual duration varies" loading="lazy" /></a><figcaption>Early sleep-duration regression · project documentation · select image to enlarge</figcaption></figure>
     </section>
 
@@ -107,6 +108,6 @@
   <button id="audioToggle" class="audio-toggle" type="button" aria-label="Next track" title="Next track">⏭</button>
   <audio id="bgm" preload="metadata" muted data-playlist='["audio/Carroussel Cafe (Instrumental).mp3","audio/Starlit Atelier (Instrumental).mp3","audio/Title_ Waterwheel Café (Instrumental).mp3","audio/dreamy-jazz-slow-background-jazz-music-piano-and-seattle-strings-9998.mp3","audio/lamp Cafe.mp3"]'></audio>
   <footer><a href="hidden-corner.html" class="hidden-link" aria-label="Visit the hidden corner">✨</a></footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261106"></script>
 </body>
 </html>

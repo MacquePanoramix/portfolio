@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css?v=20261105" />
+    <link rel="stylesheet" href="quiet-corner.css?v=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,10 +15,12 @@
     />
   </head>
 
-  <body class="page-in">
+  <body class="page-in quiet-page">
     <div class="stars"></div>
 
+    <canvas class="quiet-fish-canvas" aria-hidden="true"></canvas>
     <main class="quiet-main">
+      <div class="quiet-reading">
       <h1 class="quiet-title">A Quiet Corner</h1>
 
       <blockquote class="quiet-quote">
@@ -51,6 +54,9 @@
       </div>
 
       <a href="index.html" class="quiet-back">Back to the main path</a>
+      <button class="quiet-fish-toggle" type="button" hidden>Pause fish</button>
+      <p class="quiet-fish-credits">Fish adapted from <a href="https://github.com/MacquePanoramix/Aquarium" target="_blank" rel="noopener noreferrer">Aquarium</a> · <a href="https://github.com/argonautcode/animal-proc-anim" target="_blank" rel="noopener noreferrer">animation source</a> · <a href="https://www.youtube.com/watch?v=qlfh_rv6khY&amp;t=10s" target="_blank" rel="noopener noreferrer">tutorial</a></p>
+      </div>
     </main>
 
     <!-- Background music: single Quiet Corner track -->
@@ -63,5 +69,6 @@
     ></audio>
 
     <script src="script.js"></script>
+    <script src="quiet-fish.js?v=1"></script>
   </body>
 </html>

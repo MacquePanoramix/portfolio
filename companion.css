@@ -94,6 +94,8 @@
   margin-top: .55rem;
 }
 .companion-figure { margin: 0; min-width: 0; }
+.trailer-page header { box-sizing: border-box; }
+.trailer-page .companion-figure + p { margin-top: 1.25rem; }
 .companion-figure img, .companion-figure video {
   display: block;
   width: 100%;

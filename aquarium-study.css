@@ -68,6 +68,11 @@
 .aquarium-study-code summary:focus-visible { outline: 2px solid #70577c; outline-offset: 3px; }
 .aquarium-study-code p { margin: .9rem 0 !important; }
 .aquarium-study-code pre { max-width: 100%; overflow-x: auto; padding: 1rem; border-radius: 9px; background: #f5f0f4; font-size: .8rem; line-height: 1.6; }
+.aquarium-night-view { min-width: 0; padding: .65rem .9rem; background: #f6edf4; border: 1px solid #dfd0df; border-radius: 10px; }
+.aquarium-night-view summary { padding: .3rem 0; color: #604b68; font-weight: 700; cursor: pointer; }
+.aquarium-night-view summary:hover { text-decoration: underline; text-underline-offset: .15em; }
+.aquarium-night-view :is(summary, a):focus-visible { outline: 2px solid #70577c; outline-offset: 3px; }
+.aquarium-night-view figure { margin-top: .55rem; }
 @media (max-width: 700px) {
   .aquarium-page .aquarium-cover, .aquarium-page .aquarium-field-notes { grid-template-columns: 1fr; }
   .aquarium-cover figure { max-width: 480px; }
